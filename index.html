@@ -206,7 +206,7 @@ let searchQuery = '';
 
 async function loadData() {
   try {
-    const res = await fetch('data/prices.json');
+    const res = await fetch('tobacco-prices/data/prices.json');
     if (!res.ok) throw new Error('データの読み込みに失敗しました');
     const data = await res.json();
     allProducts = data.products || [];
