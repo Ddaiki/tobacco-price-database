@@ -2,6 +2,12 @@
 """
 財務省「製造たばこの小売定価の認可」PDFを取得・解析して prices.json を更新するスクリプト。
 GitHub Actions から週次実行される想定。
+
+PDFはToUnicode CMAPが欠落しているため:
+- テーブル構造: pdfplumber (罫線検出)
+- ASCII/Latin テキスト: pdfminer CID+29 デコード
+- 日本語テキスト: fitz + tesseract OCR (セルクロップ)
+- 価格: CIDデコード + 前の行からの引き継ぎ (マージドセル対応)
 """
 import json
 import re
@@ -15,11 +21,10 @@ from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
-
-try:
-    import pdfplumber
-except ImportError:
-    pdfplumber = None
+import pdfplumber
+import fitz  # PyMuPDF
+import pytesseract
+from PIL import Image
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 log = logging.getLogger(__name__)
@@ -43,6 +48,13 @@ CATEGORY_KEYWORDS = [
     "パイプたばこ", "かぎたばこ", "刻みたばこ",
 ]
 
+OCR_DPI = 200
+OCR_SCALE = OCR_DPI / 72  # PDF points → pixels
+
+
+# ---------------------------------------------------------------------------
+# データIO
+# ---------------------------------------------------------------------------
 
 def load_data() -> dict:
     if DATA_FILE.exists():
@@ -60,7 +72,6 @@ def save_data(data: dict):
 
 
 def fetch_with_retry(url: str, **kwargs) -> requests.Response:
-    """リトライ付きHTTPリクエスト（指数バックオフ）。"""
     delays = [2, 4, 8, 16]
     for i, delay in enumerate(delays):
         try:
@@ -77,7 +88,6 @@ def fetch_with_retry(url: str, **kwargs) -> requests.Response:
 
 
 def fetch_pdf_links() -> list[dict]:
-    """財務省ページからPDFリンク一覧を取得する。"""
     log.info("Fetching index page: %s", INDEX_URL)
     resp = fetch_with_retry(INDEX_URL)
     soup = BeautifulSoup(resp.text, "html.parser")
@@ -94,8 +104,6 @@ def fetch_pdf_links() -> list[dict]:
         if filename in seen:
             continue
         seen.add(filename)
-
-        # ファイル名から日付を抽出: 20240807_kouriteika.pdf
         m = re.search(r"(\d{8})_kouriteika", filename)
         if not m:
             continue
@@ -107,21 +115,43 @@ def fetch_pdf_links() -> list[dict]:
     return links
 
 
+# ---------------------------------------------------------------------------
+# テキストデコード
+# ---------------------------------------------------------------------------
+
+def decode_cid_ascii(text: str) -> str:
+    """
+    pdfminer が出力する (cid:XX) を ASCII 文字に変換。
+    このPDFのフォントは single-byte CID + 29 = ASCII コードポイント。
+    """
+    def _replace(m):
+        cid = int(m.group(1))
+        if cid < 200:
+            ch = chr(cid + 29)
+            return ch if 0x20 <= ord(ch) <= 0x7E else " "
+        return ""  # 日本語CIDは空白に
+    return re.sub(r"\(cid:(\d+)\)", _replace, text or "").strip()
+
+
+def has_japanese_cids(text: str) -> bool:
+    """テキストに日本語CID (>= 200) が含まれるか判定。"""
+    return any(int(m.group(1)) >= 200 for m in re.finditer(r"\(cid:(\d+)\)", text or ""))
+
+
 def normalize_price(s: str) -> int | None:
-    """価格文字列を整数に変換する。例: '1,240円' → 1240"""
     if not s:
         return None
-    m = re.search(r"[\d,]+", s)
+    m = re.search(r"[\d,]{3,}", s)
     if not m:
         return None
     try:
-        return int(m.group().replace(",", ""))
+        v = int(m.group().replace(",", ""))
+        return v if 100 <= v <= 99999 else None
     except ValueError:
         return None
 
 
 def normalize_category(s: str) -> str:
-    """区分の表記ゆれを正規化する。"""
     s = s.strip()
     for kw in CATEGORY_KEYWORDS:
         if kw in s:
@@ -129,95 +159,194 @@ def normalize_category(s: str) -> str:
     return s
 
 
-def parse_pdf_table(pdf_bytes: bytes, approval_date: str) -> list[dict]:
-    """pdfplumber でPDFの表を解析し、製品リストを返す。"""
-    if pdfplumber is None:
-        raise ImportError("pdfplumber is not installed")
+# ---------------------------------------------------------------------------
+# OCR ユーティリティ
+# ---------------------------------------------------------------------------
 
+def _crop_and_ocr(page_img: Image.Image, bbox, psm: int = 7) -> str:
+    """pdfplumber の bbox をクロップして OCR。"""
+    if bbox is None:
+        return ""
+    x0, top, x1, bottom = bbox
+    px0, py0 = int(x0 * OCR_SCALE), int(top * OCR_SCALE)
+    px1, py1 = int(x1 * OCR_SCALE), int(bottom * OCR_SCALE)
+    if px1 - px0 < 4 or py1 - py0 < 4:
+        return ""
+
+    cell_img = page_img.crop((px0, py0, px1, py1))
+    if (py1 - py0) < 30:
+        cell_img = cell_img.resize(
+            (cell_img.width * 3, cell_img.height * 3), Image.LANCZOS
+        )
+
+    cfg = f"--psm {psm} -c preserve_interword_spaces=1"
+    text = pytesseract.image_to_string(cell_img, lang="jpn", config=cfg)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def decode_cell(cid_text: str | None, bbox, page_img: Image.Image, psm: int = 7) -> str:
+    """
+    セルテキストを取得する:
+    - ASCII/Latin → CIDデコード
+    - 日本語 → OCR
+    - どちらも空 → ""
+    """
+    raw = cid_text or ""
+    if not raw and bbox is None:
+        return ""
+
+    # 日本語CIDが含まれる場合はOCR
+    if has_japanese_cids(raw):
+        return _crop_and_ocr(page_img, bbox, psm)
+
+    # ASCII/Latinのみの場合はCIDデコード
+    decoded = decode_cid_ascii(raw)
+    if decoded:
+        return decoded
+
+    # CIDなしでもbboxがあれば念のためOCR
+    if bbox:
+        return _crop_and_ocr(page_img, bbox, psm)
+    return ""
+
+
+# ---------------------------------------------------------------------------
+# メインパーサー
+# ---------------------------------------------------------------------------
+
+HEADER_TERMS = {"名称", "区分", "定価", "品目", "製造国", "製品の", "小売"}
+
+
+def _is_header(text: str) -> bool:
+    return any(t in text for t in HEADER_TERMS)
+
+
+def parse_pdf_table(pdf_bytes: bytes, approval_date: str) -> list[dict]:
+    """
+    pdfplumber で表の罫線を検出 → セル単位でテキストを取得 → 製品リストを返す。
+    価格はマージドセルに対応するため「最後に見た価格を継続使用」方式を採用。
+    """
     products = []
-    current_category = ""
+
+    # fitz で全ページを画像化
+    fitz_pdf = fitz.open(stream=pdf_bytes, filetype="pdf")
+    mat = fitz.Matrix(OCR_SCALE, OCR_SCALE)
+    page_images: list[Image.Image] = []
+    for fpage in fitz_pdf:
+        pix = fpage.get_pixmap(matrix=mat)
+        page_images.append(Image.frombytes("RGB", [pix.width, pix.height], pix.samples))
+    fitz_pdf.close()
 
     with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
-        for page in pdf.pages:
-            tables = page.extract_tables(
-                table_settings={
-                    "vertical_strategy": "lines",
-                    "horizontal_strategy": "lines",
-                }
+        for page_idx, page in enumerate(pdf.pages):
+            if page_idx >= len(page_images):
+                break
+            page_img = page_images[page_idx]
+
+            tables = page.find_tables(
+                {"vertical_strategy": "lines", "horizontal_strategy": "lines"}
             )
             if not tables:
-                # テーブル検出できない場合はテキストから試みる
-                tables = page.extract_tables()
+                continue
 
             for table in tables:
-                for row in table:
-                    if not row:
-                        continue
-                    cells = [str(c or "").strip() for c in row]
+                rows = table.rows
+                if not rows:
+                    continue
+                num_cols = len(rows[0].cells)
+                if num_cols < 4:
+                    continue
 
-                    # 区分の更新（セルが種類キーワードを含む場合）
-                    for kw in CATEGORY_KEYWORDS:
-                        if kw in cells[0]:
-                            current_category = kw
-                            break
+                # 列インデックスを決定 (6列標準: 区分|ブランド|銘柄名|製品区分|製造国|価格)
+                if num_cols >= 6:
+                    CI = {"cat": 0, "brand": 1, "name": 2, "type": 3, "ctry": 4, "price": 5}
+                elif num_cols == 5:
+                    CI = {"cat": 0, "brand": -1, "name": 1, "type": 2, "ctry": 3, "price": 4}
+                else:
+                    CI = {"cat": 0, "brand": -1, "name": 1, "type": -1, "ctry": -1, "price": num_cols - 1}
 
-                    # ヘッダー行をスキップ
-                    if "名" in cells[0] or "区分" in cells[0]:
+                extracted = table.extract()
+                current_category = ""
+                current_price: int | None = None
+
+                for row_idx, row in enumerate(rows):
+                    bboxes = row.cells
+                    plumber = extracted[row_idx] if row_idx < len(extracted) else []
+
+                    def cell_raw(key):
+                        idx = CI.get(key, -1)
+                        if idx < 0 or idx >= len(plumber):
+                            return None
+                        return plumber[idx]
+
+                    def cell_bbox(key):
+                        idx = CI.get(key, -1)
+                        if idx < 0 or idx >= len(bboxes):
+                            return None
+                        return bboxes[idx]
+
+                    # ─── 価格更新 (マージドセル対応: 見つかったら以降の行で継続) ───
+                    price_raw = decode_cid_ascii(cell_raw("price") or "")
+                    new_price = normalize_price(price_raw)
+                    if new_price is not None:
+                        current_price = new_price
+
+                    # ─── カテゴリ更新 ───
+                    cat_raw = cell_raw("cat")
+                    if cat_raw is not None or cell_bbox("cat") is not None:
+                        cat_text = decode_cell(cat_raw, cell_bbox("cat"), page_img, psm=6)
+                        cat_norm = normalize_category(cat_text)
+                        if cat_norm in CATEGORY_KEYWORDS:
+                            current_category = cat_norm
+
+                    # ─── 銘柄名取得 (col2 優先、なければ col1 brand) ───
+                    name_raw = cell_raw("name")
+                    name_bbox = cell_bbox("name")
+                    name = ""
+                    if name_raw is not None or name_bbox is not None:
+                        name = decode_cell(name_raw, name_bbox, page_img, psm=7)
+
+                    if not name:
+                        brand_raw = cell_raw("brand")
+                        brand_bbox = cell_bbox("brand")
+                        if brand_raw is not None or brand_bbox is not None:
+                            name = decode_cell(brand_raw, brand_bbox, page_img, psm=7)
+
+                    if not name or _is_header(name):
+                        continue
+                    if current_price is None or not current_category:
                         continue
 
-                    # 最低限の列数チェック
-                    if len(cells) < 4:
-                        continue
+                    # ─── 製品区分・製造国 ───
+                    type_raw = cell_raw("type")
+                    type_bbox = cell_bbox("type")
+                    product_type = decode_cell(type_raw, type_bbox, page_img, psm=7) if (type_raw or type_bbox) else ""
 
-                    # 区分・名称・製品区分・国・価格 の位置を推定
-                    # PDFの構成に応じてインデックスを調整
-                    cat_cell = cells[0] if cells[0] else current_category
-                    name_cell = cells[1] if len(cells) > 1 else ""
-                    type_cell = cells[2] if len(cells) > 2 else ""
-                    # 価格は右端付近
-                    price_cell = ""
-                    country_cell = ""
-                    for j in range(3, len(cells)):
-                        price = normalize_price(cells[j])
-                        if price is not None and price > 0:
-                            price_cell = cells[j]
-                            if j > 3:
-                                country_cell = cells[j - 1]
-                            break
-
-                    if not name_cell or not price_cell:
-                        continue
-                    price = normalize_price(price_cell)
-                    if price is None:
-                        continue
-
-                    cat = normalize_category(cat_cell) or current_category
-                    if not cat:
-                        continue
+                    ctry_raw = cell_raw("ctry")
+                    ctry_bbox = cell_bbox("ctry")
+                    country = decode_cell(ctry_raw, ctry_bbox, page_img, psm=7) if (ctry_raw or ctry_bbox) else ""
 
                     products.append({
-                        "category": cat,
-                        "name": name_cell,
-                        "product_type": type_cell,
-                        "country": country_cell,
-                        "price": price,
+                        "category": current_category,
+                        "name": name,
+                        "product_type": product_type,
+                        "country": country,
+                        "price": current_price,
                         "date": approval_date,
                     })
 
     return products
 
 
+# ---------------------------------------------------------------------------
+# DB マージ
+# ---------------------------------------------------------------------------
+
 def make_product_key(p: dict) -> str:
     return f"{p.get('category','')}|{p.get('name','')}|{p.get('product_type','')}"
 
 
 def merge_into_db(data: dict, new_products: list[dict], pdf_filename: str) -> int:
-    """
-    新規製品データをDBにマージする。
-    - 同一製品キーが存在すれば price_history に追記
-    - 存在しなければ新規追加
-    戻り値: 追加・更新した件数
-    """
     existing = {make_product_key(p): p for p in data["products"]}
     changed = 0
 
@@ -225,7 +354,6 @@ def merge_into_db(data: dict, new_products: list[dict], pdf_filename: str) -> in
         key = make_product_key(np)
         if key in existing:
             ep = existing[key]
-            # 同日同価格は重複追加しない
             already = any(
                 h["date"] == np["date"] and h["price"] == np["price"]
                 for h in ep.get("price_history", [])
@@ -262,7 +390,6 @@ def merge_into_db(data: dict, new_products: list[dict], pdf_filename: str) -> in
 
 
 def get_processed_pdfs(data: dict) -> set[str]:
-    """既処理のPDFファイル名セットを返す。"""
     processed = set()
     for p in data["products"]:
         for h in p.get("price_history", []):
@@ -270,6 +397,10 @@ def get_processed_pdfs(data: dict) -> set[str]:
                 processed.add(h["pdf"])
     return processed
 
+
+# ---------------------------------------------------------------------------
+# エントリポイント
+# ---------------------------------------------------------------------------
 
 def main():
     log.info("=== たばこ小売定価 更新スクリプト開始 ===")
@@ -283,7 +414,7 @@ def main():
         log.error("インデックスページ取得失敗: %s", e)
         sys.exit(1)
 
-    new_pdfs = [l for l in pdf_links if l["filename"] not in processed]
+    new_pdfs = [lnk for lnk in pdf_links if lnk["filename"] not in processed]
     log.info("未処理PDF件数: %d", len(new_pdfs))
 
     total_changed = 0
