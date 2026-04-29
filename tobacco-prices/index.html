@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>製造たばこ 小売定価データベース</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Hiragino Sans', 'Meiryo', sans-serif; background: #f4f6f8; color: #212121; }
+
+header {
+  background: #1a237e; color: white;
+  padding: 14px 16px;
+}
+header h1 { margin: 0; font-size: 17px; font-weight: 700; }
+header p { margin: 3px 0 0; font-size: 11px; opacity: 0.75; }
+
+.controls {
+  background: white; padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+  position: sticky; top: 0; z-index: 20;
+  box-shadow: 0 1px 4px rgba(0,0,0,.08);
+}
+.search-row { display: flex; gap: 8px; margin-bottom: 8px; }
+#search-input {
+  flex: 1; padding: 9px 12px;
+  border: 1px solid #bbb; border-radius: 6px;
+  font-size: 15px; outline: none;
+}
+#search-input:focus { border-color: #1a237e; }
+#clear-btn {
+  padding: 0 14px; border: 1px solid #bbb; border-radius: 6px;
+  background: white; cursor: pointer; font-size: 18px; color: #666;
+}
+
+.filter-row { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; }
+.filter-row::-webkit-scrollbar { display: none; }
+.filter-btn {
+  padding: 5px 14px; border: 1.5px solid #ccc; border-radius: 20px;
+  background: white; cursor: pointer; font-size: 12px;
+  white-space: nowrap; color: #444; flex-shrink: 0;
+  transition: all .15s;
+}
+.filter-btn:active { opacity: .7; }
+.filter-btn.active { background: #1a237e; color: white; border-color: #1a237e; }
+
+.stats-bar {
+  padding: 6px 14px; font-size: 12px; color: #777;
+  background: #fafafa; border-bottom: 1px solid #eee;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.stats-bar a { color: #1a237e; font-size: 11px; text-decoration: none; }
+
+.sort-row { display: flex; gap: 8px; align-items: center; padding: 6px 12px; background: #fafafa; border-bottom: 1px solid #eee; }
+.sort-row label { font-size: 12px; color: #666; }
+#sort-select { padding: 4px 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 560px; }
+thead th {
+  background: #e8eaf6; border-bottom: 2px solid #9fa8da;
+  padding: 8px 10px; text-align: left; white-space: nowrap;
+  font-size: 12px; color: #283593;
+}
+tbody tr { border-bottom: 1px solid #eee; cursor: pointer; transition: background .1s; }
+tbody tr:hover { background: #f0f4ff; }
+tbody tr.discontinued { opacity: .55; }
+td { padding: 9px 10px; vertical-align: middle; }
+
+.badge {
+  display: inline-block; padding: 2px 7px;
+  border-radius: 12px; font-size: 11px; font-weight: 600; white-space: nowrap;
+}
+.cat-加熱式たばこ { background: #e3f2fd; color: #0d47a1; }
+.cat-葉巻たばこ   { background: #fce4ec; color: #880e4f; }
+.cat-紙巻たばこ   { background: #e8f5e9; color: #1b5e20; }
+.cat-パイプたばこ { background: #fff8e1; color: #e65100; }
+.cat-かぎたばこ   { background: #f3e5f5; color: #4a148c; }
+.cat-刻みたばこ   { background: #e0f2f1; color: #004d40; }
+
+.price-cell { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.discontinued-mark { font-size: 10px; color: #e53935; margin-left: 4px; }
+.name-cell { max-width: 240px; line-height: 1.4; }
+.name-cell small { display: block; color: #888; font-size: 11px; }
+.history-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #9fa8da; margin-left: 4px; vertical-align: middle; }
+
+.empty-state { text-align: center; padding: 60px 20px; color: #aaa; font-size: 14px; }
+
+/* Modal */
+.modal-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,.45); z-index: 100;
+  align-items: flex-end; justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: white; border-radius: 14px 14px 0 0;
+  padding: 20px 18px 32px; width: 100%; max-width: 520px;
+  max-height: 70vh; overflow-y: auto;
+  animation: slideUp .2s ease;
+}
+@keyframes slideUp { from { transform: translateY(60px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.modal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.modal-title { font-size: 14px; font-weight: 700; line-height: 1.4; max-width: 85%; }
+.modal-close { background: #eee; border: none; border-radius: 50%; width: 28px; height: 28px; font-size: 16px; cursor: pointer; flex-shrink: 0; }
+.modal-meta { font-size: 12px; color: #666; margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.modal-meta span { background: #f0f0f0; padding: 2px 8px; border-radius: 10px; }
+
+.history-label { font-size: 12px; font-weight: 600; color: #1a237e; margin-bottom: 6px; }
+.history-list { list-style: none; padding: 0; margin: 0; }
+.history-list li {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 13px;
+}
+.history-list li:last-child { border-bottom: none; }
+.history-list .h-date { color: #666; font-size: 12px; }
+.history-list .h-price { font-weight: 700; font-variant-numeric: tabular-nums; }
+.history-list .h-price.current { color: #1a237e; font-size: 15px; }
+.history-list .h-pdf a { font-size: 11px; color: #888; text-decoration: none; }
+.history-list .h-pdf a:hover { text-decoration: underline; }
+
+@media (min-width: 600px) {
+  .modal-overlay { align-items: center; }
+  .modal { border-radius: 14px; max-height: 80vh; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>製造たばこ 小売定価データベース</h1>
+  <p>財務省「製造たばこの小売定価の認可」データをもとに作成</p>
+</header>
+
+<div class="controls">
+  <div class="search-row">
+    <input type="search" id="search-input" placeholder="銘柄名・製造国で検索..." autocomplete="off">
+    <button id="clear-btn" title="クリア">×</button>
+  </div>
+  <div class="filter-row">
+    <button class="filter-btn active" data-cat="">すべて</button>
+    <button class="filter-btn" data-cat="加熱式たばこ">加熱式</button>
+    <button class="filter-btn" data-cat="葉巻たばこ">葉巻</button>
+    <button class="filter-btn" data-cat="紙巻たばこ">紙巻</button>
+    <button class="filter-btn" data-cat="パイプたばこ">パイプ</button>
+    <button class="filter-btn" data-cat="かぎたばこ">かぎ</button>
+    <button class="filter-btn" data-cat="刻みたばこ">刻み</button>
+    <button class="filter-btn" data-discontinued="true">廃盤のみ</button>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <span id="result-count">読み込み中...</span>
+  <a href="https://www.mof.go.jp/policy/tab_salt/topics/kouriteika.html" target="_blank" rel="noopener">出典: 財務省 ↗</a>
+</div>
+
+<div class="sort-row">
+  <label for="sort-select">並び替え:</label>
+  <select id="sort-select">
+    <option value="name">銘柄名順</option>
+    <option value="price_asc">価格: 安い順</option>
+    <option value="price_desc">価格: 高い順</option>
+    <option value="date_desc">更新日: 新しい順</option>
+    <option value="date_asc">更新日: 古い順</option>
+    <option value="category">種類順</option>
+  </select>
+</div>
+
+<div class="table-wrap">
+  <table id="main-table">
+    <thead>
+      <tr>
+        <th>種類</th>
+        <th>銘柄名</th>
+        <th>製造国</th>
+        <th>価格(円)</th>
+        <th>最終変更日</th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+  <div class="empty-state" id="empty-state" style="display:none">該当する銘柄が見つかりませんでした</div>
+</div>
+
+<!-- Detail Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-title"></div>
+      <button class="modal-close" id="modal-close">×</button>
+    </div>
+    <div class="modal-meta" id="modal-meta"></div>
+    <div class="history-label">価格履歴</div>
+    <ul class="history-list" id="modal-history"></ul>
+  </div>
+</div>
+
+<script>
+const MOF_PDF_BASE = 'https://www.mof.go.jp/policy/tab_salt/topics/';
+let allProducts = [];
+let filtered = [];
+let currentCat = '';
+let currentDiscontinued = false;
+let currentSort = 'name';
+let searchQuery = '';
+
+async function loadData() {
+  try {
+    const res = await fetch('data/prices.json');
+    if (!res.ok) throw new Error('データの読み込みに失敗しました');
+    const data = await res.json();
+    allProducts = data.products || [];
+    document.querySelector('.stats-bar span').textContent;
+    // Show updated_at
+    if (data.updated_at) {
+      document.querySelector('header p').textContent =
+        `財務省「製造たばこの小売定価の認可」データをもとに作成 (最終更新: ${data.updated_at})`;
+    }
+    applyFilters();
+  } catch (e) {
+    document.getElementById('result-count').textContent = 'データを読み込めませんでした';
+    console.error(e);
+  }
+}
+
+function applyFilters() {
+  const q = searchQuery.toLowerCase();
+  filtered = allProducts.filter(p => {
+    if (currentCat && p.category !== currentCat) return false;
+    if (currentDiscontinued && !p.discontinued) return false;
+    if (!currentDiscontinued && p.discontinued && currentCat === '' && q === '') return false; // hide discontinued by default unless filtered
+    if (q && !p.name.toLowerCase().includes(q) && !p.country.toLowerCase().includes(q) && !p.product_type.toLowerCase().includes(q)) return false;
+    return true;
+  });
+  sortProducts();
+  renderTable();
+}
+
+function sortProducts() {
+  filtered.sort((a, b) => {
+    switch (currentSort) {
+      case 'price_asc':  return a.current_price - b.current_price;
+      case 'price_desc': return b.current_price - a.current_price;
+      case 'date_desc':  return (b.last_changed || '').localeCompare(a.last_changed || '');
+      case 'date_asc':   return (a.last_changed || '').localeCompare(b.last_changed || '');
+      case 'category':   return a.category.localeCompare(b.category) || a.name.localeCompare(b.name);
+      default:           return a.name.localeCompare(b.name);
+    }
+  });
+}
+
+function catClass(cat) {
+  return 'cat-' + cat;
+}
+
+function renderTable() {
+  const tbody = document.getElementById('table-body');
+  const empty = document.getElementById('empty-state');
+  const count = document.getElementById('result-count');
+
+  const total = allProducts.filter(p => !p.discontinued).length;
+  const disc = allProducts.filter(p => p.discontinued).length;
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = '';
+    empty.style.display = '';
+    count.textContent = `0件 (全${total}件 / 廃盤${disc}件)`;
+    return;
+  }
+  empty.style.display = 'none';
+  count.textContent = `${filtered.length}件表示 (全${total}件 / 廃盤${disc}件)`;
+
+  tbody.innerHTML = filtered.map((p, i) => {
+    const hasManyHistory = p.price_history && p.price_history.length > 1;
+    return `<tr data-idx="${i}" class="${p.discontinued ? 'discontinued' : ''}">
+      <td><span class="badge ${catClass(p.category)}">${shortCat(p.category)}</span></td>
+      <td class="name-cell">
+        ${escHtml(p.name)}${p.discontinued ? '<span class="discontinued-mark">廃盤</span>' : ''}
+        <small>${escHtml(p.product_type)}</small>
+      </td>
+      <td>${escHtml(p.country)}</td>
+      <td class="price-cell">¥${p.current_price.toLocaleString()}${hasManyHistory ? '<span class="history-dot" title="価格変更履歴あり"></span>' : ''}</td>
+      <td style="white-space:nowrap;font-size:12px;color:#666">${p.last_changed || ''}</td>
+    </tr>`;
+  }).join('');
+
+  tbody.querySelectorAll('tr').forEach(tr => {
+    tr.addEventListener('click', () => openModal(filtered[+tr.dataset.idx]));
+  });
+}
+
+function shortCat(cat) {
+  return cat.replace('たばこ', '').trim() || cat;
+}
+
+function escHtml(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function openModal(p) {
+  document.getElementById('modal-title').textContent = p.name + (p.discontinued ? '（廃盤）' : '');
+  document.getElementById('modal-meta').innerHTML =
+    `<span>${escHtml(p.category)}</span><span>${escHtml(p.product_type)}</span><span>${escHtml(p.country)}</span>`;
+
+  const history = (p.price_history || []).slice().sort((a,b) => (b.date||'').localeCompare(a.date||''));
+  document.getElementById('modal-history').innerHTML = history.map((h, i) => {
+    const isCurrent = i === 0;
+    const pdfLink = h.pdf ? `<span class="h-pdf"><a href="${MOF_PDF_BASE}${encodeURIComponent(h.pdf)}" target="_blank" rel="noopener">PDF ↗</a></span>` : '';
+    return `<li>
+      <span class="h-date">${h.date || '不明'}</span>
+      <span class="h-price ${isCurrent ? 'current' : ''}">¥${Number(h.price).toLocaleString()}</span>
+      ${pdfLink}
+    </li>`;
+  }).join('');
+
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Event listeners
+document.getElementById('search-input').addEventListener('input', e => {
+  searchQuery = e.target.value.trim();
+  applyFilters();
+});
+document.getElementById('clear-btn').addEventListener('click', () => {
+  document.getElementById('search-input').value = '';
+  searchQuery = '';
+  applyFilters();
+});
+document.getElementById('sort-select').addEventListener('change', e => {
+  currentSort = e.target.value;
+  sortProducts();
+  renderTable();
+});
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    if (btn.dataset.discontinued) {
+      currentDiscontinued = true;
+      currentCat = '';
+    } else {
+      currentDiscontinued = false;
+      currentCat = btn.dataset.cat || '';
+    }
+    applyFilters();
+  });
+});
+document.getElementById('modal-close').addEventListener('click', closeModal);
+document.getElementById('modal-overlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+});
+
+loadData();
+</script>
+</body>
+</html>
