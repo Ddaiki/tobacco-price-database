@@ -10,6 +10,7 @@ import sys
 import time
 import logging
 from datetime import date, datetime
+from urllib.parse import urljoin
 from pathlib import Path
 
 import requests
@@ -88,7 +89,7 @@ def fetch_pdf_links() -> list[dict]:
         if "kouriteika" not in href or not href.endswith(".pdf"):
             continue
         if not href.startswith("http"):
-            href = BASE_URL + href
+            href = urljoin(INDEX_URL, href)
         filename = href.split("/")[-1]
         if filename in seen:
             continue
