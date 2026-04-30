@@ -82,6 +82,13 @@ td { padding: 9px 10px; vertical-align: middle; }
 .discontinued-mark { font-size: 10px; color: #e53935; margin-left: 4px; }
 .name-cell { max-width: 240px; line-height: 1.4; }
 .name-cell small { display: block; color: #888; font-size: 11px; }
+.pdf-link {
+  display: inline-block; font-size: 10px; color: #1a237e;
+  border: 1px solid #9fa8da; border-radius: 4px;
+  padding: 1px 5px; margin-left: 5px; text-decoration: none;
+  vertical-align: middle; white-space: nowrap;
+}
+.pdf-link:active { background: #e8eaf6; }
 .history-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #9fa8da; margin-left: 4px; vertical-align: middle; }
 
 .empty-state { text-align: center; padding: 60px 20px; color: #aaa; font-size: 14px; }
@@ -272,10 +279,14 @@ function renderTable() {
 
   tbody.innerHTML = filtered.map((p, i) => {
     const hasManyHistory = p.price_history && p.price_history.length > 1;
+    const pdfFile = p.price_history && p.price_history[0] && p.price_history[0].pdf;
+    const pdfLink = pdfFile
+      ? `<a class="pdf-link" href="${MOF_PDF_BASE}${encodeURIComponent(pdfFile)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">PDF ↗</a>`
+      : '';
     return `<tr data-idx="${i}" class="${p.discontinued ? 'discontinued' : ''}">
       <td><span class="badge ${catClass(p.category)}">${shortCat(p.category)}</span></td>
       <td class="name-cell">
-        ${escHtml(p.name)}${p.discontinued ? '<span class="discontinued-mark">廃盤</span>' : ''}
+        ${escHtml(p.name)}${p.discontinued ? '<span class="discontinued-mark">廃盤</span>' : ''}${pdfLink}
         <small>${escHtml(p.product_type)}</small>
       </td>
       <td>${escHtml(p.country)}</td>
