@@ -3,11 +3,16 @@
 財務省「製造たばこの小売定価の認可」PDFを取得・解析して prices.json を更新するスクリプト。
 GitHub Actions から週次実行される想定。
 
-テキスト抽出: PyMuPDF (fitz) の get_text('blocks') を使用。
-半角カタカナは NFKC 正規化で全角に変換。
+通常PDF (kouriteika):    5〜6列テーブル → 価格を新規登録/更新
+変更PDF (kouriteikahenkou): 7列テーブル (現行価格|変更価格|変更日) → 変更価格で更新
+
+フォント対応:
+- MS-Mincho (Identity-H): fitz が正常デコード
+- MS-Mincho-90ms-RKSJ-H (Identity-H): pdfminer が (cid:XXXX) 出力 → ms_mincho_gid.json で変換
 """
 import json
 import re
+import io
 import sys
 import time
 import logging
@@ -18,6 +23,7 @@ from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
+import pdfplumber
 import fitz  # PyMuPDF
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
@@ -26,6 +32,7 @@ log = logging.getLogger(__name__)
 BASE_URL = "https://www.mof.go.jp"
 INDEX_URL = f"{BASE_URL}/policy/tab_salt/topics/kouriteika.html"
 DATA_FILE = Path(__file__).parent.parent / "data" / "prices.json"
+GID_MAP_FILE = Path(__file__).parent / "ms_mincho_gid.json"
 
 HEADERS = {
     "User-Agent": (
@@ -42,7 +49,43 @@ CATEGORY_KEYWORDS = [
     "パイプたばこ", "かぎたばこ", "刻みたばこ",
 ]
 
-HEADER_TERMS = {"名称", "区分", "定価", "品目", "製造国", "製品の", "小売"}
+HEADER_TERMS = {"名称", "区分", "定価", "品目", "製造国", "製品の", "小売", "現行", "変更"}
+
+
+# ---------------------------------------------------------------------------
+# GlyphID → Unicode マップ (MS-Mincho-90ms-RKSJ-H 用)
+# ---------------------------------------------------------------------------
+
+def load_gid_map() -> dict[int, int]:
+    if GID_MAP_FILE.exists():
+        with open(GID_MAP_FILE, encoding="utf-8") as f:
+            raw = json.load(f)
+        return {int(k): v for k, v in raw.items()}
+    return {}
+
+GID2UNICODE: dict[int, int] = load_gid_map()
+
+
+def decode_cids(text: str | None) -> str:
+    """
+    pdfminer が出力する (cid:XX) を Unicode に変換。
+    - CID < 200: CID + 29 = ASCII
+    - CID >= 200: ms_mincho_gid.json の GlyphID→Unicode で変換
+    """
+    if not text:
+        return ""
+
+    def _replace(m: re.Match) -> str:
+        cid = int(m.group(1))
+        if cid < 200:
+            ch = chr(cid + 29)
+            return ch if 0x20 <= ord(ch) <= 0x7E else ""
+        if cid in GID2UNICODE:
+            return chr(GID2UNICODE[cid])
+        return ""
+
+    result = re.sub(r"\(cid:(\d+)\)", _replace, text)
+    return unicodedata.normalize("NFKC", result).strip()
 
 
 # ---------------------------------------------------------------------------
@@ -101,10 +144,17 @@ def fetch_pdf_links() -> list[dict]:
         if not m:
             continue
         approval_date = datetime.strptime(m.group(1), "%Y%m%d").strftime("%Y-%m-%d")
-        links.append({"url": href, "filename": filename, "date": approval_date})
+        is_henkou = "henkou" in filename
+        links.append({
+            "url": href,
+            "filename": filename,
+            "date": approval_date,
+            "is_henkou": is_henkou,
+        })
 
     links.sort(key=lambda x: x["date"])
-    log.info("Found %d PDF links", len(links))
+    log.info("Found %d PDF links (%d 変更)",
+             len(links), sum(1 for l in links if l["is_henkou"]))
     return links
 
 
@@ -112,9 +162,8 @@ def fetch_pdf_links() -> list[dict]:
 # テキスト正規化
 # ---------------------------------------------------------------------------
 
-def normalize_text(s: str) -> str:
-    """半角カタカナ・記号を全角に変換し、余分な空白を除去。"""
-    return unicodedata.normalize("NFKC", s).strip()
+def norm(s: str | None) -> str:
+    return unicodedata.normalize("NFKC", (s or "").strip())
 
 
 def normalize_price(s: str) -> int | None:
@@ -131,76 +180,183 @@ def normalize_price(s: str) -> int | None:
 
 
 def normalize_category(s: str) -> str:
-    s = normalize_text(s)
+    s = norm(s)
     for kw in CATEGORY_KEYWORDS:
         if kw in s:
             return kw
     return s
 
 
-def is_header_block(parts: list[str]) -> bool:
-    """ヘッダー行かどうか判定。"""
-    joined = "".join(parts)
+def parse_reiwa_date(s: str, fallback: str) -> str:
+    """
+    令和年月日 '7.5.1' → '2025-05-01'
+    令和N年 = 2018 + N
+    """
+    s = norm(s)
+    m = re.match(r"(\d+)[.年](\d+)[.月](\d+)", s)
+    if not m:
+        return fallback
+    era_year, month, day = int(m.group(1)), int(m.group(2)), int(m.group(3))
+    year = 2018 + era_year
+    return f"{year:04d}-{month:02d}-{day:02d}"
+
+
+def is_header_row(cells: list[str]) -> bool:
+    joined = "".join(cells)
     return any(t in joined for t in HEADER_TERMS)
 
 
+def has_garbled_font(pdf_bytes: bytes) -> bool:
+    """PDFが MS-Mincho-90ms-RKSJ-H フォントを使用しているか確認。"""
+    try:
+        pdf = fitz.open(stream=pdf_bytes, filetype="pdf")
+        for page in pdf:
+            for font in page.get_fonts():
+                if "90ms-RKSJ-H" in (font[3] or ""):
+                    pdf.close()
+                    return True
+        pdf.close()
+    except Exception:
+        pass
+    return False
+
+
 # ---------------------------------------------------------------------------
-# メインパーサー
+# パーサー: pdfplumber + CIDデコード (全フォント対応)
 # ---------------------------------------------------------------------------
 
-def parse_pdf_table(pdf_bytes: bytes, approval_date: str) -> list[dict]:
+def parse_pdf_table(pdf_bytes: bytes, approval_date: str, is_henkou: bool) -> list[dict]:
     """
-    fitz の get_text('blocks') で各行をブロックとして取得し製品リストを返す。
-    各データブロックは 6 要素: [区分, 銘柄名, 製品区分, 品目, 製造国, 価格]
+    pdfplumber でテーブルを検出し、CIDデコードでテキストを取得。
+    通常PDF 5列: [区分, 銘柄名, 製品区分, 製造国, 価格]           (旧フォーマット)
+    通常PDF 6列: [区分, 銘柄名, 品名, 製品区分, 製造国, 価格]      (新フォーマット 2026~)
+    変更PDF 7列: [区分, 銘柄名, 製品区分, 製造国, 現行価格, 変更価格, 変更日]
+
+    セル結合で区分・銘柄名が空の行は直前の値を引き継ぐ。
     """
     products = []
 
-    fitz_pdf = fitz.open(stream=pdf_bytes, filetype="pdf")
-    for page in fitz_pdf:
-        blocks = page.get_text("blocks")
-        for block in blocks:
-            text = block[4]
-            parts = [normalize_text(p) for p in text.strip().split("\n") if p.strip()]
+    with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
+        for page in pdf.pages:
+            tables = page.find_tables(
+                {"vertical_strategy": "lines", "horizontal_strategy": "lines"}
+            )
+            for table in tables:
+                rows = table.extract()
+                if not rows:
+                    continue
 
-            if len(parts) < 5:
-                continue
-            if is_header_block(parts):
-                continue
+                last_category = ""
+                last_name = ""
+                last_country = ""
 
-            # カテゴリ確認
-            category = normalize_category(parts[0])
-            if category not in CATEGORY_KEYWORDS:
-                continue
+                for row in rows:
+                    # CIDデコード
+                    cells = [decode_cids(c) for c in row]
 
-            name = parts[1]
-            if not name:
-                continue
+                    # 空行・ヘッダー行をスキップ
+                    if not any(cells):
+                        continue
+                    if is_header_row(cells):
+                        continue
 
-            # 製品区分: parts[2] と parts[3] を結合 (e.g. "50.0g-箱")
-            if len(parts) >= 6:
-                product_type = parts[2] + "-" + parts[3] if parts[3] else parts[2]
-                country = parts[4]
-                price_raw = parts[5]
-            else:
-                # 5要素の場合: 区分|銘柄名|製品区分|製造国|価格
-                product_type = parts[2]
-                country = parts[3]
-                price_raw = parts[4]
+                    n = len(cells)
 
-            price = normalize_price(price_raw)
-            if price is None:
-                continue
+                    # セル結合対応: 区分・名称・製造国は先に抽出してキャリーフォワードを更新
+                    raw_category = normalize_category(cells[0]) if n >= 1 else ""
+                    raw_name = norm(cells[1]) if n >= 2 else ""
+                    # 列フォーマット別に製造国の位置を特定
+                    # 通常5列=cells[3], 通常6列=cells[4], 変更7列=cells[3], 変更8列=cells[4]
+                    if n == 6 or (is_henkou and n == 8):
+                        raw_country = norm(cells[4])
+                    elif n == 5 or (is_henkou and n == 7):
+                        raw_country = norm(cells[3])
+                    else:
+                        raw_country = ""
 
-            products.append({
-                "category": category,
-                "name": name,
-                "product_type": product_type,
-                "country": country,
-                "price": price,
-                "date": approval_date,
-            })
+                    if raw_category in CATEGORY_KEYWORDS:
+                        last_category = raw_category
+                    if raw_name:
+                        last_name = raw_name
+                    if raw_country:
+                        last_country = raw_country
 
-    fitz_pdf.close()
+                    if is_henkou and n == 8:
+                        # 変更PDF新フォーマット: [区分, 銘柄名, 品名, 製品区分, 製造国, 現行価格, 変更価格, 変更日]
+                        category = raw_category or last_category
+                        if category not in CATEGORY_KEYWORDS:
+                            continue
+                        name = raw_name or last_name
+                        if not name:
+                            continue
+                        flavor = norm(cells[2])
+                        size = norm(re.sub(r"\s+", " ", cells[3]))
+                        product_type = " ".join(filter(None, [flavor, size]))
+                        country = raw_country or last_country
+                        price = normalize_price(cells[6])  # 変更小売定価を使用
+                        if price is None:
+                            continue
+                        change_date = parse_reiwa_date(cells[7], approval_date)
+
+                    elif is_henkou and n == 7:
+                        # 変更PDF旧フォーマット: [区分, 銘柄名, 製品区分, 製造国, 現行価格, 変更価格, 変更日]
+                        category = raw_category or last_category
+                        if category not in CATEGORY_KEYWORDS:
+                            continue
+                        name = raw_name or last_name
+                        if not name:
+                            continue
+                        product_type = norm(re.sub(r"\s+", " ", cells[2]))
+                        country = raw_country or last_country
+                        price = normalize_price(cells[5])  # 変更小売定価を使用
+                        if price is None:
+                            continue
+                        change_date = parse_reiwa_date(cells[6], approval_date)
+
+                    elif not is_henkou and n == 6:
+                        # 通常PDF新フォーマット: [区分, 銘柄名, 品名, 製品区分, 製造国, 価格]
+                        category = raw_category or last_category
+                        if category not in CATEGORY_KEYWORDS:
+                            continue
+                        name = raw_name or last_name
+                        if not name:
+                            continue
+                        flavor = norm(cells[2])
+                        size = norm(re.sub(r"\s+", " ", cells[3]))
+                        product_type = " ".join(filter(None, [flavor, size]))
+                        country = raw_country or last_country
+                        price = normalize_price(cells[5])
+                        if price is None:
+                            continue
+                        change_date = approval_date
+
+                    elif not is_henkou and n == 5:
+                        # 通常PDF旧フォーマット: [区分, 銘柄名, 製品区分, 製造国, 価格]
+                        category = raw_category or last_category
+                        if category not in CATEGORY_KEYWORDS:
+                            continue
+                        name = raw_name or last_name
+                        if not name:
+                            continue
+                        product_type = norm(re.sub(r"\s+", " ", cells[2]))
+                        country = raw_country or last_country
+                        price = normalize_price(cells[4])
+                        if price is None:
+                            continue
+                        change_date = approval_date
+
+                    else:
+                        continue
+
+                    products.append({
+                        "category": category,
+                        "name": name,
+                        "product_type": product_type,
+                        "country": country,
+                        "price": price,
+                        "date": change_date,
+                    })
+
     return products
 
 
@@ -214,12 +370,23 @@ def make_product_key(p: dict) -> str:
 
 def merge_into_db(data: dict, new_products: list[dict], pdf_filename: str) -> int:
     existing = {make_product_key(p): p for p in data["products"]}
+    # 銘柄名+カテゴリで製品区分なしマッチング (変更PDFで製品区分が微妙にずれる場合に対応)
+    existing_by_name = {}
+    for key, p in existing.items():
+        name_key = f"{p.get('category','')}|{p.get('name','')}"
+        if name_key not in existing_by_name:
+            existing_by_name[name_key] = p
+
     changed = 0
 
     for np in new_products:
         key = make_product_key(np)
-        if key in existing:
-            ep = existing[key]
+        name_key = f"{np.get('category','')}|{np.get('name','')}"
+
+        # 完全キーマッチ優先、次に名前+カテゴリマッチ
+        ep = existing.get(key) or existing_by_name.get(name_key)
+
+        if ep is not None:
             already = any(
                 h["date"] == np["date"] and h["price"] == np["price"]
                 for h in ep.get("price_history", [])
@@ -235,7 +402,7 @@ def merge_into_db(data: dict, new_products: list[dict], pdf_filename: str) -> in
                 ep["last_changed"] = ep["price_history"][0]["date"]
                 changed += 1
         else:
-            existing[key] = {
+            new_entry = {
                 "category": np["category"],
                 "name": np["name"],
                 "product_type": np["product_type"],
@@ -249,6 +416,8 @@ def merge_into_db(data: dict, new_products: list[dict], pdf_filename: str) -> in
                     "pdf": pdf_filename,
                 }],
             }
+            existing[key] = new_entry
+            existing_by_name[name_key] = new_entry
             changed += 1
 
     data["products"] = list(existing.values())
@@ -285,10 +454,14 @@ def main():
 
     total_changed = 0
     for link in new_pdfs:
-        log.info("処理中: %s (%s)", link["filename"], link["date"])
+        log.info("処理中: %s (%s)%s",
+                 link["filename"], link["date"],
+                 " [変更]" if link["is_henkou"] else "")
         try:
             resp = fetch_with_retry(link["url"])
-            products = parse_pdf_table(resp.content, link["date"])
+            products = parse_pdf_table(
+                resp.content, link["date"], link["is_henkou"]
+            )
             log.info("  抽出件数: %d", len(products))
             if products:
                 changed = merge_into_db(data, products, link["filename"])

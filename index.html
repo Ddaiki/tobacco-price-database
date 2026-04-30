@@ -75,6 +75,8 @@ td { padding: 9px 10px; vertical-align: middle; }
 .cat-葉巻たばこ   { background: #fce4ec; color: #880e4f; }
 .cat-紙巻たばこ   { background: #e8f5e9; color: #1b5e20; }
 .cat-パイプたばこ { background: #fff8e1; color: #e65100; }
+.cat-西洋パイプ   { background: #fff8e1; color: #e65100; }
+.cat-シーシャ     { background: #fbe9e7; color: #bf360c; }
 .cat-かぎたばこ   { background: #f3e5f5; color: #4a148c; }
 .cat-刻みたばこ   { background: #e0f2f1; color: #004d40; }
 
@@ -150,6 +152,8 @@ td { padding: 9px 10px; vertical-align: middle; }
     <button class="filter-btn" data-cat="葉巻たばこ">葉巻</button>
     <button class="filter-btn" data-cat="紙巻たばこ">紙巻</button>
     <button class="filter-btn" data-cat="パイプたばこ">パイプ</button>
+    <button class="filter-btn" data-subcat="西洋パイプ">西洋パイプ</button>
+    <button class="filter-btn" data-subcat="シーシャ">シーシャ</button>
     <button class="filter-btn" data-cat="かぎたばこ">かぎ</button>
     <button class="filter-btn" data-cat="刻みたばこ">刻み</button>
     <button class="filter-btn" data-discontinued="true">廃盤のみ</button>
@@ -207,9 +211,23 @@ const MOF_PDF_BASE = 'https://www.mof.go.jp/policy/tab_salt/topics/';
 let allProducts = [];
 let filtered = [];
 let currentCat = '';
+let currentSubcat = '';
 let currentDiscontinued = false;
 let currentSort = 'name';
 let searchQuery = '';
+
+const SHISHA_COUNTRIES = ['アラブ首長国連邦', 'ヨルダン', 'トルコ', 'ロシア', 'エジプト', 'レバノン', 'サウジ'];
+
+function getPipeSubcat(p) {
+  if (p.category !== 'パイプたばこ') return null;
+  const country = p.country || '';
+  if (country === 'ドイツ') {
+    const m = (p.product_type || '').match(/(\d+\.?\d*)\s*g/);
+    return parseFloat(m ? m[1] : 0) >= 50 ? 'シーシャ' : '西洋パイプ';
+  }
+  if (SHISHA_COUNTRIES.some(c => country.includes(c))) return 'シーシャ';
+  return '西洋パイプ';
+}
 
 async function loadData() {
   try {
@@ -233,9 +251,12 @@ async function loadData() {
 function applyFilters() {
   const q = searchQuery.toLowerCase();
   filtered = allProducts.filter(p => {
-    if (currentCat && p.category !== currentCat) return false;
+    if (currentSubcat) {
+      if (p.category !== 'パイプたばこ') return false;
+      if (getPipeSubcat(p) !== currentSubcat) return false;
+    } else if (currentCat && p.category !== currentCat) return false;
     if (currentDiscontinued && !p.discontinued) return false;
-    if (!currentDiscontinued && p.discontinued && currentCat === '' && q === '') return false; // hide discontinued by default unless filtered
+    if (!currentDiscontinued && p.discontinued && currentCat === '' && currentSubcat === '' && q === '') return false;
     if (q && !p.name.toLowerCase().includes(q) && !p.country.toLowerCase().includes(q) && !p.product_type.toLowerCase().includes(q)) return false;
     return true;
   });
@@ -256,8 +277,14 @@ function sortProducts() {
   });
 }
 
-function catClass(cat) {
-  return 'cat-' + cat;
+function catClass(p) {
+  if (p.category === 'パイプたばこ') return 'cat-' + (getPipeSubcat(p) || 'パイプたばこ');
+  return 'cat-' + p.category;
+}
+
+function displayCat(p) {
+  if (p.category === 'パイプたばこ') return getPipeSubcat(p) || 'パイプ';
+  return shortCat(p.category);
 }
 
 function renderTable() {
@@ -284,7 +311,7 @@ function renderTable() {
       ? `<a class="pdf-link" href="${MOF_PDF_BASE}${encodeURIComponent(pdfFile)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">PDF ↗</a>`
       : '';
     return `<tr data-idx="${i}" class="${p.discontinued ? 'discontinued' : ''}">
-      <td><span class="badge ${catClass(p.category)}">${shortCat(p.category)}</span></td>
+      <td><span class="badge ${catClass(p)}">${displayCat(p)}</span></td>
       <td class="name-cell">
         ${escHtml(p.name)}${p.discontinued ? '<span class="discontinued-mark">廃盤</span>' : ''}${pdfLink}
         <small>${escHtml(p.product_type)}</small>
@@ -310,8 +337,11 @@ function escHtml(s) {
 
 function openModal(p) {
   document.getElementById('modal-title').textContent = p.name + (p.discontinued ? '（廃盤）' : '');
+  const catLabel = p.category === 'パイプたばこ'
+    ? `${p.category}（${getPipeSubcat(p)}）`
+    : p.category;
   document.getElementById('modal-meta').innerHTML =
-    `<span>${escHtml(p.category)}</span><span>${escHtml(p.product_type)}</span><span>${escHtml(p.country)}</span>`;
+    `<span>${escHtml(catLabel)}</span><span>${escHtml(p.product_type)}</span><span>${escHtml(p.country)}</span>`;
 
   const history = (p.price_history || []).slice().sort((a,b) => (b.date||'').localeCompare(a.date||''));
   document.getElementById('modal-history').innerHTML = history.map((h, i) => {
@@ -355,9 +385,15 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     if (btn.dataset.discontinued) {
       currentDiscontinued = true;
       currentCat = '';
+      currentSubcat = '';
+    } else if (btn.dataset.subcat) {
+      currentDiscontinued = false;
+      currentCat = '';
+      currentSubcat = btn.dataset.subcat;
     } else {
       currentDiscontinued = false;
       currentCat = btn.dataset.cat || '';
+      currentSubcat = '';
     }
     applyFilters();
   });
