@@ -132,13 +132,75 @@ td { padding: 9px 10px; vertical-align: middle; }
   .modal-overlay { align-items: center; }
   .modal { border-radius: 14px; max-height: 80vh; }
 }
+
+/* 通知登録モーダル */
+.notify-btn {
+  padding: 6px 14px; border: 1.5px solid #9fa8da; border-radius: 20px;
+  background: white; color: #1a237e; cursor: pointer; font-size: 12px;
+  white-space: nowrap; transition: all .15s;
+}
+.notify-btn:hover { background: #e8eaf6; }
+
+.notify-modal { max-width: 480px; }
+.notify-modal h2 { margin: 0 0 4px; font-size: 15px; }
+.notify-modal p  { margin: 0 0 14px; font-size: 12px; color: #666; }
+
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 12px; font-weight: 600; color: #444; margin-bottom: 6px; }
+.form-group input[type="email"] {
+  width: 100%; padding: 9px 12px; border: 1px solid #bbb; border-radius: 6px;
+  font-size: 14px; outline: none; box-sizing: border-box;
+}
+.form-group input[type="email"]:focus { border-color: #1a237e; }
+.form-group input[type="text"] {
+  width: 100%; padding: 8px 12px; border: 1px solid #bbb; border-radius: 6px;
+  font-size: 13px; outline: none; box-sizing: border-box;
+}
+.form-group input[type="text"]:focus { border-color: #1a237e; }
+.form-hint { font-size: 11px; color: #999; margin-top: 4px; }
+
+.checkbox-grid {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.checkbox-grid label {
+  display: flex; align-items: center; gap: 5px;
+  padding: 4px 10px; border: 1.5px solid #ddd; border-radius: 16px;
+  font-size: 12px; font-weight: normal; color: #444; cursor: pointer;
+  transition: all .15s; white-space: nowrap;
+}
+.checkbox-grid input[type="checkbox"] { display: none; }
+.checkbox-grid label:has(input:checked) {
+  background: #1a237e; color: white; border-color: #1a237e;
+}
+
+.submit-btn {
+  width: 100%; padding: 11px; background: #1a237e; color: white;
+  border: none; border-radius: 8px; font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: opacity .15s;
+}
+.submit-btn:hover { opacity: .88; }
+.submit-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+.notify-success { text-align: center; padding: 24px 0 8px; }
+.notify-success .success-icon { font-size: 40px; margin-bottom: 10px; }
+.notify-success h3 { margin: 0 0 6px; font-size: 15px; }
+.notify-success p  { margin: 0; font-size: 12px; color: #666; }
+
+.unsubscribe-notice {
+  background: #fff3e0; border: 1px solid #ffe0b2; border-radius: 8px;
+  padding: 14px 16px; margin: 16px; font-size: 13px; color: #e65100;
+  text-align: center;
+}
 </style>
 </head>
 <body>
 
-<header>
-  <h1>製造たばこ 小売定価データベース</h1>
-  <p>財務省「製造たばこの小売定価の認可」データをもとに作成</p>
+<header style="display:flex;justify-content:space-between;align-items:center">
+  <div>
+    <h1>製造たばこ 小売定価データベース</h1>
+    <p>財務省「製造たばこの小売定価の認可」データをもとに作成</p>
+  </div>
+  <button class="notify-btn" id="notify-open-btn">🔔 通知登録</button>
 </header>
 
 <div class="controls">
@@ -191,6 +253,80 @@ td { padding: 9px 10px; vertical-align: middle; }
     <tbody id="table-body"></tbody>
   </table>
   <div class="empty-state" id="empty-state" style="display:none">該当する銘柄が見つかりませんでした</div>
+</div>
+
+<!-- 通知登録モーダル -->
+<div class="modal-overlay" id="notify-overlay">
+  <div class="modal notify-modal">
+    <div id="notify-unsub-notice" style="display:none" class="unsubscribe-notice">
+      配信停止処理中...
+    </div>
+    <div id="notify-form-wrap">
+      <div class="modal-header">
+        <div>
+          <h2>価格更新通知の登録</h2>
+          <p>条件に合った更新があったときにメールでお知らせします</p>
+        </div>
+        <button class="modal-close" id="notify-close-btn">×</button>
+      </div>
+
+      <form id="notify-form">
+        <div class="form-group">
+          <label>メールアドレス <span style="color:#e53935">*</span></label>
+          <input type="email" id="notify-email" placeholder="example@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label>カテゴリ <span style="color:#888;font-weight:normal">（未選択 = 全カテゴリ）</span></label>
+          <div class="checkbox-grid" id="cat-checkboxes">
+            <label><input type="checkbox" value="加熱式たばこ">加熱式</label>
+            <label><input type="checkbox" value="葉巻たばこ">葉巻</label>
+            <label><input type="checkbox" value="紙巻たばこ">紙巻</label>
+            <label><input type="checkbox" value="西洋パイプ">西洋パイプ</label>
+            <label><input type="checkbox" value="シーシャ">シーシャ</label>
+            <label><input type="checkbox" value="かぎたばこ">かぎ</label>
+            <label><input type="checkbox" value="刻みたばこ">刻み</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>製造国 <span style="color:#888;font-weight:normal">（未選択 = 全国）</span></label>
+          <div class="checkbox-grid" id="country-checkboxes">
+            <label><input type="checkbox" value="ニカラグア">ニカラグア</label>
+            <label><input type="checkbox" value="ドミニカ共和国">ドミニカ共和国</label>
+            <label><input type="checkbox" value="トルコ">トルコ</label>
+            <label><input type="checkbox" value="ロシア">ロシア</label>
+            <label><input type="checkbox" value="キューバ">キューバ</label>
+            <label><input type="checkbox" value="アメリカ合衆国">アメリカ</label>
+            <label><input type="checkbox" value="アラブ首長国連邦">UAE</label>
+            <label><input type="checkbox" value="ホンジュラス">ホンジュラス</label>
+            <label><input type="checkbox" value="ヨルダン">ヨルダン</label>
+            <label><input type="checkbox" value="ドイツ">ドイツ</label>
+            <label><input type="checkbox" value="日本">日本</label>
+            <label><input type="checkbox" value="大韓民国">韓国</label>
+            <label><input type="checkbox" value="インドネシア">インドネシア</label>
+            <label><input type="checkbox" value="デンマーク">デンマーク</label>
+            <label><input type="checkbox" value="ブラジル">ブラジル</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>ブランドキーワード <span style="color:#888;font-weight:normal">（部分一致・複数可）</span></label>
+          <input type="text" id="notify-keywords" placeholder="例: キャプテンブラック, Cohiba">
+          <p class="form-hint">カンマ区切りで複数入力できます。空欄 = 全ブランド</p>
+        </div>
+
+        <div id="notify-error" style="display:none;color:#e53935;font-size:12px;margin-bottom:10px"></div>
+        <button type="submit" class="submit-btn" id="notify-submit">登録する</button>
+      </form>
+    </div>
+
+    <div id="notify-success" class="notify-success" style="display:none">
+      <div class="success-icon">✅</div>
+      <h3>登録が完了しました</h3>
+      <p>条件に合う価格更新があったときにメールをお送りします</p>
+    </div>
+  </div>
 </div>
 
 <!-- Detail Modal -->
@@ -451,6 +587,124 @@ document.getElementById('modal-overlay').addEventListener('click', e => {
 });
 
 loadData();
+
+// ===== 通知登録 =====
+
+const SUPABASE_URL  = 'https://vqzflvuiertnsuonvny.supabase.co';
+const SUPABASE_ANON = 'sb_publishable_iW4BqS-TYfGZsYmB732RuA_Q42zBOW3';
+
+function getCheckedValues(containerId) {
+  return Array.from(document.querySelectorAll(`#${containerId} input:checked`))
+    .map(cb => cb.value);
+}
+
+async function registerSubscriber(email, categoryFilters, countryFilters, nameKeywords) {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/subscribers`, {
+    method: 'POST',
+    headers: {
+      'apikey': SUPABASE_ANON,
+      'Authorization': `Bearer ${SUPABASE_ANON}`,
+      'Content-Type': 'application/json',
+      'Prefer': 'return=minimal',
+    },
+    body: JSON.stringify({
+      email,
+      category_filters: categoryFilters,
+      country_filters:  countryFilters,
+      name_keywords:    nameKeywords,
+    }),
+  });
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    // 重複メール (unique constraint)
+    if (res.status === 409 || (body.code && body.code === '23505')) {
+      throw new Error('このメールアドレスはすでに登録されています');
+    }
+    throw new Error('登録に失敗しました。しばらくしてからお試しください');
+  }
+}
+
+async function unsubscribeByToken(token) {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/unsubscribe_by_token`, {
+    method: 'POST',
+    headers: {
+      'apikey': SUPABASE_ANON,
+      'Authorization': `Bearer ${SUPABASE_ANON}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ p_token: token }),
+  });
+  return res.ok;
+}
+
+// 配信停止URLパラメーター処理
+(async () => {
+  const params = new URLSearchParams(location.search);
+  const token  = params.get('unsubscribe');
+  if (!token) return;
+
+  const overlay = document.getElementById('notify-overlay');
+  const notice  = document.getElementById('notify-unsub-notice');
+  const formWrap = document.getElementById('notify-form-wrap');
+
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  formWrap.style.display = 'none';
+  notice.style.display = '';
+  notice.textContent = '配信停止処理中...';
+
+  const ok = await unsubscribeByToken(token);
+  notice.textContent = ok
+    ? '✅ 配信停止が完了しました。今後はメールをお送りしません。'
+    : '⚠️ 配信停止処理に失敗しました。すでに削除済みの可能性があります。';
+
+  // URLからパラメーターを除去
+  history.replaceState(null, '', location.pathname);
+})();
+
+// モーダル開閉
+document.getElementById('notify-open-btn').addEventListener('click', () => {
+  document.getElementById('notify-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+document.getElementById('notify-close-btn').addEventListener('click', () => {
+  document.getElementById('notify-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+});
+document.getElementById('notify-overlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('notify-overlay')) {
+    document.getElementById('notify-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+
+// フォーム送信
+document.getElementById('notify-form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn   = document.getElementById('notify-submit');
+  const errEl = document.getElementById('notify-error');
+  const email = document.getElementById('notify-email').value.trim();
+
+  const categoryFilters = getCheckedValues('cat-checkboxes');
+  const countryFilters  = getCheckedValues('country-checkboxes');
+  const rawKeywords     = document.getElementById('notify-keywords').value;
+  const nameKeywords    = rawKeywords.split(',').map(s => s.trim()).filter(Boolean);
+
+  errEl.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = '登録中...';
+
+  try {
+    await registerSubscriber(email, categoryFilters, countryFilters, nameKeywords);
+    document.getElementById('notify-form-wrap').style.display = 'none';
+    document.getElementById('notify-success').style.display = '';
+  } catch (err) {
+    errEl.textContent = err.message;
+    errEl.style.display = '';
+    btn.disabled = false;
+    btn.textContent = '登録する';
+  }
+});
 </script>
 </body>
 </html>
