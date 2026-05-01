@@ -603,15 +603,10 @@
       "name": "Tangiers Cane Mint Alpha",
       "product_type": "100.0g パウチ",
       "country": "アメリカ合衆国",
-      "current_price": 4400,
-      "last_changed": "2025-11-24",
+      "current_price": 3600,
+      "last_changed": "2023-04-10",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 4400,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
-        },
         {
           "price": 3600,
           "date": "2023-04-10",
@@ -624,20 +619,10 @@
       "name": "Tangiers Pink Grapefruit",
       "product_type": "100.0g パウチ",
       "country": "アメリカ合衆国",
-      "current_price": 10000,
-      "last_changed": "2025-11-24",
+      "current_price": 3600,
+      "last_changed": "2023-04-10",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 10000,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
-        },
         {
           "price": 3600,
           "date": "2023-04-10",
@@ -650,15 +635,10 @@
       "name": "Tangiers Foreplay on the Peach",
       "product_type": "100.0g パウチ",
       "country": "アメリカ合衆国",
-      "current_price": 4400,
-      "last_changed": "2025-11-24",
+      "current_price": 3600,
+      "last_changed": "2023-04-10",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 4400,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
-        },
         {
           "price": 3600,
           "date": "2023-04-10",
@@ -1881,10 +1861,15 @@
       "name": "H.O.T. レッド",
       "product_type": "1.0g 1本",
       "country": "アメリカ合衆国",
-      "current_price": 520,
-      "last_changed": "2023-05-12",
+      "current_price": 560,
+      "last_changed": "2026-03-19",
       "discontinued": false,
       "price_history": [
+        {
+          "price": 560,
+          "date": "2026-03-19",
+          "pdf": "20260319_kouriteikahenkou.pdf"
+        },
         {
           "price": 520,
           "date": "2023-05-12",
@@ -7443,10 +7428,15 @@
       "name": "クラブマスター・ミニ・スーペリア・バニラ",
       "product_type": "67mm 20本 缶",
       "country": "ドイツ",
-      "current_price": 920,
-      "last_changed": "2023-09-01",
+      "current_price": 1050,
+      "last_changed": "2026-04-01",
       "discontinued": false,
       "price_history": [
+        {
+          "price": 1050,
+          "date": "2026-04-01",
+          "pdf": "20260319_kouriteikahenkou.pdf"
+        },
         {
           "price": 920,
           "date": "2023-09-01",
@@ -7523,10 +7513,15 @@
       "name": "クラブマスター・ミニ・バニラ・フィルター",
       "product_type": "70mm 20本 箱",
       "country": "ドイツ",
-      "current_price": 980,
-      "last_changed": "2023-09-01",
+      "current_price": 1150,
+      "last_changed": "2026-03-19",
       "discontinued": false,
       "price_history": [
+        {
+          "price": 1150,
+          "date": "2026-03-19",
+          "pdf": "20260319_kouriteikahenkou.pdf"
+        },
         {
           "price": 980,
           "date": "2023-09-01",
@@ -7852,10 +7847,15 @@
       "name": "ケント・ネオスティック・リッチ・タバコ・エックス",
       "product_type": "フィルター付 20本 ハードパック",
       "country": "大韓民国",
-      "current_price": 550,
-      "last_changed": "2023-10-01",
+      "current_price": 580,
+      "last_changed": "2026-06-01",
       "discontinued": false,
       "price_history": [
+        {
+          "price": 580,
+          "date": "2026-06-01",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        },
         {
           "price": 550,
           "date": "2023-10-01",
@@ -7964,10 +7964,15 @@
       "name": "ラッキー・ストライク・メンソール・glo hyper用",
       "product_type": "フィルター付 20本 ハードパック",
       "country": "大韓民国",
-      "current_price": 430,
-      "last_changed": "2024-04-01",
+      "current_price": 480,
+      "last_changed": "2026-04-27",
       "discontinued": false,
       "price_history": [
+        {
+          "price": 480,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        },
         {
           "price": 430,
           "date": "2024-04-01",
@@ -8913,11 +8918,6 @@
           "price": 1700,
           "date": "2023-09-01",
           "pdf": "20230901_kouriteika2.pdf"
-        },
-        {
-          "price": 4200,
-          "date": "2023-09-01",
-          "pdf": "20230901_kouriteika2.pdf"
         }
       ]
     },
@@ -8932,11 +8932,6 @@
       "price_history": [
         {
           "price": 1700,
-          "date": "2023-09-01",
-          "pdf": "20230901_kouriteika2.pdf"
-        },
-        {
-          "price": 4200,
           "date": "2023-09-01",
           "pdf": "20230901_kouriteika2.pdf"
         }
@@ -8955,11 +8950,6 @@
           "price": 1700,
           "date": "2023-09-01",
           "pdf": "20230901_kouriteika2.pdf"
-        },
-        {
-          "price": 4200,
-          "date": "2023-09-01",
-          "pdf": "20230901_kouriteika2.pdf"
         }
       ]
     },
@@ -8974,11 +8964,6 @@
       "price_history": [
         {
           "price": 1700,
-          "date": "2023-09-01",
-          "pdf": "20230901_kouriteika2.pdf"
-        },
-        {
-          "price": 4200,
           "date": "2023-09-01",
           "pdf": "20230901_kouriteika2.pdf"
         }
@@ -8997,7 +8982,82 @@
           "price": 1700,
           "date": "2023-09-01",
           "pdf": "20230901_kouriteika2.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Citrus Fizz",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4200,
+      "last_changed": "2023-09-01",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4200,
+          "date": "2023-09-01",
+          "pdf": "20230901_kouriteika2.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Feijoa",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4200,
+      "last_changed": "2023-09-01",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4200,
+          "date": "2023-09-01",
+          "pdf": "20230901_kouriteika2.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Raspberries",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4200,
+      "last_changed": "2023-09-01",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4200,
+          "date": "2023-09-01",
+          "pdf": "20230901_kouriteika2.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Kivi Fresh",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4200,
+      "last_changed": "2023-09-01",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4200,
+          "date": "2023-09-01",
+          "pdf": "20230901_kouriteika2.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Berry Black",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4200,
+      "last_changed": "2023-09-01",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 4200,
           "date": "2023-09-01",
@@ -9090,15 +9150,10 @@
       "name": "ベガフィナ・ニカラグア グラン ブルカノ",
       "product_type": "137mm 1本",
       "country": "ドミニカ共和国",
-      "current_price": 2200,
-      "last_changed": "2024-11-01",
+      "current_price": 2000,
+      "last_changed": "2023-09-05",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 2200,
-          "date": "2024-11-01",
-          "pdf": "20241004_kouriteikahenkou.pdf"
-        },
         {
           "price": 2000,
           "date": "2023-09-05",
@@ -11268,15 +11323,10 @@
       "name": "Tangiers Melon Blend",
       "product_type": "250.0g 箱",
       "country": "アメリカ合衆国",
-      "current_price": 4400,
+      "current_price": 10000,
       "last_changed": "2025-11-24",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 4400,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
-        },
         {
           "price": 10000,
           "date": "2025-11-24",
@@ -11294,15 +11344,10 @@
       "name": "Tangiers Orange Soda",
       "product_type": "250.0g 箱",
       "country": "アメリカ合衆国",
-      "current_price": 4400,
+      "current_price": 10000,
       "last_changed": "2025-11-24",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 4400,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
-        },
         {
           "price": 10000,
           "date": "2025-11-24",
@@ -14384,20 +14429,10 @@
       "name": "メビウス・ゴールド・パープル・ミント・ウィズ用",
       "product_type": "3.0g 5本",
       "country": "日本",
-      "current_price": 620,
-      "last_changed": "2026-04-01",
+      "current_price": 580,
+      "last_changed": "2023-12-21",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 620,
-          "date": "2026-04-01",
-          "pdf": "20260226_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 600,
-          "date": "2025-05-01",
-          "pdf": "20250228_kouriteikahenkou.pdf"
-        },
         {
           "price": 580,
           "date": "2023-12-21",
@@ -17509,7 +17544,18 @@
           "price": 1500,
           "date": "2024-02-20",
           "pdf": "20240220_kouriteika_1.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "コピ クリーミー スリムパナテラ",
+      "product_type": "177mm 1本",
+      "country": "インドネシア",
+      "current_price": 300,
+      "last_changed": "2024-02-20",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 300,
           "date": "2024-02-20",
@@ -18763,10 +18809,15 @@
       "name": "ネオ・マイルド・タバコ・glo hyper用",
       "product_type": "フィルター付 20本 ハードパック",
       "country": "大韓民国",
-      "current_price": 500,
-      "last_changed": "2024-03-26",
+      "current_price": 530,
+      "last_changed": "2026-04-27",
       "discontinued": false,
       "price_history": [
+        {
+          "price": 530,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        },
         {
           "price": 500,
           "date": "2024-03-26",
@@ -18835,11 +18886,6 @@
           "price": 1700,
           "date": "2024-03-26",
           "pdf": "20240326_kouriteika_1.pdf"
-        },
-        {
-          "price": 4200,
-          "date": "2024-03-26",
-          "pdf": "20240326_kouriteika_1.pdf"
         }
       ]
     },
@@ -18854,11 +18900,6 @@
       "price_history": [
         {
           "price": 1700,
-          "date": "2024-03-26",
-          "pdf": "20240326_kouriteika_1.pdf"
-        },
-        {
-          "price": 4200,
           "date": "2024-03-26",
           "pdf": "20240326_kouriteika_1.pdf"
         }
@@ -18877,11 +18918,6 @@
           "price": 1700,
           "date": "2024-03-26",
           "pdf": "20240326_kouriteika_1.pdf"
-        },
-        {
-          "price": 4200,
-          "date": "2024-03-26",
-          "pdf": "20240326_kouriteika_1.pdf"
         }
       ]
     },
@@ -18898,7 +18934,66 @@
           "price": 1700,
           "date": "2024-03-26",
           "pdf": "20240326_kouriteika_1.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Classic Tropic Rose",
+      "product_type": "100.0g 箱",
+      "country": "モルドバ",
+      "current_price": 4200,
+      "last_changed": "2024-03-26",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4200,
+          "date": "2024-03-26",
+          "pdf": "20240326_kouriteika_1.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Classic Honey Candy Chill",
+      "product_type": "100.0g 箱",
+      "country": "モルドバ",
+      "current_price": 4200,
+      "last_changed": "2024-03-26",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4200,
+          "date": "2024-03-26",
+          "pdf": "20240326_kouriteika_1.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Arctic Mix Caramel Glass",
+      "product_type": "100.0g 箱",
+      "country": "モルドバ",
+      "current_price": 4200,
+      "last_changed": "2024-03-26",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4200,
+          "date": "2024-03-26",
+          "pdf": "20240326_kouriteika_1.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Arctic Mix Peanut Latte",
+      "product_type": "100.0g 箱",
+      "country": "モルドバ",
+      "current_price": 4200,
+      "last_changed": "2024-03-26",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 4200,
           "date": "2024-03-26",
@@ -25375,10 +25470,15 @@
       "name": "チェ・ブランコ",
       "product_type": "F85mm 20本 ハードパック",
       "country": "ルクセンブルク",
-      "current_price": 550,
-      "last_changed": "2024-07-01",
+      "current_price": 570,
+      "last_changed": "2026-03-30",
       "discontinued": false,
       "price_history": [
+        {
+          "price": 570,
+          "date": "2026-03-30",
+          "pdf": "20260330_kouriteikahenkou.pdf"
+        },
         {
           "price": 550,
           "date": "2024-07-01",
@@ -29278,15 +29378,10 @@
       "name": "Media Rueda Segundo Robusto",
       "product_type": "130mm 1本",
       "country": "ニカラグア",
-      "current_price": 2100,
-      "last_changed": "2024-07-08",
+      "current_price": 1400,
+      "last_changed": "2024-06-03",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 2100,
-          "date": "2024-07-08",
-          "pdf": "20240617_kouriteikahenkou.pdf"
-        },
         {
           "price": 1400,
           "date": "2024-06-03",
@@ -29641,6 +29736,22 @@
       "price_history": [
         {
           "price": 1400,
+          "date": "2024-07-08",
+          "pdf": "20240617_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "Media Rueda Segundo Robusto",
+      "product_type": "111mm 1本",
+      "country": "ニカラグア",
+      "current_price": 2100,
+      "last_changed": "2024-07-08",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2100,
           "date": "2024-07-08",
           "pdf": "20240617_kouriteikahenkou.pdf"
         }
@@ -34869,11 +34980,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -34888,11 +34994,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -34927,11 +35028,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -34964,11 +35060,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -34983,11 +35074,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35006,11 +35092,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35025,11 +35106,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35048,11 +35124,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35067,11 +35138,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35090,11 +35156,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35109,11 +35170,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35132,11 +35188,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35151,11 +35202,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35174,11 +35220,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35193,11 +35234,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35216,11 +35252,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35235,11 +35266,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35258,11 +35284,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35277,11 +35298,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35300,11 +35316,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35319,11 +35330,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35342,11 +35348,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35361,11 +35362,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35384,11 +35380,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35403,11 +35394,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35426,11 +35412,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35445,11 +35426,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35468,11 +35444,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35487,11 +35458,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35510,11 +35476,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35529,11 +35490,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35552,11 +35508,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35573,11 +35524,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35592,11 +35538,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35631,11 +35572,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35650,11 +35586,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35673,11 +35604,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35692,11 +35618,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35715,11 +35636,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35736,11 +35652,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35755,11 +35666,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35794,11 +35700,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35813,11 +35714,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35852,11 +35748,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35871,11 +35762,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35894,11 +35780,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35913,11 +35794,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35936,11 +35812,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35955,11 +35826,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -35978,11 +35844,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -35997,11 +35858,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -36020,11 +35876,6 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -36039,11 +35890,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -36062,7 +35908,402 @@
           "price": 1500,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE ADMIRAL ACBAR CEREAL",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE BANANAPAPA",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE BARVY ORANGE",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE BASSBERRY",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE BERGAMONSTR",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE BLACKBERRY",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE BLACKCURRANT",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE BLUEBERRY BLAST",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE BOUNTY HUNTER",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE BREAKING RED",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE C.R.E.A.M. S.O.D.A.",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE CHERRY ROCKS",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE CODE CHERRY",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE COSMO FLOWER",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE COSMOS",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE CRYSTAL GRAPE",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE CYBER KIWI",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE DARK ICECREAM",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE DARK PASSION",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE DARKSIDE COLA",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE DARKSUPRA",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE DEEP BLUE SEA",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE DESERT EAGLE",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE FALLING STAR",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE FRUITTALLITY",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 4400,
           "date": "2024-08-13",
@@ -36073,6 +36314,390 @@
     {
       "category": "パイプたばこ",
       "name": "DARKSIDE FRUITY DUST",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE GENERIS RASPBERRY",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE GOAL",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE GRAPE CORE",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE GREEN BEAM",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE GREEN MIST",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE HONEY DUST",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE ICE GRANNY",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE KALEE GRAPEFRUIT 2.0",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE LEMONBLAST",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE MANGO LASSI 2.0",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE NORDBERRY",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE PEAR",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE PINEAPPLE PULSE",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE POLAR CREAM",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE POMELOW",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE RED ALERT",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE RED RUSH",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE RED ZEPPELIN",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE SPACE JAM",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE STRAWBERRY LIGHT",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE SUPERNOVA",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE SWEET COMET",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE TORPEDO",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE TROPIC RAY",
       "product_type": "100.0g 箱",
       "country": "ロシア",
       "current_price": 4400,
@@ -36104,7 +36729,7 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "DARKSIDE NEEDLS",
+      "name": "DARKSIDE VIRGIN PEACH",
       "product_type": "100.0g 箱",
       "country": "ロシア",
       "current_price": 4400,
@@ -36115,9 +36740,68 @@
           "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE WAFFLE SHUFFLE",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
         {
-          "price": 1500,
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE WILD FOREST",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE WILDBERRY",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE NEEDLS",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
         }
@@ -36136,11 +36820,6 @@
           "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
-        {
-          "price": 1500,
-          "date": "2024-08-13",
-          "pdf": "20240813_kouriteika.pdf"
         }
       ]
     },
@@ -36157,7 +36836,66 @@
           "price": 4400,
           "date": "2024-08-13",
           "pdf": "20240813_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE GLITCH ICE TEA",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE NEEDLS",
+      "product_type": "30.0g 箱",
+      "country": "ロシア",
+      "current_price": 1500,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1500,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE SALBEI",
+      "product_type": "30.0g 箱",
+      "country": "ロシア",
+      "current_price": 1500,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1500,
+          "date": "2024-08-13",
+          "pdf": "20240813_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE GUAVA REBEL",
+      "product_type": "30.0g 箱",
+      "country": "ロシア",
+      "current_price": 1500,
+      "last_changed": "2024-08-13",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 1500,
           "date": "2024-08-13",
@@ -38724,10 +39462,15 @@
       "name": "ケント・トゥルー・タバコ・glo hyper用",
       "product_type": "フィルター付 20本 ハードパック",
       "country": "大韓民国",
-      "current_price": 480,
-      "last_changed": "2024-09-06",
+      "current_price": 520,
+      "last_changed": "2026-04-27",
       "discontinued": false,
       "price_history": [
+        {
+          "price": 520,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        },
         {
           "price": 480,
           "date": "2024-09-06",
@@ -38921,15 +39664,10 @@
       "name": "シガローネ・ロイヤルスリム・メンソール",
       "product_type": "F 117mm ボックス20本",
       "country": "アルメニア",
-      "current_price": 1200,
-      "last_changed": "2025-05-01",
+      "current_price": 1100,
+      "last_changed": "2024-09-24",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 1200,
-          "date": "2025-05-01",
-          "pdf": "20250408_kouriteikahenkou.pdf"
-        },
         {
           "price": 1100,
           "date": "2024-09-24",
@@ -38942,15 +39680,10 @@
       "name": "シガローネ・スーパースリム・メンソール",
       "product_type": "FK 100mm ボックス20本",
       "country": "アルメニア",
-      "current_price": 780,
-      "last_changed": "2025-05-01",
+      "current_price": 740,
+      "last_changed": "2024-09-24",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 780,
-          "date": "2025-05-01",
-          "pdf": "20250408_kouriteikahenkou.pdf"
-        },
         {
           "price": 740,
           "date": "2024-09-24",
@@ -38995,15 +39728,10 @@
       "name": "JENT Sweet Double Apple",
       "product_type": "40.0g 箱",
       "country": "ロシア\nモルドバ",
-      "current_price": 4800,
-      "last_changed": "2026-03-02",
+      "current_price": 1790,
+      "last_changed": "2024-09-24",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 4800,
-          "date": "2026-03-02",
-          "pdf": "20260302_kouriteika.pdf"
-        },
         {
           "price": 1790,
           "date": "2024-09-24",
@@ -39072,11 +39800,6 @@
           "price": 4200,
           "date": "2024-09-24",
           "pdf": "20240924_kouriteika_2.pdf"
-        },
-        {
-          "price": 1700,
-          "date": "2024-09-24",
-          "pdf": "20240924_kouriteika_2.pdf"
         }
       ]
     },
@@ -39091,11 +39814,6 @@
       "price_history": [
         {
           "price": 4200,
-          "date": "2024-09-24",
-          "pdf": "20240924_kouriteika_2.pdf"
-        },
-        {
-          "price": 1700,
           "date": "2024-09-24",
           "pdf": "20240924_kouriteika_2.pdf"
         }
@@ -39114,11 +39832,6 @@
           "price": 4200,
           "date": "2024-09-24",
           "pdf": "20240924_kouriteika_2.pdf"
-        },
-        {
-          "price": 1700,
-          "date": "2024-09-24",
-          "pdf": "20240924_kouriteika_2.pdf"
         }
       ]
     },
@@ -39133,11 +39846,6 @@
       "price_history": [
         {
           "price": 4200,
-          "date": "2024-09-24",
-          "pdf": "20240924_kouriteika_2.pdf"
-        },
-        {
-          "price": 1700,
           "date": "2024-09-24",
           "pdf": "20240924_kouriteika_2.pdf"
         }
@@ -39156,11 +39864,6 @@
           "price": 4200,
           "date": "2024-09-24",
           "pdf": "20240924_kouriteika_2.pdf"
-        },
-        {
-          "price": 1700,
-          "date": "2024-09-24",
-          "pdf": "20240924_kouriteika_2.pdf"
         }
       ]
     },
@@ -39175,11 +39878,6 @@
       "price_history": [
         {
           "price": 4200,
-          "date": "2024-09-24",
-          "pdf": "20240924_kouriteika_2.pdf"
-        },
-        {
-          "price": 1700,
           "date": "2024-09-24",
           "pdf": "20240924_kouriteika_2.pdf"
         }
@@ -39198,11 +39896,6 @@
           "price": 4200,
           "date": "2024-09-24",
           "pdf": "20240924_kouriteika_2.pdf"
-        },
-        {
-          "price": 1700,
-          "date": "2024-09-24",
-          "pdf": "20240924_kouriteika_2.pdf"
         }
       ]
     },
@@ -39219,11 +39912,6 @@
           "price": 4200,
           "date": "2024-09-24",
           "pdf": "20240924_kouriteika_2.pdf"
-        },
-        {
-          "price": 1700,
-          "date": "2024-09-24",
-          "pdf": "20240924_kouriteika_2.pdf"
         }
       ]
     },
@@ -39238,11 +39926,6 @@
       "price_history": [
         {
           "price": 4200,
-          "date": "2024-09-24",
-          "pdf": "20240924_kouriteika_2.pdf"
-        },
-        {
-          "price": 1700,
           "date": "2024-09-24",
           "pdf": "20240924_kouriteika_2.pdf"
         }
@@ -39291,6 +39974,150 @@
       "price_history": [
         {
           "price": 1790,
+          "date": "2024-09-24",
+          "pdf": "20240924_kouriteika_2.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Classic Bergamot",
+      "product_type": "40.0g 箱",
+      "country": "ロシア\nモルドバ",
+      "current_price": 1700,
+      "last_changed": "2024-09-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1700,
+          "date": "2024-09-24",
+          "pdf": "20240924_kouriteika_2.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Classic Cactus",
+      "product_type": "40.0g 箱",
+      "country": "ロシア\nモルドバ",
+      "current_price": 1700,
+      "last_changed": "2024-09-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1700,
+          "date": "2024-09-24",
+          "pdf": "20240924_kouriteika_2.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Classic Cassis",
+      "product_type": "40.0g 箱",
+      "country": "ロシア\nモルドバ",
+      "current_price": 1700,
+      "last_changed": "2024-09-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1700,
+          "date": "2024-09-24",
+          "pdf": "20240924_kouriteika_2.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Classic Blackberry",
+      "product_type": "40.0g 箱",
+      "country": "ロシア\nモルドバ",
+      "current_price": 1700,
+      "last_changed": "2024-09-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1700,
+          "date": "2024-09-24",
+          "pdf": "20240924_kouriteika_2.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Classic Tiramisu",
+      "product_type": "40.0g 箱",
+      "country": "ロシア\nモルドバ",
+      "current_price": 1700,
+      "last_changed": "2024-09-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1700,
+          "date": "2024-09-24",
+          "pdf": "20240924_kouriteika_2.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Classic Papaya",
+      "product_type": "40.0g 箱",
+      "country": "ロシア\nモルドバ",
+      "current_price": 1700,
+      "last_changed": "2024-09-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1700,
+          "date": "2024-09-24",
+          "pdf": "20240924_kouriteika_2.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Classic Fruit Yogurt",
+      "product_type": "40.0g 箱",
+      "country": "ロシア\nモルドバ",
+      "current_price": 1700,
+      "last_changed": "2024-09-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1700,
+          "date": "2024-09-24",
+          "pdf": "20240924_kouriteika_2.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Classic Passion Fruit",
+      "product_type": "40.0g 箱",
+      "country": "ロシア\nモルドバ",
+      "current_price": 1700,
+      "last_changed": "2024-09-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1700,
+          "date": "2024-09-24",
+          "pdf": "20240924_kouriteika_2.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Classic Milk",
+      "product_type": "40.0g 箱",
+      "country": "ロシア\nモルドバ",
+      "current_price": 1700,
+      "last_changed": "2024-09-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1700,
           "date": "2024-09-24",
           "pdf": "20240924_kouriteika_2.pdf"
         }
@@ -39563,6 +40390,22 @@
       "price_history": [
         {
           "price": 1870,
+          "date": "2024-11-01",
+          "pdf": "20241004_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "ベガフィナ・ニカラグア グラン ブルカノ",
+      "product_type": "1本 137mm",
+      "country": "ドミニカ共和国",
+      "current_price": 2200,
+      "last_changed": "2024-11-01",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2200,
           "date": "2024-11-01",
           "pdf": "20241004_kouriteikahenkou.pdf"
         }
@@ -40501,15 +41344,10 @@
       "name": "クザーノ ホンジュラス ハーフコロナ",
       "product_type": "105mm 1本",
       "country": "ドミニカ共和国",
-      "current_price": 1050,
-      "last_changed": "2026-03-10",
+      "current_price": 900,
+      "last_changed": "2024-10-04",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 1050,
-          "date": "2026-03-10",
-          "pdf": "20260306_kouriteikahenkou.pdf"
-        },
         {
           "price": 900,
           "date": "2024-10-04",
@@ -40522,15 +41360,10 @@
       "name": "クザーノ ホンジュラス ロブスト",
       "product_type": "124mm 1本",
       "country": "ドミニカ共和国",
-      "current_price": 1500,
-      "last_changed": "2026-03-10",
+      "current_price": 1300,
+      "last_changed": "2024-10-04",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 1500,
-          "date": "2026-03-10",
-          "pdf": "20260306_kouriteikahenkou.pdf"
-        },
         {
           "price": 1300,
           "date": "2024-10-04",
@@ -40564,15 +41397,10 @@
       "name": "クザーノ ホンジュラス チャーチル",
       "product_type": "177mm 1本",
       "country": "ドミニカ共和国",
-      "current_price": 1750,
-      "last_changed": "2026-03-10",
+      "current_price": 1700,
+      "last_changed": "2024-10-04",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 1750,
-          "date": "2026-03-10",
-          "pdf": "20260306_kouriteikahenkou.pdf"
-        },
         {
           "price": 1700,
           "date": "2024-10-04",
@@ -40833,11 +41661,6 @@
           "price": 7750,
           "date": "2024-11-01",
           "pdf": "20241016_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 1550,
-          "date": "2024-11-01",
-          "pdf": "20241016_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -40852,11 +41675,6 @@
       "price_history": [
         {
           "price": 7750,
-          "date": "2024-11-01",
-          "pdf": "20241016_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 1550,
           "date": "2024-11-01",
           "pdf": "20241016_kouriteikahenkou.pdf"
         }
@@ -41259,11 +42077,6 @@
           "price": 7750,
           "date": "2024-11-01",
           "pdf": "20241016_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 1550,
-          "date": "2024-11-01",
-          "pdf": "20241016_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -41509,6 +42322,38 @@
     },
     {
       "category": "パイプたばこ",
+      "name": "AL Fakher Blueberry",
+      "product_type": "50.0g 箱",
+      "country": "アラブ首長国連邦",
+      "current_price": 1550,
+      "last_changed": "2024-11-01",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1550,
+          "date": "2024-11-01",
+          "pdf": "20241016_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "AL Fakher Blueberry Mint",
+      "product_type": "50.0g 箱",
+      "country": "アラブ首長国連邦",
+      "current_price": 1550,
+      "last_changed": "2024-11-01",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1550,
+          "date": "2024-11-01",
+          "pdf": "20241016_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
       "name": "AL FAKHER Bubble Gum",
       "product_type": "50.0g 箱",
       "country": "アラブ首長国連邦",
@@ -41646,11 +42491,6 @@
       "price_history": [
         {
           "price": 1550,
-          "date": "2024-11-01",
-          "pdf": "20241016_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 7750,
           "date": "2024-11-01",
           "pdf": "20241016_kouriteikahenkou.pdf"
         }
@@ -41941,11 +42781,6 @@
           "price": 1550,
           "date": "2024-11-01",
           "pdf": "20241016_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 7750,
-          "date": "2024-11-01",
-          "pdf": "20241016_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -42079,7 +42914,7 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "AL Fakher Mojito",
+      "name": "AL Fakher Mint Cream",
       "product_type": "50.0g 箱",
       "country": "アラブ首長国連邦",
       "current_price": 1550,
@@ -42090,9 +42925,20 @@
           "price": 1550,
           "date": "2024-11-01",
           "pdf": "20241016_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "AL Fakher Mojito",
+      "product_type": "50.0g 箱",
+      "country": "アラブ首長国連邦",
+      "current_price": 1550,
+      "last_changed": "2024-11-01",
+      "discontinued": false,
+      "price_history": [
         {
-          "price": 7750,
+          "price": 1550,
           "date": "2024-11-01",
           "pdf": "20241016_kouriteikahenkou.pdf"
         }
@@ -42324,7 +43170,55 @@
     },
     {
       "category": "パイプたばこ",
+      "name": "AL FAKHER Cinnamon",
+      "product_type": "250.0g 箱",
+      "country": "アラブ首長国連邦",
+      "current_price": 7750,
+      "last_changed": "2024-11-01",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 7750,
+          "date": "2024-11-01",
+          "pdf": "20241016_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
       "name": "AL Fakher Grapefruit with\nMint",
+      "product_type": "250.0g プラケース",
+      "country": "アラブ首長国連邦",
+      "current_price": 7750,
+      "last_changed": "2024-11-01",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 7750,
+          "date": "2024-11-01",
+          "pdf": "20241016_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "AL FAKHER Honey",
+      "product_type": "250.0g 箱",
+      "country": "アラブ首長国連邦",
+      "current_price": 7750,
+      "last_changed": "2024-11-01",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 7750,
+          "date": "2024-11-01",
+          "pdf": "20241016_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "AL Fakher Mojito",
       "product_type": "250.0g プラケース",
       "country": "アラブ首長国連邦",
       "current_price": 7750,
@@ -42431,7 +43325,18 @@
           "price": 1550,
           "date": "2024-11-01",
           "pdf": "20241016_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "AL Fakher Magic Love",
+      "product_type": "250.0g プラケース",
+      "country": "アラブ首長国連邦",
+      "current_price": 7750,
+      "last_changed": "2024-11-01",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 7750,
           "date": "2024-11-01",
@@ -45630,6 +46535,27 @@
     {
       "category": "加熱式たばこ",
       "name": "メビウス・プレミアムゴールド・フローズン・ウィズ用",
+      "product_type": "2.6g 5本",
+      "country": "日本",
+      "current_price": 620,
+      "last_changed": "2026-04-01",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 620,
+          "date": "2026-04-01",
+          "pdf": "20260226_kouriteikahenkou.pdf"
+        },
+        {
+          "price": 600,
+          "date": "2025-05-01",
+          "pdf": "20250228_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "加熱式たばこ",
+      "name": "メビウス・ゴールド・パープル・ミント・ウィズ用",
       "product_type": "2.6g 5本",
       "country": "日本",
       "current_price": 620,
@@ -49699,6 +50625,38 @@
       ]
     },
     {
+      "category": "紙巻たばこ",
+      "name": "シガローネ・ロイヤルスリム・メンソール",
+      "product_type": "F117mm 20本 ボックス",
+      "country": "アルメニア",
+      "current_price": 1200,
+      "last_changed": "2025-05-01",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1200,
+          "date": "2025-05-01",
+          "pdf": "20250408_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "紙巻たばこ",
+      "name": "シガローネ・スーパースリム・メンソール",
+      "product_type": "FK100mm 20本 ボックス",
+      "country": "アルメニア",
+      "current_price": 780,
+      "last_changed": "2025-05-01",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 780,
+          "date": "2025-05-01",
+          "pdf": "20250408_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
       "category": "葉巻たばこ",
       "name": "コピ セニョリタス/10",
       "product_type": "104mm 10本",
@@ -51020,15 +51978,10 @@
       "name": "DARKSIDE VIRGIN PEACH 2.0",
       "product_type": "100.0g 箱",
       "country": "ロシア",
-      "current_price": 1500,
-      "last_changed": "2025-09-29",
+      "current_price": 4400,
+      "last_changed": "2025-04-25",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 1500,
-          "date": "2025-09-29",
-          "pdf": "20250929_kouriteika.pdf"
-        },
         {
           "price": 4400,
           "date": "2025-04-25",
@@ -51617,10 +52570,15 @@
       "name": "ラッキー・ストライク・ブラック・シリーズ・チルベリー・1・100",
       "product_type": "FSK 20本 ハードパック",
       "country": "大韓民国",
-      "current_price": 470,
-      "last_changed": "2025-06-01",
+      "current_price": 450,
+      "last_changed": "2026-05-01",
       "discontinued": false,
       "price_history": [
+        {
+          "price": 450,
+          "date": "2026-05-01",
+          "pdf": "20260324_kouriteikahenkou.pdf"
+        },
         {
           "price": 470,
           "date": "2025-06-01",
@@ -53424,15 +54382,10 @@
       "name": "DARKSIDE SUPERMINT",
       "product_type": "100.0g 箱",
       "country": "ロシア",
-      "current_price": 1500,
-      "last_changed": "2025-09-29",
+      "current_price": 4400,
+      "last_changed": "2025-05-30",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 1500,
-          "date": "2025-09-29",
-          "pdf": "20250929_kouriteika.pdf"
-        },
         {
           "price": 4400,
           "date": "2025-05-30",
@@ -54896,11 +55849,6 @@
           "price": 3500,
           "date": "2025-07-23",
           "pdf": "20250723_kouriteika.pdf"
-        },
-        {
-          "price": 8750,
-          "date": "2025-07-23",
-          "pdf": "20250723_kouriteika.pdf"
         }
       ]
     },
@@ -54915,11 +55863,6 @@
       "price_history": [
         {
           "price": 3500,
-          "date": "2025-07-23",
-          "pdf": "20250723_kouriteika.pdf"
-        },
-        {
-          "price": 8750,
           "date": "2025-07-23",
           "pdf": "20250723_kouriteika.pdf"
         }
@@ -54938,11 +55881,6 @@
           "price": 3500,
           "date": "2025-07-23",
           "pdf": "20250723_kouriteika.pdf"
-        },
-        {
-          "price": 8750,
-          "date": "2025-07-23",
-          "pdf": "20250723_kouriteika.pdf"
         }
       ]
     },
@@ -54957,11 +55895,6 @@
       "price_history": [
         {
           "price": 3500,
-          "date": "2025-07-23",
-          "pdf": "20250723_kouriteika.pdf"
-        },
-        {
-          "price": 8750,
           "date": "2025-07-23",
           "pdf": "20250723_kouriteika.pdf"
         }
@@ -54980,11 +55913,6 @@
           "price": 3500,
           "date": "2025-07-23",
           "pdf": "20250723_kouriteika.pdf"
-        },
-        {
-          "price": 8750,
-          "date": "2025-07-23",
-          "pdf": "20250723_kouriteika.pdf"
         }
       ]
     },
@@ -54999,11 +55927,6 @@
       "price_history": [
         {
           "price": 3500,
-          "date": "2025-07-23",
-          "pdf": "20250723_kouriteika.pdf"
-        },
-        {
-          "price": 8750,
           "date": "2025-07-23",
           "pdf": "20250723_kouriteika.pdf"
         }
@@ -55022,11 +55945,6 @@
           "price": 3500,
           "date": "2025-07-23",
           "pdf": "20250723_kouriteika.pdf"
-        },
-        {
-          "price": 8750,
-          "date": "2025-07-23",
-          "pdf": "20250723_kouriteika.pdf"
         }
       ]
     },
@@ -55041,11 +55959,6 @@
       "price_history": [
         {
           "price": 3500,
-          "date": "2025-07-23",
-          "pdf": "20250723_kouriteika.pdf"
-        },
-        {
-          "price": 8750,
           "date": "2025-07-23",
           "pdf": "20250723_kouriteika.pdf"
         }
@@ -55064,11 +55977,6 @@
           "price": 3500,
           "date": "2025-07-23",
           "pdf": "20250723_kouriteika.pdf"
-        },
-        {
-          "price": 8750,
-          "date": "2025-07-23",
-          "pdf": "20250723_kouriteika.pdf"
         }
       ]
     },
@@ -55083,11 +55991,6 @@
       "price_history": [
         {
           "price": 3500,
-          "date": "2025-07-23",
-          "pdf": "20250723_kouriteika.pdf"
-        },
-        {
-          "price": 8750,
           "date": "2025-07-23",
           "pdf": "20250723_kouriteika.pdf"
         }
@@ -55106,11 +56009,6 @@
           "price": 3500,
           "date": "2025-07-23",
           "pdf": "20250723_kouriteika.pdf"
-        },
-        {
-          "price": 8750,
-          "date": "2025-07-23",
-          "pdf": "20250723_kouriteika.pdf"
         }
       ]
     },
@@ -55125,11 +56023,6 @@
       "price_history": [
         {
           "price": 3500,
-          "date": "2025-07-23",
-          "pdf": "20250723_kouriteika.pdf"
-        },
-        {
-          "price": 8750,
           "date": "2025-07-23",
           "pdf": "20250723_kouriteika.pdf"
         }
@@ -55148,11 +56041,6 @@
           "price": 3500,
           "date": "2025-07-23",
           "pdf": "20250723_kouriteika.pdf"
-        },
-        {
-          "price": 8750,
-          "date": "2025-07-23",
-          "pdf": "20250723_kouriteika.pdf"
         }
       ]
     },
@@ -55167,11 +56055,6 @@
       "price_history": [
         {
           "price": 3500,
-          "date": "2025-07-23",
-          "pdf": "20250723_kouriteika.pdf"
-        },
-        {
-          "price": 8750,
           "date": "2025-07-23",
           "pdf": "20250723_kouriteika.pdf"
         }
@@ -55190,7 +56073,82 @@
           "price": 3500,
           "date": "2025-07-23",
           "pdf": "20250723_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Azure hookah tobacco, Gold Line\nGrapefruit",
+      "product_type": "250.0g パウチ",
+      "country": "アメリカ合衆国",
+      "current_price": 8750,
+      "last_changed": "2025-07-23",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 8750,
+          "date": "2025-07-23",
+          "pdf": "20250723_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Azure hookah tobacco, Gold Line\nLime Cola",
+      "product_type": "250.0g パウチ",
+      "country": "アメリカ合衆国",
+      "current_price": 8750,
+      "last_changed": "2025-07-23",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 8750,
+          "date": "2025-07-23",
+          "pdf": "20250723_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Azure hookah tobacco, Gold Line\nIce Pear",
+      "product_type": "250.0g パウチ",
+      "country": "アメリカ合衆国",
+      "current_price": 8750,
+      "last_changed": "2025-07-23",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 8750,
+          "date": "2025-07-23",
+          "pdf": "20250723_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Azure hookah tobacco, Gold Line\nOrange Crush",
+      "product_type": "250.0g パウチ",
+      "country": "アメリカ合衆国",
+      "current_price": 8750,
+      "last_changed": "2025-07-23",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 8750,
+          "date": "2025-07-23",
+          "pdf": "20250723_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Azure hookah tobacco, Gold Line\nRaspberry Vanilla",
+      "product_type": "250.0g パウチ",
+      "country": "アメリカ合衆国",
+      "current_price": 8750,
+      "last_changed": "2025-07-23",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 8750,
           "date": "2025-07-23",
@@ -55201,6 +56159,166 @@
     {
       "category": "パイプたばこ",
       "name": "Azure hookah tobacco, Gold Line\nGreen Tea",
+      "product_type": "250.0g パウチ",
+      "country": "アメリカ合衆国",
+      "current_price": 8750,
+      "last_changed": "2025-07-23",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 8750,
+          "date": "2025-07-23",
+          "pdf": "20250723_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Azure hookah tobacco, Gold Line\nMelon Green Tea",
+      "product_type": "250.0g パウチ",
+      "country": "アメリカ合衆国",
+      "current_price": 8750,
+      "last_changed": "2025-07-23",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 8750,
+          "date": "2025-07-23",
+          "pdf": "20250723_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Azure hookah tobacco, Gold Line\nPapaya",
+      "product_type": "250.0g パウチ",
+      "country": "アメリカ合衆国",
+      "current_price": 8750,
+      "last_changed": "2025-07-23",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 8750,
+          "date": "2025-07-23",
+          "pdf": "20250723_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Azure hookah tobacco, Gold Line\nCucumelon",
+      "product_type": "250.0g パウチ",
+      "country": "アメリカ合衆国",
+      "current_price": 8750,
+      "last_changed": "2025-07-23",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 8750,
+          "date": "2025-07-23",
+          "pdf": "20250723_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Azure hookah tobacco, Gold Line\nSolana Beach",
+      "product_type": "250.0g パウチ",
+      "country": "アメリカ合衆国",
+      "current_price": 8750,
+      "last_changed": "2025-07-23",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 8750,
+          "date": "2025-07-23",
+          "pdf": "20250723_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Azure hookah tobacco, Gold Line\nCopacabana",
+      "product_type": "250.0g パウチ",
+      "country": "アメリカ合衆国",
+      "current_price": 8750,
+      "last_changed": "2025-07-23",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 8750,
+          "date": "2025-07-23",
+          "pdf": "20250723_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Azure hookah tobacco, Gold Line\nPinky",
+      "product_type": "250.0g パウチ",
+      "country": "アメリカ合衆国",
+      "current_price": 8750,
+      "last_changed": "2025-07-23",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 8750,
+          "date": "2025-07-23",
+          "pdf": "20250723_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Azure hookah tobacco, Gold Line D\nCherry",
+      "product_type": "250.0g パウチ",
+      "country": "アメリカ合衆国",
+      "current_price": 8750,
+      "last_changed": "2025-07-23",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 8750,
+          "date": "2025-07-23",
+          "pdf": "20250723_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Azure hookah tobacco, Gold Line\nSour",
+      "product_type": "250.0g パウチ",
+      "country": "アメリカ合衆国",
+      "current_price": 8750,
+      "last_changed": "2025-07-23",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 8750,
+          "date": "2025-07-23",
+          "pdf": "20250723_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Azure hookah tobacco, Gold Line\nQueen Of Fruits",
+      "product_type": "250.0g パウチ",
+      "country": "アメリカ合衆国",
+      "current_price": 8750,
+      "last_changed": "2025-07-23",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 8750,
+          "date": "2025-07-23",
+          "pdf": "20250723_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Azure hookah tobacco, Gold Line\nStrong Lychee",
       "product_type": "250.0g パウチ",
       "country": "アメリカ合衆国",
       "current_price": 8750,
@@ -56165,11 +57283,6 @@
           "price": 2400,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 4500,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
         }
       ]
     },
@@ -56184,11 +57297,6 @@
       "price_history": [
         {
           "price": 2400,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 4500,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
         }
@@ -56207,11 +57315,6 @@
           "price": 2400,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 4500,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
         }
       ]
     },
@@ -56226,11 +57329,6 @@
       "price_history": [
         {
           "price": 2400,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 4500,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
         }
@@ -56249,11 +57347,6 @@
           "price": 2400,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 4500,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
         }
       ]
     },
@@ -56268,11 +57361,6 @@
       "price_history": [
         {
           "price": 2400,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 4500,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
         }
@@ -56355,7 +57443,114 @@
           "price": 2400,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "BONCHE Base",
+      "product_type": "60.0g 瓶",
+      "country": "ロシア",
+      "current_price": 4500,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4500,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "BONCHE Basil",
+      "product_type": "60.0g 瓶",
+      "country": "ロシア",
+      "current_price": 4500,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4500,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "BONCHE Caramel",
+      "product_type": "60.0g 瓶",
+      "country": "ロシア",
+      "current_price": 4500,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4500,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "BONCHE Cherry",
+      "product_type": "60.0g 瓶",
+      "country": "ロシア",
+      "current_price": 4500,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4500,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "BONCHE Honey",
+      "product_type": "60.0g 瓶",
+      "country": "ロシア",
+      "current_price": 4500,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4500,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "BONCHE Lavender",
+      "product_type": "60.0g 瓶",
+      "country": "ロシア",
+      "current_price": 4500,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4500,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "BONCHE Wild Strawberry",
+      "product_type": "60.0g 瓶",
+      "country": "ロシア",
+      "current_price": 4500,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 4500,
           "date": "2025-08-28",
@@ -56376,11 +57571,6 @@
           "price": 1500,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
         }
       ]
     },
@@ -56395,11 +57585,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
         }
@@ -56418,11 +57603,6 @@
           "price": 1500,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
         }
       ]
     },
@@ -56439,11 +57619,6 @@
           "price": 1500,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
         }
       ]
     },
@@ -56452,15 +57627,10 @@
       "name": "DEUS Wood",
       "product_type": "30.0g 箱",
       "country": "ロシア",
-      "current_price": 4400,
-      "last_changed": "2026-03-02",
+      "current_price": 1500,
+      "last_changed": "2025-08-28",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 4400,
-          "date": "2026-03-02",
-          "pdf": "20260302_kouriteika.pdf"
-        },
         {
           "price": 1500,
           "date": "2025-08-28",
@@ -56473,15 +57643,10 @@
       "name": "DEUS Flower Perfume",
       "product_type": "30.0g 箱",
       "country": "ロシア",
-      "current_price": 4400,
-      "last_changed": "2026-03-02",
+      "current_price": 1500,
+      "last_changed": "2025-08-28",
       "discontinued": false,
       "price_history": [
-        {
-          "price": 4400,
-          "date": "2026-03-02",
-          "pdf": "20260302_kouriteika.pdf"
-        },
         {
           "price": 1500,
           "date": "2025-08-28",
@@ -56502,11 +57667,6 @@
           "price": 1500,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
         }
       ]
     },
@@ -56521,11 +57681,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
         }
@@ -56544,11 +57699,6 @@
           "price": 1500,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
         }
       ]
     },
@@ -56563,11 +57713,6 @@
       "price_history": [
         {
           "price": 1500,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 4400,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
         }
@@ -56586,7 +57731,146 @@
           "price": 1500,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DEUS Viola",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DEUS Strawberry",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DEUS Pink Grapefruit",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DEUS Mango Pineapple",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DEUS Marmelade",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DEUS Gynness",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DEUS Elderberry Wine",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DEUS Black Berry",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DEUS Green Apple",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 4400,
           "date": "2025-08-28",
@@ -56607,11 +57891,6 @@
           "price": 1700,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 4200,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
         }
       ]
     },
@@ -56626,11 +57905,6 @@
       "price_history": [
         {
           "price": 1700,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 4200,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
         }
@@ -56649,7 +57923,50 @@
           "price": 1700,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Classic Coco Like",
+      "product_type": "100.0g 箱",
+      "country": "ロシア\nモルドバ",
+      "current_price": 4200,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4200,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Classic Coffee",
+      "product_type": "100.0g 箱",
+      "country": "ロシア\nモルドバ",
+      "current_price": 4200,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4200,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SEBERO Classic Halloween\nPumpkin",
+      "product_type": "100.0g 箱",
+      "country": "ロシア\nモルドバ",
+      "current_price": 4200,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 4200,
           "date": "2025-08-28",
@@ -56910,11 +58227,6 @@
           "price": 4800,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 980,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
         }
       ]
     },
@@ -56929,11 +58241,6 @@
       "price_history": [
         {
           "price": 4800,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 980,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
         }
@@ -56952,11 +58259,6 @@
           "price": 4800,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 980,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
         }
       ]
     },
@@ -56971,11 +58273,6 @@
       "price_history": [
         {
           "price": 4800,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 980,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
         }
@@ -56994,11 +58291,6 @@
           "price": 4800,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 980,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
         }
       ]
     },
@@ -57013,11 +58305,6 @@
       "price_history": [
         {
           "price": 4800,
-          "date": "2025-08-28",
-          "pdf": "20250828_kouriteika.pdf"
-        },
-        {
-          "price": 980,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
         }
@@ -57036,7 +58323,114 @@
           "price": 4800,
           "date": "2025-08-28",
           "pdf": "20250828_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "JENT CIGAR No Aroma",
+      "product_type": "20.0g 瓶",
+      "country": "ロシア\nモルドバ",
+      "current_price": 980,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 980,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "JENT CIGAR Lavender",
+      "product_type": "20.0g 瓶",
+      "country": "ロシア\nモルドバ",
+      "current_price": 980,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 980,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "JENT CIGAR Raspberry Basil",
+      "product_type": "20.0g 瓶",
+      "country": "ロシア\nモルドバ",
+      "current_price": 980,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 980,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "JENT CIGAR Ginger Cookies",
+      "product_type": "20.0g 瓶",
+      "country": "ロシア\nモルドバ",
+      "current_price": 980,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 980,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "JENT CIGAR Single Malt\nWhiskey",
+      "product_type": "20.0g 瓶",
+      "country": "ロシア\nモルドバ",
+      "current_price": 980,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 980,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "JENT CIGAR Nuts",
+      "product_type": "20.0g 瓶",
+      "country": "ロシア\nモルドバ",
+      "current_price": 980,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 980,
+          "date": "2025-08-28",
+          "pdf": "20250828_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "JENT CIGAR White Wine",
+      "product_type": "20.0g 瓶",
+      "country": "ロシア\nモルドバ",
+      "current_price": 980,
+      "last_changed": "2025-08-28",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 980,
           "date": "2025-08-28",
@@ -57819,6 +59213,38 @@
     },
     {
       "category": "パイプたばこ",
+      "name": "DARKSIDE SUPERMINT",
+      "product_type": "30.0g 箱",
+      "country": "ロシア",
+      "current_price": 1500,
+      "last_changed": "2025-09-29",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1500,
+          "date": "2025-09-29",
+          "pdf": "20250929_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE VIRGIN PEACH 2.0",
+      "product_type": "30.0g 箱",
+      "country": "ロシア",
+      "current_price": 1500,
+      "last_changed": "2025-09-29",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1500,
+          "date": "2025-09-29",
+          "pdf": "20250929_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
       "name": "アクレマ・ブレンド",
       "product_type": "20.0g パウチパック",
       "country": "ブラジル",
@@ -58038,11 +59464,6 @@
           "price": 2300,
           "date": "2025-10-08",
           "pdf": "20251008_kouriteika.pdf"
-        },
-        {
-          "price": 4600,
-          "date": "2025-10-08",
-          "pdf": "20251008_kouriteika.pdf"
         }
       ]
     },
@@ -58073,11 +59494,6 @@
       "price_history": [
         {
           "price": 2300,
-          "date": "2025-10-08",
-          "pdf": "20251008_kouriteika.pdf"
-        },
-        {
-          "price": 4600,
           "date": "2025-10-08",
           "pdf": "20251008_kouriteika.pdf"
         }
@@ -58112,11 +59528,6 @@
           "price": 2300,
           "date": "2025-10-08",
           "pdf": "20251008_kouriteika.pdf"
-        },
-        {
-          "price": 4600,
-          "date": "2025-10-08",
-          "pdf": "20251008_kouriteika.pdf"
         }
       ]
     },
@@ -58131,11 +59542,6 @@
       "price_history": [
         {
           "price": 2300,
-          "date": "2025-10-08",
-          "pdf": "20251008_kouriteika.pdf"
-        },
-        {
-          "price": 4600,
           "date": "2025-10-08",
           "pdf": "20251008_kouriteika.pdf"
         }
@@ -58218,11 +59624,6 @@
           "price": 2300,
           "date": "2025-10-08",
           "pdf": "20251008_kouriteika.pdf"
-        },
-        {
-          "price": 4600,
-          "date": "2025-10-08",
-          "pdf": "20251008_kouriteika.pdf"
         }
       ]
     },
@@ -58285,11 +59686,6 @@
       "price_history": [
         {
           "price": 2300,
-          "date": "2025-10-08",
-          "pdf": "20251008_kouriteika.pdf"
-        },
-        {
-          "price": 4600,
           "date": "2025-10-08",
           "pdf": "20251008_kouriteika.pdf"
         }
@@ -58372,7 +59768,50 @@
           "price": 1300,
           "date": "2025-10-08",
           "pdf": "20251008_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "NASH ラストサムライ",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4600,
+      "last_changed": "2025-10-08",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4600,
+          "date": "2025-10-08",
+          "pdf": "20251008_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "NASH パッションフルーツ",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4600,
+      "last_changed": "2025-10-08",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4600,
+          "date": "2025-10-08",
+          "pdf": "20251008_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "NASH グレープフルーツ",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4600,
+      "last_changed": "2025-10-08",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 4600,
           "date": "2025-10-08",
@@ -58398,7 +59837,71 @@
     },
     {
       "category": "パイプたばこ",
+      "name": "NASH バクラヴァ",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4600,
+      "last_changed": "2025-10-08",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4600,
+          "date": "2025-10-08",
+          "pdf": "20251008_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "NASH ワッフル",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4600,
+      "last_changed": "2025-10-08",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4600,
+          "date": "2025-10-08",
+          "pdf": "20251008_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "NASH キウイ",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4600,
+      "last_changed": "2025-10-08",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4600,
+          "date": "2025-10-08",
+          "pdf": "20251008_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
       "name": "NASH ココナツ",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4600,
+      "last_changed": "2025-10-08",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4600,
+          "date": "2025-10-08",
+          "pdf": "20251008_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "NASH ウイスキー",
       "product_type": "100.0g 箱",
       "country": "ロシア",
       "current_price": 4600,
@@ -58441,7 +59944,18 @@
           "price": 2600,
           "date": "2025-10-08",
           "pdf": "20251008_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "NASH ハニートロピカルフルーツ",
+      "product_type": "120.0g 箱",
+      "country": "ロシア",
+      "current_price": 7500,
+      "last_changed": "2025-10-08",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 7500,
           "date": "2025-10-08",
@@ -58462,7 +59976,18 @@
           "price": 2600,
           "date": "2025-10-08",
           "pdf": "20251008_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "NASH ローズマリー タイム",
+      "product_type": "120.0g 箱",
+      "country": "ロシア",
+      "current_price": 7500,
+      "last_changed": "2025-10-08",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 7500,
           "date": "2025-10-08",
@@ -58872,11 +60397,6 @@
           "price": 4400,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -58925,11 +60445,6 @@
           "price": 4400,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -58951,7 +60466,39 @@
     },
     {
       "category": "パイプたばこ",
+      "name": "Tangiers Melon Blend",
+      "product_type": "100.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 4400,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
       "name": "Tangiers Mime",
+      "product_type": "100.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 4400,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Orange Soda",
       "product_type": "100.0g 箱",
       "country": "アメリカ合衆国",
       "current_price": 4400,
@@ -59058,11 +60605,6 @@
           "price": 4400,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -59095,11 +60637,6 @@
           "price": 4400,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -59114,11 +60651,6 @@
       "price_history": [
         {
           "price": 4400,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
         }
@@ -59217,11 +60749,6 @@
           "price": 4400,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -59236,11 +60763,6 @@
       "price_history": [
         {
           "price": 4400,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
         }
@@ -59275,11 +60797,6 @@
           "price": 4400,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -59294,11 +60811,6 @@
       "price_history": [
         {
           "price": 4400,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
         }
@@ -59317,11 +60829,6 @@
           "price": 4400,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -59338,11 +60845,6 @@
           "price": 4400,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -59357,11 +60859,6 @@
       "price_history": [
         {
           "price": 4400,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
         }
@@ -59396,11 +60893,6 @@
           "price": 4400,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -59417,11 +60909,6 @@
           "price": 4400,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -59436,11 +60923,6 @@
       "price_history": [
         {
           "price": 4400,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
         }
@@ -59475,11 +60957,6 @@
           "price": 4400,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -59494,11 +60971,6 @@
       "price_history": [
         {
           "price": 4400,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
         }
@@ -59517,11 +60989,6 @@
           "price": 4400,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -59538,11 +61005,6 @@
           "price": 4400,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -59557,11 +61019,6 @@
       "price_history": [
         {
           "price": 4400,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
         }
@@ -59586,6 +61043,22 @@
     {
       "category": "パイプたばこ",
       "name": "Tangiers Blizsturm",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Cane Mint",
       "product_type": "250.0g 箱",
       "country": "アメリカ合衆国",
       "current_price": 10000,
@@ -59665,7 +61138,39 @@
     },
     {
       "category": "パイプたばこ",
+      "name": "Tangiers Kashmir Guajava",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
       "name": "Tangiers Kashmir Peach",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Pink Grapefruit",
       "product_type": "250.0g 箱",
       "country": "アメリカ合衆国",
       "current_price": 10000,
@@ -59697,6 +61202,22 @@
     },
     {
       "category": "パイプたばこ",
+      "name": "Tangiers Noir Kashmir",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
       "name": "Tangiers Noir Kashmir Blue",
       "product_type": "250.0g 箱",
       "country": "アメリカ合衆国",
@@ -59713,7 +61234,103 @@
     },
     {
       "category": "パイプたばこ",
+      "name": "Tangiers Noir Mimon",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Noir New Lime",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Noir Peach Iced Tea",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
       "name": "Tangiers Noir Pear",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Noir Pineapple",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Noir Strawberry",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Noir Welsh Cream",
       "product_type": "250.0g 箱",
       "country": "アメリカ合衆国",
       "current_price": 10000,
@@ -59756,11 +61373,6 @@
           "price": 4400,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 10000,
-          "date": "2025-11-24",
-          "pdf": "20251105_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -59791,6 +61403,22 @@
       "price_history": [
         {
           "price": 4400,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Noir Blue Gumball 2.0",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
         }
@@ -59830,7 +61458,55 @@
     },
     {
       "category": "パイプたばこ",
+      "name": "Tangiers Noir Cherry Limeade",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Noir Chocolate Iced\nCream",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
       "name": "Tangiers Noir Raspberry",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Noir Cocoa",
       "product_type": "250.0g 箱",
       "country": "アメリカ合衆国",
       "current_price": 10000,
@@ -59926,6 +61602,22 @@
     },
     {
       "category": "パイプたばこ",
+      "name": "Tangiers Noir French Jelly",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
       "name": "Tangiers Noir Guajava Kiss",
       "product_type": "250.0g 箱",
       "country": "アメリカ合衆国",
@@ -59943,6 +61635,22 @@
     {
       "category": "パイプたばこ",
       "name": "Tangiers Noir Horchata",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Noir It's Like That\nOne Breakfast Cereal",
       "product_type": "250.0g 箱",
       "country": "アメリカ合衆国",
       "current_price": 10000,
@@ -60022,6 +61730,22 @@
     },
     {
       "category": "パイプたばこ",
+      "name": "Tangiers Noir Maraschino\nCherry",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
       "name": "Tangiers Noir Midnight Orchard\nApple",
       "product_type": "250.0g 箱",
       "country": "アメリカ合衆国",
@@ -60054,6 +61778,38 @@
     },
     {
       "category": "パイプたばこ",
+      "name": "Tangiers Noir Mixed Fruit 6",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Noir Lemon Lime",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
       "name": "Tangiers Noir Sour",
       "product_type": "250.0g 箱",
       "country": "アメリカ合衆国",
@@ -60070,7 +61826,39 @@
     },
     {
       "category": "パイプたばこ",
+      "name": "Tangiers Noir Static Starlight",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
       "name": "Tangiers Noir Tasty Peach",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Noir Tropical Punch",
       "product_type": "250.0g 箱",
       "country": "アメリカ合衆国",
       "current_price": 10000,
@@ -60111,6 +61899,70 @@
       "price_history": [
         {
           "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Noir Wintergreen",
+      "product_type": "250.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 10000,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 10000,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Cane Mint Alpha",
+      "product_type": "100.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 4400,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Pink Grapefruit",
+      "product_type": "100.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 4400,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2025-11-24",
+          "pdf": "20251105_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tangiers Foreplay on the Peach",
+      "product_type": "100.0g 箱",
+      "country": "アメリカ合衆国",
+      "current_price": 4400,
+      "last_changed": "2025-11-24",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
           "date": "2025-11-24",
           "pdf": "20251105_kouriteikahenkou.pdf"
         }
@@ -65161,11 +67013,6 @@
           "price": 980,
           "date": "2026-03-02",
           "pdf": "20260302_kouriteika.pdf"
-        },
-        {
-          "price": 4800,
-          "date": "2026-03-02",
-          "pdf": "20260302_kouriteika.pdf"
         }
       ]
     },
@@ -65180,11 +67027,6 @@
       "price_history": [
         {
           "price": 980,
-          "date": "2026-03-02",
-          "pdf": "20260302_kouriteika.pdf"
-        },
-        {
-          "price": 4800,
           "date": "2026-03-02",
           "pdf": "20260302_kouriteika.pdf"
         }
@@ -65203,11 +67045,6 @@
           "price": 980,
           "date": "2026-03-02",
           "pdf": "20260302_kouriteika.pdf"
-        },
-        {
-          "price": 4800,
-          "date": "2026-03-02",
-          "pdf": "20260302_kouriteika.pdf"
         }
       ]
     },
@@ -65224,7 +67061,18 @@
           "price": 980,
           "date": "2026-03-02",
           "pdf": "20260302_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "JENT CIGAR Amaretto",
+      "product_type": "100.0g 瓶",
+      "country": "ロシア\nモルドバ",
+      "current_price": 4800,
+      "last_changed": "2026-03-02",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 4800,
           "date": "2026-03-02",
@@ -65235,6 +67083,22 @@
     {
       "category": "パイプたばこ",
       "name": "JENT CIGAR Bellini",
+      "product_type": "100.0g 瓶",
+      "country": "ロシア\nモルドバ",
+      "current_price": 4800,
+      "last_changed": "2026-03-02",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4800,
+          "date": "2026-03-02",
+          "pdf": "20260302_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "JENT CIGAR Camomile",
       "product_type": "100.0g 瓶",
       "country": "ロシア\nモルドバ",
       "current_price": 4800,
@@ -65266,7 +67130,39 @@
     },
     {
       "category": "パイプたばこ",
+      "name": "JENT CIGAR Coconut Cream",
+      "product_type": "100.0g 瓶",
+      "country": "ロシア\nモルドバ",
+      "current_price": 4800,
+      "last_changed": "2026-03-02",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4800,
+          "date": "2026-03-02",
+          "pdf": "20260302_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
       "name": "JENT CIGAR Red Sangria",
+      "product_type": "100.0g 瓶",
+      "country": "ロシア\nモルドバ",
+      "current_price": 4800,
+      "last_changed": "2026-03-02",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4800,
+          "date": "2026-03-02",
+          "pdf": "20260302_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "JENT CIGAR Triple Citrus",
       "product_type": "100.0g 瓶",
       "country": "ロシア\nモルドバ",
       "current_price": 4800,
@@ -65330,6 +67226,22 @@
     },
     {
       "category": "パイプたばこ",
+      "name": "JENT Sweet Double Apple",
+      "product_type": "100.0g 箱",
+      "country": "ロシア\nモルドバ",
+      "current_price": 4800,
+      "last_changed": "2026-03-02",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4800,
+          "date": "2026-03-02",
+          "pdf": "20260302_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
       "name": "JENT Classic Peach Station",
       "product_type": "100.0g 箱",
       "country": "ロシア\nモルドバ",
@@ -65339,6 +67251,38 @@
       "price_history": [
         {
           "price": 4800,
+          "date": "2026-03-02",
+          "pdf": "20260302_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DEUS Flower Perfume",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2026-03-02",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2026-03-02",
+          "pdf": "20260302_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DEUS Wood",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2026-03-02",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
           "date": "2026-03-02",
           "pdf": "20260302_kouriteika.pdf"
         }
@@ -65666,6 +67610,54 @@
     },
     {
       "category": "葉巻たばこ",
+      "name": "クザーノ ホンジュラス ハーフコロナ",
+      "product_type": "102mm 1本",
+      "country": "ドミニカ共和国",
+      "current_price": 1050,
+      "last_changed": "2026-03-10",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1050,
+          "date": "2026-03-10",
+          "pdf": "20260306_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "クザーノ ホンジュラス ロブスト",
+      "product_type": "127mm 1本",
+      "country": "ドミニカ共和国",
+      "current_price": 1500,
+      "last_changed": "2026-03-10",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1500,
+          "date": "2026-03-10",
+          "pdf": "20260306_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "クザーノ ホンジュラス チャーチル",
+      "product_type": "178mm 1本",
+      "country": "ドミニカ共和国",
+      "current_price": 1750,
+      "last_changed": "2026-03-10",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1750,
+          "date": "2026-03-10",
+          "pdf": "20260306_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
       "name": "ダビドフ ロイヤルリリース ロブスト",
       "product_type": "140mm 1本",
       "country": "ドミニカ共和国",
@@ -65981,7 +67973,18 @@
           "price": 1500,
           "date": "2026-03-13",
           "pdf": "20260313_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE BLOODY ORANGE",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2026-03-13",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 4400,
           "date": "2026-03-13",
@@ -66039,40 +68042,8 @@
     },
     {
       "category": "葉巻たばこ",
-      "name": "クラブマスター・ミニ・スーペリア",
-      "product_type": "・バニラ 67mm 20本 缶",
-      "country": "ドイツ",
-      "current_price": 1050,
-      "last_changed": "2026-04-01",
-      "discontinued": false,
-      "price_history": [
-        {
-          "price": 1050,
-          "date": "2026-04-01",
-          "pdf": "20260319_kouriteikahenkou.pdf"
-        }
-      ]
-    },
-    {
-      "category": "葉巻たばこ",
-      "name": "クラブマスター・ミニ",
-      "product_type": "・バニラ・フィルター 70mm 20本 箱",
-      "country": "ドイツ",
-      "current_price": 1150,
-      "last_changed": "2026-03-19",
-      "discontinued": false,
-      "price_history": [
-        {
-          "price": 1150,
-          "date": "2026-03-19",
-          "pdf": "20260319_kouriteikahenkou.pdf"
-        }
-      ]
-    },
-    {
-      "category": "葉巻たばこ",
-      "name": "チャズ",
-      "product_type": "・シガリロ 100mm 20本 箱",
+      "name": "チャズ・シガリロ",
+      "product_type": "100mm 20本 箱",
       "country": "ドイツ",
       "current_price": 2000,
       "last_changed": "2026-03-19",
@@ -66082,12 +68053,34 @@
           "price": 2000,
           "date": "2026-03-19",
           "pdf": "20260319_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "チャズ・シガロス・コルトス",
+      "product_type": "75mm 10本 箱",
+      "country": "ドイツ",
+      "current_price": 1400,
+      "last_changed": "2026-03-19",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 1400,
           "date": "2026-03-19",
           "pdf": "20260319_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "チャズ・シガロス",
+      "product_type": "105mm 5本 箱",
+      "country": "ドイツ",
+      "current_price": 930,
+      "last_changed": "2026-03-19",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 930,
           "date": "2026-03-19",
@@ -66097,8 +68090,8 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "フランドリア",
-      "product_type": "・ブラック 25.0g パウチ",
+      "name": "フランドリア・ブラック",
+      "product_type": "25.0g パウチ",
       "country": "ベルギー",
       "current_price": 760,
       "last_changed": "2026-03-19",
@@ -66106,22 +68099,6 @@
       "price_history": [
         {
           "price": 760,
-          "date": "2026-03-19",
-          "pdf": "20260319_kouriteikahenkou.pdf"
-        }
-      ]
-    },
-    {
-      "category": "加熱式たばこ",
-      "name": "H.O.T.",
-      "product_type": "レッド 1.0g 1本",
-      "country": "アメリカ合衆国",
-      "current_price": 560,
-      "last_changed": "2026-03-19",
-      "discontinued": false,
-      "price_history": [
-        {
-          "price": 560,
           "date": "2026-03-19",
           "pdf": "20260319_kouriteikahenkou.pdf"
         }
@@ -66192,25 +68169,9 @@
       ]
     },
     {
-      "category": "紙巻たばこ",
-      "name": "ラッキー・ストライク・ブラック・シリーズ",
-      "product_type": "・チルベリー・1・100 FSK 20本 ハードパック",
-      "country": "大韓民国\nアメリカ合衆国",
-      "current_price": 450,
-      "last_changed": "2026-05-01",
-      "discontinued": false,
-      "price_history": [
-        {
-          "price": 450,
-          "date": "2026-05-01",
-          "pdf": "20260324_kouriteikahenkou.pdf"
-        }
-      ]
-    },
-    {
       "category": "かぎたばこ",
-      "name": "ベロ",
-      "product_type": "・アイシー・ベリーズ・インテンス 15個 缶",
+      "name": "ベロ・アイシー・ベリーズ・インテンス",
+      "product_type": "15個 缶",
       "country": "パキスタン",
       "current_price": 360,
       "last_changed": "2026-03-24",
@@ -66225,8 +68186,8 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "チェ",
-      "product_type": "・シャグ (25) 25.0g パウチ",
+      "name": "チェ・シャグ (25)",
+      "product_type": "25.0g パウチ",
       "country": "ルクセンブルク",
       "current_price": 700,
       "last_changed": "2026-06-01",
@@ -66236,7 +68197,18 @@
           "price": 700,
           "date": "2026-06-01",
           "pdf": "20260330_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "チェ・シャグ100g缶",
+      "product_type": "100.0g 缶",
+      "country": "ルクセンブルク",
+      "current_price": 2730,
+      "last_changed": "2026-03-30",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 2730,
           "date": "2026-03-30",
@@ -66246,8 +68218,8 @@
     },
     {
       "category": "紙巻たばこ",
-      "name": "ブラックデビル",
-      "product_type": "・オリジナル F85mm 20本 ハードパック",
+      "name": "ブラックデビル・オリジナル",
+      "product_type": "F85mm 20本 ハードパック",
       "country": "オランダ",
       "current_price": 580,
       "last_changed": "2026-03-30",
@@ -66262,8 +68234,8 @@
     },
     {
       "category": "葉巻たばこ",
-      "name": "エル プルポ",
-      "product_type": "ジ・イール ランセロ 178mm 1本",
+      "name": "エル プルポ ジ・イール ランセロ",
+      "product_type": "178mm 1本",
       "country": "ニカラグア",
       "current_price": 3300,
       "last_changed": "2026-03-30",
@@ -66273,7 +68245,18 @@
           "price": 3300,
           "date": "2026-03-30",
           "pdf": "20260330_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "エル プルポ ザ・スクウィッド サロモン",
+      "product_type": "165mm 1本",
+      "country": "ニカラグア",
+      "current_price": 4000,
+      "last_changed": "2026-03-30",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 4000,
           "date": "2026-03-30",
@@ -66283,8 +68266,8 @@
     },
     {
       "category": "葉巻たばこ",
-      "name": "ビバ・ラ・ヴィーダ",
-      "product_type": "コネチカット ロブスト 127mm 1本",
+      "name": "ビバ・ラ・ヴィーダ コネチカット ロブスト",
+      "product_type": "127mm 1本",
       "country": "ニカラグア",
       "current_price": 3200,
       "last_changed": "2026-03-30",
@@ -66294,7 +68277,18 @@
           "price": 3200,
           "date": "2026-03-30",
           "pdf": "20260330_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "ビバ・ラ・ヴィーダ コネチカット トロ",
+      "product_type": "152mm 1本",
+      "country": "ニカラグア",
+      "current_price": 3400,
+      "last_changed": "2026-03-30",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 3400,
           "date": "2026-03-30",
@@ -66368,8 +68362,8 @@
     },
     {
       "category": "葉巻たばこ",
-      "name": "La Union",
-      "product_type": "My Father para Tatuaje 184mm 1本",
+      "name": "La Union My Father para Tatuaje",
+      "product_type": "184mm 1本",
       "country": "ニカラグア",
       "current_price": 15000,
       "last_changed": "2026-03-30",
@@ -66384,8 +68378,8 @@
     },
     {
       "category": "紙巻たばこ",
-      "name": "ジョーカー",
-      "product_type": "・20 F120mm 20本",
+      "name": "ジョーカー・20",
+      "product_type": "F120mm 20本",
       "country": "スイス",
       "current_price": 630,
       "last_changed": "2026-03-30",
@@ -66416,8 +68410,8 @@
     },
     {
       "category": "葉巻たばこ",
-      "name": "エル ブルヒート",
-      "product_type": "F1 125mm 1本",
+      "name": "エル ブルヒート F1",
+      "product_type": "125mm 1本",
       "country": "ニカラグア",
       "current_price": 1550,
       "last_changed": "2026-04-14",
@@ -66427,7 +68421,18 @@
           "price": 1550,
           "date": "2026-04-14",
           "pdf": "20260410_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "エル ブルヒート F8",
+      "product_type": "110mm 1本",
+      "country": "ニカラグア",
+      "current_price": 1250,
+      "last_changed": "2026-04-10",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 1250,
           "date": "2026-04-10",
@@ -66437,8 +68442,8 @@
     },
     {
       "category": "葉巻たばこ",
-      "name": "アルファンブラ",
-      "product_type": "緑帯 ロブスト 125mm 1本",
+      "name": "アルファンブラ 緑帯 ロブスト",
+      "product_type": "125mm 1本",
       "country": "ニカラグア",
       "current_price": 1650,
       "last_changed": "2026-04-10",
@@ -66448,7 +68453,18 @@
           "price": 1650,
           "date": "2026-04-10",
           "pdf": "20260410_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "アルファンブラ 緑帯 ハーフコロナ",
+      "product_type": "100mm 1本",
+      "country": "ニカラグア",
+      "current_price": 1300,
+      "last_changed": "2026-04-10",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 1300,
           "date": "2026-04-10",
@@ -66474,8 +68490,8 @@
     },
     {
       "category": "紙巻たばこ",
-      "name": "ALISHAN",
-      "product_type": "FANCY AROMA ORANGE BLAST SLIM FSK97mm 20本 ハードパック",
+      "name": "ALISHAN FANCY AROMA ORANGE BLAST SLIM",
+      "product_type": "FSK97mm 20本 ハードパック",
       "country": "台湾",
       "current_price": 600,
       "last_changed": "2026-04-15",
@@ -66485,9 +68501,36 @@
           "price": 600,
           "date": "2026-04-15",
           "pdf": "20260415_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "紙巻たばこ",
+      "name": "ALISHAN MUSE 5 MENTHOL HONEY PEACH SLIM",
+      "product_type": "",
+      "country": "台湾",
+      "current_price": 580,
+      "last_changed": "2026-04-15",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 580,
+          "date": "2026-04-15",
+          "pdf": "20260415_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "紙巻たばこ",
+      "name": "ALISHAN FANCY AROMA HAMI MELON BLAST SLIM",
+      "product_type": "",
+      "country": "台湾",
+      "current_price": 600,
+      "last_changed": "2026-04-15",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 600,
           "date": "2026-04-15",
           "pdf": "20260415_kouriteika.pdf"
         }
@@ -66511,8 +68554,8 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "BONCHE",
-      "product_type": "Lavender 120.0g 瓶",
+      "name": "BONCHE Lavender",
+      "product_type": "120.0g 瓶",
       "country": "ロシア",
       "current_price": 8800,
       "last_changed": "2026-04-17",
@@ -66559,8 +68602,8 @@
     },
     {
       "category": "葉巻たばこ",
-      "name": "ダビドフ プーロ ドミニカーノ",
-      "product_type": "ショートロブスト 115mm 1本",
+      "name": "ダビドフ プーロ ドミニカーノ ショートロブスト",
+      "product_type": "115mm 1本",
       "country": "ドミニカ共和国",
       "current_price": 7000,
       "last_changed": "2026-04-17",
@@ -66570,80 +68613,38 @@
           "price": 7000,
           "date": "2026-04-17",
           "pdf": "20260417_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "ダビドフ プーロ ドミニカーノ コロナ ラルガ",
+      "product_type": "149mm 1本",
+      "country": "ドミニカ共和国",
+      "current_price": 7900,
+      "last_changed": "2026-04-17",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 7900,
           "date": "2026-04-17",
           "pdf": "20260417_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "ダビドフ プーロ ドミニカーノ パーフェクト",
+      "product_type": "140mm 1本",
+      "country": "ドミニカ共和国",
+      "current_price": 8500,
+      "last_changed": "2026-04-17",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 8500,
           "date": "2026-04-17",
           "pdf": "20260417_kouriteika.pdf"
-        }
-      ]
-    },
-    {
-      "category": "加熱式たばこ",
-      "name": "ケント・ネオスティック",
-      "product_type": "・リッチ・タバコ・エックス フィルター付 20本 ハードパック 4.6g",
-      "country": "大韓民国",
-      "current_price": 580,
-      "last_changed": "2026-06-01",
-      "discontinued": false,
-      "price_history": [
-        {
-          "price": 580,
-          "date": "2026-06-01",
-          "pdf": "20260427_kouriteikahenkou.pdf"
-        }
-      ]
-    },
-    {
-      "category": "加熱式たばこ",
-      "name": "ケント・トゥルー",
-      "product_type": "・タバコ・glo hyper用 フィルター付 20本 ハードパック 5.2g",
-      "country": "大韓民国",
-      "current_price": 520,
-      "last_changed": "2026-04-27",
-      "discontinued": false,
-      "price_history": [
-        {
-          "price": 520,
-          "date": "2026-04-27",
-          "pdf": "20260427_kouriteikahenkou.pdf"
-        }
-      ]
-    },
-    {
-      "category": "加熱式たばこ",
-      "name": "ネオ",
-      "product_type": "・マイルド・タバコ・glo hyper用 フィルター付 20本 ハードパック 5.2g",
-      "country": "大韓民国",
-      "current_price": 530,
-      "last_changed": "2026-04-27",
-      "discontinued": false,
-      "price_history": [
-        {
-          "price": 530,
-          "date": "2026-04-27",
-          "pdf": "20260427_kouriteikahenkou.pdf"
-        }
-      ]
-    },
-    {
-      "category": "加熱式たばこ",
-      "name": "ラッキー・ストライク",
-      "product_type": "・メンソール・glo hyper用 フィルター付 20本 ハードパック 5.2g",
-      "country": "大韓民国",
-      "current_price": 480,
-      "last_changed": "2026-04-27",
-      "discontinued": false,
-      "price_history": [
-        {
-          "price": 480,
-          "date": "2026-04-27",
-          "pdf": "20260427_kouriteikahenkou.pdf"
         }
       ]
     },
@@ -66841,8 +68842,8 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "ティム",
-      "product_type": "・シティーライン・No.3 50.0g 缶",
+      "name": "ティム・シティーライン・No.3",
+      "product_type": "50.0g 缶",
       "country": "ドイツ",
       "current_price": 2800,
       "last_changed": "2026-04-27",
@@ -66852,7 +68853,18 @@
           "price": 2800,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ティム・ロンドンブレンド1000",
+      "product_type": "100.0g 缶",
+      "country": "ドイツ",
+      "current_price": 5000,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 5000,
           "date": "2026-04-27",
@@ -66862,8 +68874,8 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "トーベンダンスク",
-      "product_type": "・オリエント 50.0g 缶",
+      "name": "トーベンダンスク・オリエント",
+      "product_type": "50.0g 缶",
       "country": "ドイツ",
       "current_price": 2700,
       "last_changed": "2026-04-27",
@@ -66873,34 +68885,148 @@
           "price": 2700,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "トーベンダンスク・ラタキア・キプロス(Cypern)",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3200,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 3200,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "トーベンダンスク・ケンタッキーUSA",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 2950,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 2950,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "トーベンダンスク・ブラックキャベンディッシュピュア",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 2800,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 2800,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "トーベンダンスク・レッドバージニア・No.3",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 2500,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 2500,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "トーベンダンスク・バージニア1.6ザイール",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 2650,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 2650,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "トーベンダンスク・バージニア・マイソール・レディー・ラブド",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 2800,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2800,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "トーベンダンスク・ルイジアナ・ペリクUSA",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3200,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3200,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "トーベンダンスク・ブラック・キャベンディッシュスイートアロマ",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 2900,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 2900,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "トーベンダンスク・バーレー",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 2800,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2800,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
         }
@@ -67036,8 +69162,8 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "クリスウィル",
-      "product_type": "・ゴールデンネイビーカット",
+      "name": "クリスウィル・ゴールデンネイビーカット",
+      "product_type": "",
       "country": "ドイツ",
       "current_price": 2800,
       "last_changed": "2026-04-27",
@@ -67228,8 +69354,8 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "スリービー",
-      "product_type": "イングリッシュミクスチャー",
+      "name": "スリービー イングリッシュミクスチャー",
+      "product_type": "",
       "country": "ドイツ",
       "current_price": 3100,
       "last_changed": "2026-04-27",
@@ -67239,7 +69365,18 @@
           "price": 3100,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "スリービー オリエンタルミクスチャー",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3200,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 3200,
           "date": "2026-04-27",
@@ -67249,8 +69386,24 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "イエス・コウノウィッチ",
-      "product_type": "T15",
+      "name": "スリービー スコティッシュミクスチャー",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3100,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3100,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "イエス・コウノウィッチ T15",
+      "product_type": "",
       "country": "ドイツ",
       "current_price": 3050,
       "last_changed": "2026-04-27",
@@ -67265,8 +69418,8 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "コモイ",
-      "product_type": "・コーニッシュ ミクスチャー 50.0g 缶",
+      "name": "コモイ・コーニッシュ ミクスチャー",
+      "product_type": "50.0g 缶",
       "country": "ドイツ",
       "current_price": 3300,
       "last_changed": "2026-05-01",
@@ -67276,12 +69429,34 @@
           "price": 3300,
           "date": "2026-05-01",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "コモイ・イングリッシュ ミクスチャー",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3150,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 3150,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "コモイ・アイリッシュ ミクスチャー",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3200,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 3200,
           "date": "2026-04-27",
@@ -67339,45 +69514,15 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "ラットレー",
-      "product_type": "・スリーノギンズ 100.0g 缶",
+      "name": "ラットレー・スリーノギンズ",
+      "product_type": "100.0g 缶",
       "country": "ドイツ",
       "current_price": 5500,
-      "last_changed": "2026-05-01",
+      "last_changed": "2026-04-27",
       "discontinued": false,
       "price_history": [
         {
           "price": 5500,
-          "date": "2026-05-01",
-          "pdf": "20260427_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 5500,
-          "date": "2026-04-27",
-          "pdf": "20260427_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 2850,
-          "date": "2026-04-27",
-          "pdf": "20260427_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 3150,
-          "date": "2026-04-27",
-          "pdf": "20260427_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 5700,
-          "date": "2026-04-27",
-          "pdf": "20260427_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 2950,
-          "date": "2026-04-27",
-          "pdf": "20260427_kouriteikahenkou.pdf"
-        },
-        {
-          "price": 3200,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
         }
@@ -67385,8 +69530,24 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "ロバートマッコーネル",
-      "product_type": "・バーキンロード(50)",
+      "name": "ラットレー・スリーノギンズ(50)",
+      "product_type": "50.0g 缶",
+      "country": "ドイツ",
+      "current_price": 2850,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2850,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・セブンリザーブ",
+      "product_type": "",
       "country": "ドイツ",
       "current_price": 3150,
       "last_changed": "2026-04-27",
@@ -67396,34 +69557,388 @@
           "price": 3150,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・アカウンタンツ",
+      "product_type": "100.0g 缶",
+      "country": "ドイツ",
+      "current_price": 5500,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
-          "price": 3400,
+          "price": 5500,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・アカウンタンツ(50)",
+      "product_type": "50.0g 缶",
+      "country": "ドイツ",
+      "current_price": 2850,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
-          "price": 3050,
+          "price": 2850,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・ブラックマロリー",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3150,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
-          "price": 4150,
+          "price": 3150,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・ブラックバージニア",
+      "product_type": "100.0g 缶",
+      "country": "ドイツ",
+      "current_price": 5500,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 5500,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・ブラックバージニア(50)",
+      "product_type": "50.0g 缶",
+      "country": "ドイツ",
+      "current_price": 2850,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2850,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・ブランクルーニー",
+      "product_type": "100.0g 缶",
+      "country": "ドイツ",
+      "current_price": 5700,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 5700,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・ブランクルーニー(50)",
+      "product_type": "50.0g 缶",
+      "country": "ドイツ",
+      "current_price": 2950,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 2950,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・ダークフレグラント",
+      "product_type": "100.0g 缶",
+      "country": "ドイツ",
+      "current_price": 5500,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
-          "price": 5200,
+          "price": 5500,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・ダークフレグラント(50)",
+      "product_type": "50.0g 缶",
+      "country": "ドイツ",
+      "current_price": 2850,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2850,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・ハローザウインド",
+      "product_type": "100.0g 缶",
+      "country": "ドイツ",
+      "current_price": 5700,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 5700,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・ハローザウインド(50)",
+      "product_type": "50.0g 缶",
+      "country": "ドイツ",
+      "current_price": 2950,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2950,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・ハイランドタージ",
+      "product_type": "100.0g 缶",
+      "country": "ドイツ",
+      "current_price": 5700,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 5700,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・ハイランドタージ(50)",
+      "product_type": "50.0g 缶",
+      "country": "ドイツ",
+      "current_price": 2850,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2850,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・ジャックスミクスチャー",
+      "product_type": "100.0g 缶",
+      "country": "ドイツ",
+      "current_price": 5500,
+      "last_changed": "2026-05-01",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 5500,
+          "date": "2026-05-01",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・ジャックスミクスチャー(50)",
+      "product_type": "50.0g 缶",
+      "country": "ドイツ",
+      "current_price": 2850,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2850,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・マクベス",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3150,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3150,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・マーリンフレイク",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3200,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 3200,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・プロフェッショナル",
+      "product_type": "100.0g 缶",
+      "country": "ドイツ",
+      "current_price": 5500,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 5500,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・プロフェッショナル(50)",
+      "product_type": "50.0g 缶",
+      "country": "ドイツ",
+      "current_price": 2850,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2850,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・レッドライオン",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3150,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3150,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ラットレー・レッドラパリー",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3200,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3200,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ロバートマッコーネル・バーキンロード(50)",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3150,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3150,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ロバートマッコーネル・ブラックフレイク(50)",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3400,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3400,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ロバートマッコーネル・ブティックブレンド(50)",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3050,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3050,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
         }
@@ -67463,8 +69978,120 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "ピュア",
-      "product_type": "・ブラジル 50.0g 缶",
+      "name": "ロバートマッコーネル・ハイゲート(50)",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 4150,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4150,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ロバートマッコーネル・ラタキアミクスチャー1848(50)",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3050,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3050,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ロバートマッコーネル・メリルボーン(50)",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3150,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3150,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ロバートマッコーネル・ノッティンヒル(50)",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3050,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3050,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ロバートマッコーネル・オックスフォードストリート(50)",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 2950,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2950,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ロバートマッコーネル・パディントン(50)",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3050,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3050,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ロバートマッコーネル・ピカデリーサーカス(50)",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 2950,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2950,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ピュア・ブラジル",
+      "product_type": "50.0g 缶",
       "country": "ドイツ",
       "current_price": 3050,
       "last_changed": "2026-05-01",
@@ -67474,12 +70101,34 @@
           "price": 3050,
           "date": "2026-05-01",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ピュア・ラタキア",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3150,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 3150,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ピュア・オリエント",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3050,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 3050,
           "date": "2026-04-27",
@@ -67489,8 +70138,40 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "サビネリ",
-      "product_type": "・アロマ",
+      "name": "ロバートマッコーネル・レディラブド(50)",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3150,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3150,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ロバートマッコーネル・レッドローゼス",
+      "product_type": "100.0g 缶",
+      "country": "ドイツ",
+      "current_price": 5200,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 5200,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ロバートマッコーネル・スコティッシュフレイク",
+      "product_type": "50.0g 缶",
       "country": "ドイツ",
       "current_price": 3200,
       "last_changed": "2026-04-27",
@@ -67500,7 +70181,50 @@
           "price": 3200,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ロバートマッコーネル・シェイクスピア(50)",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3150,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3150,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "サビネリ・アロマ",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3200,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3200,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "サビネリ・レオナルド",
+      "product_type": "100.0g 缶",
+      "country": "ドイツ",
+      "current_price": 5400,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 5400,
           "date": "2026-04-27",
@@ -67510,8 +70234,8 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "ソラーニ",
-      "product_type": "・エイジドバーレフレイク656 50.0g 缶",
+      "name": "ソラーニ・エイジドバーレフレイク656",
+      "product_type": "50.0g 缶",
       "country": "ドイツ",
       "current_price": 3200,
       "last_changed": "2026-04-27",
@@ -67521,9 +70245,36 @@
           "price": 3200,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ソラーニ・ゴールド779",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3150,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 3150,
+          "date": "2026-04-27",
+          "pdf": "20260427_kouriteikahenkou.pdf"
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ソラーニ・スイートミステリー113",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 3200,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3200,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
         }
@@ -67659,8 +70410,8 @@
     },
     {
       "category": "葉巻たばこ",
-      "name": "タバカレラ",
-      "product_type": "・コロナス 140mm 1本",
+      "name": "タバカレラ・コロナス",
+      "product_type": "140mm 1本",
       "country": "フィリピン",
       "current_price": 500,
       "last_changed": "2026-04-27",
@@ -67670,27 +70421,82 @@
           "price": 500,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "タバカレラ・ダブルコロナス",
+      "product_type": "215mm 1本",
+      "country": "フィリピン",
+      "current_price": 930,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 930,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "タバカレラ・ハーフコロナス",
+      "product_type": "105mm 1本",
+      "country": "フィリピン",
+      "current_price": 330,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 330,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "タバカレラ・ピラミッド",
+      "product_type": "160mm 1本",
+      "country": "フィリピン",
+      "current_price": 820,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 820,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "タバカレラ・ロブスト",
+      "product_type": "130mm 1本",
+      "country": "フィリピン",
+      "current_price": 650,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 650,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "タバカレラ・エルコンデ",
+      "product_type": "172mm 1本",
+      "country": "フィリピン",
+      "current_price": 520,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 520,
           "date": "2026-04-27",
@@ -67700,8 +70506,8 @@
     },
     {
       "category": "葉巻たばこ",
-      "name": "ドンファン",
-      "product_type": "・コロナ 140mm 1本",
+      "name": "ドンファン・コロナ",
+      "product_type": "140mm 1本",
       "country": "フィリピン",
       "current_price": 860,
       "last_changed": "2026-05-01",
@@ -67711,12 +70517,34 @@
           "price": 860,
           "date": "2026-05-01",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "ドンファン・ハーフコロナ",
+      "product_type": "105mm 1本",
+      "country": "フィリピン",
+      "current_price": 580,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 580,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "ドンファン・チャーチル",
+      "product_type": "178mm 1本",
+      "country": "フィリピン",
+      "current_price": 1250,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 1250,
           "date": "2026-04-27",
@@ -67726,8 +70554,8 @@
     },
     {
       "category": "葉巻たばこ",
-      "name": "ブラジル・トルレリエ",
-      "product_type": "・ミニ 90mm 10本",
+      "name": "ブラジル・トルレリエ・ミニ",
+      "product_type": "90mm 10本",
       "country": "ドイツ",
       "current_price": 2100,
       "last_changed": "2026-04-27",
@@ -67737,12 +70565,34 @@
           "price": 2100,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "ブラジル・トルレリエ・エルドラド",
+      "product_type": "136mm 10本",
+      "country": "ドイツ",
+      "current_price": 2600,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 2600,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteikahenkou.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "ブラジル・トルレリエ・バヤッツォ",
+      "product_type": "108mm 50本",
+      "country": "ドイツ",
+      "current_price": 15500,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 15500,
           "date": "2026-04-27",
@@ -67768,8 +70618,8 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "ファウエン",
-      "product_type": "・オックスフォードブレンド 50.0g 缶",
+      "name": "ファウエン・オックスフォードブレンド",
+      "product_type": "50.0g 缶",
       "country": "ドイツ",
       "current_price": 3500,
       "last_changed": "2026-04-27",
@@ -67784,8 +70634,8 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "ジャーマイン",
-      "product_type": "・リッチ ダークフレーク",
+      "name": "ジャーマイン・リッチ ダークフレーク",
+      "product_type": "",
       "country": "英国",
       "current_price": 2800,
       "last_changed": "2026-04-27",
@@ -67800,8 +70650,8 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "JiBiAR",
-      "product_type": "Cappuccino 50.0g 箱",
+      "name": "JiBiAR Cappuccino",
+      "product_type": "50.0g 箱",
       "country": "トルコ",
       "current_price": 1750,
       "last_changed": "2026-04-27",
@@ -67832,8 +70682,8 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "ペッセカヌー",
-      "product_type": "・イースト",
+      "name": "ペッセカヌー・イースト",
+      "product_type": "",
       "country": "トルコ",
       "current_price": 3200,
       "last_changed": "2026-04-27",
@@ -67848,8 +70698,8 @@
     },
     {
       "category": "葉巻たばこ",
-      "name": "シュスター ブラジル",
-      "product_type": "・クラブ 92mm 12本",
+      "name": "シュスター ブラジル・クラブ",
+      "product_type": "92mm 12本",
       "country": "ドイツ",
       "current_price": 3700,
       "last_changed": "2026-04-27",
@@ -67859,7 +70709,18 @@
           "price": 3700,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "シュスター ブラジル・プリトス",
+      "product_type": "114mm 10本",
+      "country": "ドイツ",
+      "current_price": 3900,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 3900,
           "date": "2026-04-27",
@@ -67885,8 +70746,8 @@
     },
     {
       "category": "パイプたばこ",
-      "name": "DARKSIDE",
-      "product_type": "MARY JANE 2.0 30.0g 箱",
+      "name": "DARKSIDE MARY JANE 2.0",
+      "product_type": "30.0g 箱",
       "country": "ロシア",
       "current_price": 1500,
       "last_changed": "2026-04-27",
@@ -67896,7 +70757,18 @@
           "price": 1500,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteika.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DARKSIDE YAGODA MALINA",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2026-04-27",
+      "discontinued": false,
+      "price_history": [
         {
           "price": 4400,
           "date": "2026-04-27",
@@ -67906,8 +70778,8 @@
     },
     {
       "category": "葉巻たばこ",
-      "name": "キース・マイルド",
-      "product_type": "・20 FK 20本 ハードパック",
+      "name": "キース・マイルド・20",
+      "product_type": "FK 20本 ハードパック",
       "country": "日本",
       "current_price": 570,
       "last_changed": "2026-04-27",
@@ -67917,6 +70789,22 @@
           "price": 570,
           "date": "2026-04-27",
           "pdf": "20260427_kouriteika.pdf"
+        }
+      ]
+    },
+    {
+      "category": "加熱式たばこ",
+      "name": "ブレンズ・バランスド・クラシックス",
+      "product_type": "F45 20スティック ハードパック 3.2g",
+      "country": "ポーランド",
+      "current_price": 570,
+      "last_changed": "2026-04-30",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 570,
+          "date": "2026-04-30",
+          "pdf": "20260430_kouriteika.pdf"
         }
       ]
     }

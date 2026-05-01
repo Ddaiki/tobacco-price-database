@@ -179,6 +179,21 @@ def normalize_price(s: str) -> int | None:
         return None
 
 
+def combine_brand_variant(brand: str, variant: str) -> str:
+    """
+    銘柄名と品名（バリアント）を結合。
+    variant が '・' で始まる場合は直接結合 ('ブランド・バリアント')、
+    そうでなければスペース結合 ('Brand Flavor')。
+    """
+    brand = norm(brand)
+    variant = norm(variant)
+    if not variant:
+        return brand
+    if variant.startswith("・"):
+        return brand + variant
+    return (brand + " " + variant).strip()
+
+
 def normalize_category(s: str) -> str:
     s = norm(s)
     for kw in CATEGORY_KEYWORDS:
@@ -283,15 +298,15 @@ def parse_pdf_table(pdf_bytes: bytes, approval_date: str, is_henkou: bool) -> li
 
                     if is_henkou and n == 8:
                         # 変更PDF新フォーマット: [区分, 銘柄名, 品名, 製品区分, 製造国, 現行価格, 変更価格, 変更日]
+                        # 銘柄名(cells[1]) + 品名(cells[2]) を結合して一意な名称にする
                         category = raw_category or last_category
                         if category not in CATEGORY_KEYWORDS:
                             continue
-                        name = raw_name or last_name
-                        if not name:
+                        brand = raw_name or last_name
+                        if not brand:
                             continue
-                        flavor = norm(cells[2])
-                        size = norm(re.sub(r"\s+", " ", cells[3]))
-                        product_type = " ".join(filter(None, [flavor, size]))
+                        name = combine_brand_variant(brand, norm(cells[2]))
+                        product_type = norm(re.sub(r"\s+", " ", cells[3]))
                         country = raw_country or last_country
                         price = normalize_price(cells[6])  # 変更小売定価を使用
                         if price is None:
@@ -315,15 +330,15 @@ def parse_pdf_table(pdf_bytes: bytes, approval_date: str, is_henkou: bool) -> li
 
                     elif not is_henkou and n == 6:
                         # 通常PDF新フォーマット: [区分, 銘柄名, 品名, 製品区分, 製造国, 価格]
+                        # 銘柄名(cells[1]) + 品名(cells[2]) を結合して一意な名称にする
                         category = raw_category or last_category
                         if category not in CATEGORY_KEYWORDS:
                             continue
-                        name = raw_name or last_name
-                        if not name:
+                        brand = raw_name or last_name
+                        if not brand:
                             continue
-                        flavor = norm(cells[2])
-                        size = norm(re.sub(r"\s+", " ", cells[3]))
-                        product_type = " ".join(filter(None, [flavor, size]))
+                        name = combine_brand_variant(brand, norm(cells[2]))
+                        product_type = norm(re.sub(r"\s+", " ", cells[3]))
                         country = raw_country or last_country
                         price = normalize_price(cells[5])
                         if price is None:
@@ -370,9 +385,13 @@ def make_product_key(p: dict) -> str:
 
 def merge_into_db(data: dict, new_products: list[dict], pdf_filename: str) -> int:
     existing = {make_product_key(p): p for p in data["products"]}
-    # 銘柄名+カテゴリで製品区分なしマッチング (変更PDFで製品区分が微妙にずれる場合に対応)
-    existing_by_name = {}
-    for key, p in existing.items():
+
+    # 銘柄名+カテゴリ フォールバック用インデックス (既存DBのみ; ループ中は更新しない)
+    # 用途: 変更PDFで product_type の表記が微妙に異なる場合のマッチング
+    # ※ 同一PDFに同じ銘柄の複数バリアントが含まれる場合の誤マージを防ぐため
+    #   ループ中に新規追加した製品は existing_by_name に入れない。
+    existing_by_name: dict[str, dict] = {}
+    for p in data["products"]:
         name_key = f"{p.get('category','')}|{p.get('name','')}"
         if name_key not in existing_by_name:
             existing_by_name[name_key] = p
@@ -383,8 +402,19 @@ def merge_into_db(data: dict, new_products: list[dict], pdf_filename: str) -> in
         key = make_product_key(np)
         name_key = f"{np.get('category','')}|{np.get('name','')}"
 
-        # 完全キーマッチ優先、次に名前+カテゴリマッチ
-        ep = existing.get(key) or existing_by_name.get(name_key)
+        # 1. 完全キー（区分|銘柄名|製品区分）でマッチ
+        ep = existing.get(key)
+
+        # 2. 名前キーフォールバック: product_type が互換的な場合のみ使用
+        #    (旧フォーマット→新フォーマットで product_type の重量記述が変わった場合に対応)
+        if ep is None:
+            ep_by_name = existing_by_name.get(name_key)
+            if ep_by_name is not None:
+                ep_pt = ep_by_name.get("product_type", "")
+                np_pt = np.get("product_type", "")
+                # 一方が空か、一方が他方に含まれる場合のみフォールバックを使用
+                if not ep_pt or not np_pt or ep_pt in np_pt or np_pt in ep_pt:
+                    ep = ep_by_name
 
         if ep is not None:
             already = any(
@@ -417,7 +447,7 @@ def merge_into_db(data: dict, new_products: list[dict], pdf_filename: str) -> in
                 }],
             }
             existing[key] = new_entry
-            existing_by_name[name_key] = new_entry
+            # existing_by_name は更新しない (同一PDF内の別バリアントとの誤マージ防止)
             changed += 1
 
     data["products"] = list(existing.values())

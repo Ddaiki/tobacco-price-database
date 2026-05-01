@@ -216,17 +216,66 @@ let currentDiscontinued = false;
 let currentSort = 'name';
 let searchQuery = '';
 
-const SHISHA_COUNTRIES = ['アラブ首長国連邦', 'ヨルダン', 'トルコ', 'ロシア', 'エジプト', 'レバノン', 'サウジ'];
+// === パイプたばこ シーシャ/西洋パイプ 分類ロジック (3段階) ===
+
+// Stage 1: 製造国による確定分類
+const SHISHA_COUNTRIES   = ['アラブ首長国連邦', 'ヨルダン', 'トルコ', 'エジプト', 'ロシア', 'インド', 'レバノン', 'サウジ'];
+const WESTERN_COUNTRIES  = ['デンマーク', 'イギリス', '英国', 'アイルランド', 'ベルギー', 'オランダ', 'スイス', 'スウェーデン'];
+
+// Stage 2: ブランド名ホワイトリスト (シーシャ確定)
+const SHISHA_BRANDS = [
+  // 英字表記 (大文字マッチ)
+  'AL FAKHER','ALFAKHER','DOZAJ','DARKSIDE','DARK SIDE','AFZAL',
+  'FUMARI','AZURE','TRIFECTA','SOCIAL SMOKE','STARBUZZ','STAR BUZZ',
+  'SERBETLI','DEBAJ','NAKHLA','AL WAHA','BUTA','MALAKI','LIRRA',
+  'TANGIERS','HAZE','ODUMAN','REVOSHI','SEBERO','ELEMENT','MUSTHAVE',
+  'ZODIAC','JIBAR','JIBIAR','LAVOO','CHAOS','DUFT','ARGELINI',
+  'SHISHA KARTEL','ADALYA','MUST HAVE','CONSUME','BLUE MIST',
+  'TWO APPLE','WHITE FOX','CHABACCO','PARADISE','KRAKEN',
+  // カナ表記
+  'アルファーヘル','ドザジ','ダークサイド','アフザル','フマリ',
+  'スターバズ','セルベトリ','デバジ','ナハラ','アルワハ','マラキ','リラ',
+];
+
+// Stage 3a: シーシャ判定キーワード
+const SHISHA_KW = [
+  'ICE','MINT','MELON','APPLE','GRAPE','BERRY','LOVE','BLUE','FIZZ',
+  'MOJITO','FLAVORED','MOLASSES','LEMON','PEACH','MANGO','STRAWBERRY',
+  'WATERMELON','BANANA','COLA','ORANGE','CHERRY','BLUEBERRY','PINEAPPLE',
+  'GUAVA','PASSION','COCONUT','VANILLA CREAM','DOUBLE',
+];
+// Stage 3b: 西洋パイプ判定キーワード
+const PIPE_KW = [
+  'MIXTURE','BLEND','FLAKE','CUT','CAVENDISH','LATAKIA','NAVY','ROYAL',
+  'VIRGINIA','BURLEY','ORIENTAL','ENGLISH','SCOTTISH','AROMATIC',
+  'シャグ','フレイク','ミクスチャー','ブレンド','オリエント','バージニア',
+];
 
 function getPipeSubcat(p) {
   if (p.category !== 'パイプたばこ') return null;
+
   const country = p.country || '';
-  if (country === 'ドイツ') {
-    const m = (p.product_type || '').match(/(\d+\.?\d*)\s*g/);
-    return parseFloat(m ? m[1] : 0) >= 50 ? 'シーシャ' : '西洋パイプ';
-  }
+  const nameUp = (p.name + ' ' + (p.product_type || '')).toUpperCase();
+
+  // Stage 1: 製造国で確定
   if (SHISHA_COUNTRIES.some(c => country.includes(c))) return 'シーシャ';
-  return '西洋パイプ';
+  if (WESTERN_COUNTRIES.some(c => country.includes(c))) return '西洋パイプ';
+
+  // 混在国 (アメリカ, ドイツ, 日本, ラオス等) → Stage 2/3 へ
+  // Stage 2: ブランド名ホワイトリスト
+  if (SHISHA_BRANDS.some(b => nameUp.includes(b.toUpperCase()))) return 'シーシャ';
+
+  // Stage 3: キーワード判定
+  if (PIPE_KW.some(k => nameUp.includes(k))) return '西洋パイプ';
+  if (SHISHA_KW.some(k => nameUp.includes(k))) return 'シーシャ';
+
+  // 重量フォールバック (100g+ はシーシャ多数)
+  const m = (p.product_type || p.name || '').match(/(\d+\.?\d*)\s*g/);
+  const w = m ? parseFloat(m[1]) : 0;
+  if (w >= 100) return 'シーシャ';
+  if (w > 0 && w <= 30) return '西洋パイプ';
+
+  return '西洋パイプ'; // デフォルト
 }
 
 async function loadData() {
