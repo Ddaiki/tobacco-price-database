@@ -216,15 +216,17 @@ let currentDiscontinued = false;
 let currentSort = 'name';
 let searchQuery = '';
 
-// === パイプたばこ シーシャ/西洋パイプ 分類ロジック (3段階) ===
+// === パイプたばこ シーシャ/西洋パイプ 分類ロジック ===
 
-// Stage 1: 製造国による確定分類
-const SHISHA_COUNTRIES   = ['アラブ首長国連邦', 'ヨルダン', 'トルコ', 'エジプト', 'ロシア', 'インド', 'レバノン', 'サウジ'];
-const WESTERN_COUNTRIES  = ['デンマーク', 'イギリス', '英国', 'アイルランド', 'ベルギー', 'オランダ', 'スイス', 'スウェーデン'];
+// 製造国: シーシャほぼ確定
+const SHISHA_COUNTRIES  = ['アラブ首長国連邦', 'ヨルダン', 'トルコ', 'エジプト', 'ロシア', 'インド', 'レバノン', 'サウジ'];
+// 製造国: 西洋パイプほぼ確定 (ドイツは JBR 等のシーシャブランドもあるが、ブランドチェックを先行させる)
+const WESTERN_COUNTRIES = ['デンマーク', 'イギリス', '英国', 'アイルランド', 'ベルギー', 'オランダ', 'スイス', 'スウェーデン', 'ドイツ'];
 
-// Stage 2: ブランド名ホワイトリスト (シーシャ確定)
+// シーシャブランド確定リスト (ブランドチェックを製造国より優先)
+// ドイツ製 JBR 等を正しく判定するために先行チェック
 const SHISHA_BRANDS = [
-  // 英字表記 (大文字マッチ)
+  // 確認済みブランド (英字)
   'AL FAKHER','ALFAKHER','DOZAJ','DARKSIDE','DARK SIDE','AFZAL',
   'FUMARI','AZURE','TRIFECTA','SOCIAL SMOKE','STARBUZZ','STAR BUZZ',
   'SERBETLI','DEBAJ','NAKHLA','AL WAHA','BUTA','MALAKI','LIRRA',
@@ -232,23 +234,25 @@ const SHISHA_BRANDS = [
   'ZODIAC','JIBAR','JIBIAR','LAVOO','CHAOS','DUFT','ARGELINI',
   'SHISHA KARTEL','ADALYA','MUST HAVE','CONSUME','BLUE MIST',
   'TWO APPLE','WHITE FOX','CHABACCO','PARADISE','KRAKEN',
+  'MAZAYA','HOOKAFINA','TOKYO SHISHA','JBR',   // 追加: 確認済み
+  'ROYAL SMOKIN','ROYAL SMOKIN',
   // カナ表記
   'アルファーヘル','ドザジ','ダークサイド','アフザル','フマリ',
   'スターバズ','セルベトリ','デバジ','ナハラ','アルワハ','マラキ','リラ',
+  'ロイヤルスモーキン',
 ];
 
-// Stage 3a: シーシャ判定キーワード
-const SHISHA_KW = [
-  'ICE','MINT','MELON','APPLE','GRAPE','BERRY','LOVE','BLUE','FIZZ',
-  'MOJITO','FLAVORED','MOLASSES','LEMON','PEACH','MANGO','STRAWBERRY',
-  'WATERMELON','BANANA','COLA','ORANGE','CHERRY','BLUEBERRY','PINEAPPLE',
-  'GUAVA','PASSION','COCONUT','VANILLA CREAM','DOUBLE',
-];
-// Stage 3b: 西洋パイプ判定キーワード
+// 西洋パイプ判定キーワード
 const PIPE_KW = [
-  'MIXTURE','BLEND','FLAKE','CUT','CAVENDISH','LATAKIA','NAVY','ROYAL',
+  'MIXTURE','BLEND','FLAKE','CUT','CAVENDISH','LATAKIA','NAVY',
   'VIRGINIA','BURLEY','ORIENTAL','ENGLISH','SCOTTISH','AROMATIC',
   'シャグ','フレイク','ミクスチャー','ブレンド','オリエント','バージニア',
+];
+
+// シーシャ判定キーワード (ブランドリスト・製造国で確定できない場合の補完)
+const SHISHA_KW = [
+  'HOOKAH','MOLASSES','FLAVORED',
+  'ICE','MOJITO','FIZZ',
 ];
 
 function getPipeSubcat(p) {
@@ -257,23 +261,17 @@ function getPipeSubcat(p) {
   const country = p.country || '';
   const nameUp = (p.name + ' ' + (p.product_type || '')).toUpperCase();
 
-  // Stage 1: 製造国で確定
+  // Step 1: ブランド名で先に確定 (製造国より優先)
+  // 理由: ドイツ製 JBR のようにブランドがシーシャでも国が西洋系の場合に対応
+  if (SHISHA_BRANDS.some(b => nameUp.includes(b.toUpperCase()))) return 'シーシャ';
+
+  // Step 2: 製造国で確定
   if (SHISHA_COUNTRIES.some(c => country.includes(c))) return 'シーシャ';
   if (WESTERN_COUNTRIES.some(c => country.includes(c))) return '西洋パイプ';
 
-  // 混在国 (アメリカ, ドイツ, 日本, ラオス等) → Stage 2/3 へ
-  // Stage 2: ブランド名ホワイトリスト
-  if (SHISHA_BRANDS.some(b => nameUp.includes(b.toUpperCase()))) return 'シーシャ';
-
-  // Stage 3: キーワード判定
+  // Step 3: キーワード判定 (USA, ラオス, 日本等の残余)
   if (PIPE_KW.some(k => nameUp.includes(k))) return '西洋パイプ';
   if (SHISHA_KW.some(k => nameUp.includes(k))) return 'シーシャ';
-
-  // 重量フォールバック (100g+ はシーシャ多数)
-  const m = (p.product_type || p.name || '').match(/(\d+\.?\d*)\s*g/);
-  const w = m ? parseFloat(m[1]) : 0;
-  if (w >= 100) return 'シーシャ';
-  if (w > 0 && w <= 30) return '西洋パイプ';
 
   return '西洋パイプ'; // デフォルト
 }
