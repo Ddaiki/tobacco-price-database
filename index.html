@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>製造たばこ 小売定価データベース</title>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S7X29LJ22P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S7X29LJ22P');
+</script>
 <style>
 * { box-sizing: border-box; }
 body { margin: 0; font-family: 'Hiragino Sans', 'Meiryo', sans-serif; background: #f4f6f8; color: #212121; }
@@ -322,9 +330,9 @@ td { padding: 9px 10px; vertical-align: middle; }
     </div>
 
     <div id="notify-success" class="notify-success" style="display:none">
-      <div class="success-icon">✅</div>
-      <h3>登録が完了しました</h3>
-      <p>条件に合う価格更新があったときにメールをお送りします</p>
+      <div class="success-icon">📧</div>
+      <h3>確認メールを送信しました</h3>
+      <p>メール内のリンクをクリックして本登録を完了してください</p>
     </div>
   </div>
 </div>
@@ -539,6 +547,7 @@ function openModal(p) {
 
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+  gtag('event', 'view_item', { item_name: p.name, item_category: p.category, price: p.current_price });
 }
 
 function closeModal() {
@@ -547,9 +556,17 @@ function closeModal() {
 }
 
 // Event listeners
+let _searchTimer;
 document.getElementById('search-input').addEventListener('input', e => {
   searchQuery = e.target.value.trim();
   applyFilters();
+  // 1秒間入力が止まったらGA4に送信（2文字以上）
+  clearTimeout(_searchTimer);
+  if (searchQuery.length >= 2) {
+    _searchTimer = setTimeout(() => {
+      gtag('event', 'search', { search_term: searchQuery });
+    }, 1000);
+  }
 });
 document.getElementById('clear-btn').addEventListener('click', () => {
   document.getElementById('search-input').value = '';
@@ -569,14 +586,17 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
       currentDiscontinued = true;
       currentCat = '';
       currentSubcat = '';
+      gtag('event', 'filter_category', { filter_name: '廃盤のみ' });
     } else if (btn.dataset.subcat) {
       currentDiscontinued = false;
       currentCat = '';
       currentSubcat = btn.dataset.subcat;
+      gtag('event', 'filter_category', { filter_name: btn.dataset.subcat });
     } else {
       currentDiscontinued = false;
       currentCat = btn.dataset.cat || '';
       currentSubcat = '';
+      gtag('event', 'filter_category', { filter_name: btn.dataset.cat || 'すべて' });
     }
     applyFilters();
   });
@@ -599,27 +619,22 @@ function getCheckedValues(containerId) {
 }
 
 async function registerSubscriber(email, categoryFilters, countryFilters, nameKeywords) {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/subscribers`, {
+  // register_subscriber RPC で登録（重複はサイレント処理）
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/register_subscriber`, {
     method: 'POST',
     headers: {
       'apikey': SUPABASE_ANON,
       'Authorization': `Bearer ${SUPABASE_ANON}`,
       'Content-Type': 'application/json',
-      'Prefer': 'return=minimal',
     },
     body: JSON.stringify({
-      email,
-      category_filters: categoryFilters,
-      country_filters:  countryFilters,
-      name_keywords:    nameKeywords,
+      p_email:            email,
+      p_category_filters: categoryFilters,
+      p_country_filters:  countryFilters,
+      p_name_keywords:    nameKeywords,
     }),
   });
   if (!res.ok) {
-    const body = await res.json().catch(() => ({}));
-    // 重複メール (unique constraint)
-    if (res.status === 409 || (body.code && body.code === '23505')) {
-      throw new Error('このメールアドレスはすでに登録されています');
-    }
     throw new Error('登録に失敗しました。しばらくしてからお試しください');
   }
 }
@@ -637,28 +652,51 @@ async function unsubscribeByToken(token) {
   return res.ok;
 }
 
-// 配信停止URLパラメーター処理
+// URLパラメーター処理（本登録確認・配信停止）
 (async () => {
-  const params = new URLSearchParams(location.search);
-  const token  = params.get('unsubscribe');
-  if (!token) return;
+  const params   = new URLSearchParams(location.search);
+  const confirm  = params.get('confirm');
+  const unsub    = params.get('unsubscribe');
+  if (!confirm && !unsub) return;
 
-  const overlay = document.getElementById('notify-overlay');
-  const notice  = document.getElementById('notify-unsub-notice');
+  const overlay  = document.getElementById('notify-overlay');
+  const notice   = document.getElementById('notify-unsub-notice');
   const formWrap = document.getElementById('notify-form-wrap');
 
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
   formWrap.style.display = 'none';
   notice.style.display = '';
-  notice.textContent = '配信停止処理中...';
 
-  const ok = await unsubscribeByToken(token);
-  notice.textContent = ok
-    ? '✅ 配信停止が完了しました。今後はメールをお送りしません。'
-    : '⚠️ 配信停止処理に失敗しました。すでに削除済みの可能性があります。';
+  if (confirm) {
+    notice.textContent = '本登録処理中...';
+    try {
+      const res = await fetch(
+        `${SUPABASE_URL}/functions/v1/confirm-subscriber`,
+        {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_ANON,
+            'Authorization': `Bearer ${SUPABASE_ANON}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token: confirm }),
+        }
+      );
+      notice.textContent = res.ok
+        ? '✅ 本登録が完了しました。価格更新時にメールをお送りします。'
+        : '⚠️ 処理に失敗しました。リンクが無効または期限切れの可能性があります。';
+    } catch {
+      notice.textContent = '⚠️ 通信エラーが発生しました。';
+    }
+  } else if (unsub) {
+    notice.textContent = '配信停止処理中...';
+    const ok = await unsubscribeByToken(unsub);
+    notice.textContent = ok
+      ? '✅ 配信停止が完了しました。今後はメールをお送りしません。'
+      : '⚠️ 配信停止処理に失敗しました。すでに削除済みの可能性があります。';
+  }
 
-  // URLからパラメーターを除去
   history.replaceState(null, '', location.pathname);
 })();
 
