@@ -92,6 +92,23 @@ td { padding: 9px 10px; vertical-align: middle; }
 .discontinued-mark { font-size: 10px; color: #e53935; margin-left: 4px; }
 .name-cell { max-width: 240px; line-height: 1.4; }
 .name-cell small { display: block; color: #888; font-size: 11px; }
+.brand-tag {
+  color: #1a237e; cursor: pointer; font-weight: 600; font-size: 11px;
+}
+.brand-tag:hover { text-decoration: underline; }
+.brand-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 10px; background: #e8eaf6; border-radius: 16px;
+  font-size: 12px; color: #1a237e; font-weight: 600;
+}
+.brand-chip button {
+  background: none; border: none; padding: 0; cursor: pointer;
+  font-size: 14px; color: #5c6bc0; line-height: 1;
+}
+#brand-filter-row {
+  padding: 6px 12px; background: #f0f4ff; border-bottom: 1px solid #c5cae9;
+  display: none; align-items: center; gap: 8px; font-size: 12px; color: #666;
+}
 .pdf-link {
   display: inline-block; font-size: 10px; color: #1a237e;
   border: 1px solid #9fa8da; border-radius: 4px;
@@ -230,6 +247,10 @@ td { padding: 9px 10px; vertical-align: middle; }
   </div>
 </div>
 
+<div id="brand-filter-row">
+  <span>ブランド絞り込み中:</span>
+  <span class="brand-chip"><span id="brand-chip-label"></span><button id="brand-chip-clear" title="解除">×</button></span>
+</div>
 <div class="stats-bar">
   <span id="result-count">読み込み中...</span>
   <a href="https://www.mof.go.jp/policy/tab_salt/topics/kouriteika.html" target="_blank" rel="noopener">出典: 財務省 ↗</a>
@@ -359,65 +380,11 @@ let currentSubcat = '';
 let currentDiscontinued = false;
 let currentSort = 'name';
 let searchQuery = '';
+let currentBrand = '';
 
-// === パイプたばこ シーシャ/西洋パイプ 分類ロジック ===
-
-// 製造国: シーシャほぼ確定
-const SHISHA_COUNTRIES  = ['アラブ首長国連邦', 'ヨルダン', 'トルコ', 'エジプト', 'ロシア', 'インド', 'レバノン', 'サウジ'];
-// 製造国: 西洋パイプほぼ確定 (ドイツは JBR 等のシーシャブランドもあるが、ブランドチェックを先行させる)
-const WESTERN_COUNTRIES = ['デンマーク', 'イギリス', '英国', 'アイルランド', 'ベルギー', 'オランダ', 'スイス', 'スウェーデン', 'ドイツ'];
-
-// シーシャブランド確定リスト (ブランドチェックを製造国より優先)
-// ドイツ製 JBR 等を正しく判定するために先行チェック
-const SHISHA_BRANDS = [
-  // 確認済みブランド (英字)
-  'AL FAKHER','ALFAKHER','DOZAJ','DARKSIDE','DARK SIDE','AFZAL',
-  'FUMARI','AZURE','TRIFECTA','SOCIAL SMOKE','STARBUZZ','STAR BUZZ',
-  'SERBETLI','DEBAJ','NAKHLA','AL WAHA','BUTA','MALAKI','LIRRA',
-  'TANGIERS','HAZE','ODUMAN','REVOSHI','SEBERO','ELEMENT','MUSTHAVE',
-  'ZODIAC','JIBAR','JIBIAR','LAVOO','CHAOS','DUFT','ARGELINI',
-  'SHISHA KARTEL','ADALYA','MUST HAVE','CONSUME','BLUE MIST',
-  'TWO APPLE','WHITE FOX','CHABACCO','PARADISE','KRAKEN',
-  'MAZAYA','HOOKAFINA','TOKYO SHISHA','JBR',   // 追加: 確認済み
-  'ROYAL SMOKIN','ROYAL SMOKIN',
-  // カナ表記
-  'アルファーヘル','ドザジ','ダークサイド','アフザル','フマリ',
-  'スターバズ','セルベトリ','デバジ','ナハラ','アルワハ','マラキ','リラ',
-  'ロイヤルスモーキン',
-];
-
-// 西洋パイプ判定キーワード
-const PIPE_KW = [
-  'MIXTURE','BLEND','FLAKE','CUT','CAVENDISH','LATAKIA','NAVY',
-  'VIRGINIA','BURLEY','ORIENTAL','ENGLISH','SCOTTISH','AROMATIC',
-  'シャグ','フレイク','ミクスチャー','ブレンド','オリエント','バージニア',
-];
-
-// シーシャ判定キーワード (ブランドリスト・製造国で確定できない場合の補完)
-const SHISHA_KW = [
-  'HOOKAH','MOLASSES','FLAVORED',
-  'ICE','MOJITO','FIZZ',
-];
-
+// サブカテゴリはデータ側（prices.json）で計算済み
 function getPipeSubcat(p) {
-  if (p.category !== 'パイプたばこ') return null;
-
-  const country = p.country || '';
-  const nameUp = (p.name + ' ' + (p.product_type || '')).toUpperCase();
-
-  // Step 1: ブランド名で先に確定 (製造国より優先)
-  // 理由: ドイツ製 JBR のようにブランドがシーシャでも国が西洋系の場合に対応
-  if (SHISHA_BRANDS.some(b => nameUp.includes(b.toUpperCase()))) return 'シーシャ';
-
-  // Step 2: 製造国で確定
-  if (SHISHA_COUNTRIES.some(c => country.includes(c))) return 'シーシャ';
-  if (WESTERN_COUNTRIES.some(c => country.includes(c))) return '西洋パイプ';
-
-  // Step 3: キーワード判定 (USA, ラオス, 日本等の残余)
-  if (PIPE_KW.some(k => nameUp.includes(k))) return '西洋パイプ';
-  if (SHISHA_KW.some(k => nameUp.includes(k))) return 'シーシャ';
-
-  return '西洋パイプ'; // デフォルト
+  return p.subcategory || 'パイプたばこ';
 }
 
 async function loadData() {
@@ -448,11 +415,24 @@ function applyFilters() {
     } else if (currentCat && p.category !== currentCat) return false;
     if (currentDiscontinued && !p.discontinued) return false;
     if (!currentDiscontinued && p.discontinued && currentCat === '' && currentSubcat === '' && q === '') return false;
+    if (currentBrand && (p.brand || '') !== currentBrand) return false;
     if (q && !p.name.toLowerCase().includes(q) && !p.country.toLowerCase().includes(q) && !p.product_type.toLowerCase().includes(q)) return false;
     return true;
   });
   sortProducts();
   renderTable();
+}
+
+function setBrandFilter(brand) {
+  currentBrand = brand;
+  const row = document.getElementById('brand-filter-row');
+  if (brand) {
+    document.getElementById('brand-chip-label').textContent = brand;
+    row.style.display = 'flex';
+  } else {
+    row.style.display = 'none';
+  }
+  applyFilters();
 }
 
 function sortProducts() {
@@ -505,7 +485,7 @@ function renderTable() {
       <td><span class="badge ${catClass(p)}">${displayCat(p)}</span></td>
       <td class="name-cell">
         ${escHtml(p.name)}${p.discontinued ? '<span class="discontinued-mark">廃盤</span>' : ''}${pdfLink}
-        <small>${escHtml(p.product_type)}</small>
+        <small>${p.brand ? `<span class="brand-tag" data-brand="${escHtml(p.brand)}">${escHtml(p.brand)}</span> · ` : ''}${escHtml(p.product_type)}</small>
       </td>
       <td>${escHtml(p.country)}</td>
       <td class="price-cell">¥${p.current_price.toLocaleString()}${hasManyHistory ? '<span class="history-dot" title="価格変更履歴あり"></span>' : ''}</td>
@@ -582,6 +562,8 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+    currentBrand = '';
+    document.getElementById('brand-filter-row').style.display = 'none';
     if (btn.dataset.discontinued) {
       currentDiscontinued = true;
       currentCat = '';
@@ -601,6 +583,15 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     applyFilters();
   });
 });
+// ブランドタグクリック（イベント委譲）
+document.getElementById('table-body').addEventListener('click', e => {
+  const tag = e.target.closest('.brand-tag');
+  if (!tag) return;
+  e.stopPropagation();
+  setBrandFilter(tag.dataset.brand);
+});
+document.getElementById('brand-chip-clear').addEventListener('click', () => setBrandFilter(''));
+
 document.getElementById('modal-close').addEventListener('click', closeModal);
 document.getElementById('modal-overlay').addEventListener('click', e => {
   if (e.target === document.getElementById('modal-overlay')) closeModal();

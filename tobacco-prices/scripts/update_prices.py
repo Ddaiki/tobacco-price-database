@@ -51,6 +51,125 @@ CATEGORY_KEYWORDS = [
 
 HEADER_TERMS = {"名称", "区分", "定価", "品目", "製造国", "製品の", "小売", "現行", "変更"}
 
+BRAND_OVERRIDES_FILE = Path(__file__).parent / "brand_overrides.json"
+
+# ---------------------------------------------------------------------------
+# サブカテゴリ判定定数（パイプたばこ → シーシャ / 西洋パイプ）
+# ---------------------------------------------------------------------------
+
+_SHISHA_COUNTRIES  = ["アラブ首長国連邦", "ヨルダン", "トルコ", "エジプト", "ロシア", "インド", "レバノン", "サウジ"]
+_WESTERN_COUNTRIES = ["デンマーク", "イギリス", "英国", "アイルランド", "ベルギー", "オランダ", "スイス", "スウェーデン", "ドイツ"]
+_SHISHA_BRANDS = [
+    "AL FAKHER","ALFAKHER","DOZAJ","DARKSIDE","DARK SIDE","AFZAL",
+    "FUMARI","AZURE","TRIFECTA","SOCIAL SMOKE","STARBUZZ","STAR BUZZ",
+    "SERBETLI","DEBAJ","NAKHLA","AL WAHA","BUTA","MALAKI","LIRRA",
+    "TANGIERS","HAZE","ODUMAN","REVOSHI","SEBERO","ELEMENT","MUSTHAVE",
+    "ZODIAC","JIBAR","JIBIAR","LAVOO","CHAOS","DUFT","ARGELINI",
+    "SHISHA KARTEL","ADALYA","MUST HAVE","CONSUME","BLUE MIST",
+    "TWO APPLE","WHITE FOX","CHABACCO","PARADISE","KRAKEN",
+    "MAZAYA","HOOKAFINA","TOKYO SHISHA","JBR","ROYAL SMOKIN",
+    "アルファーヘル","ドザジ","ダークサイド","アフザル","フマリ",
+    "スターバズ","セルベトリ","デバジ","ナハラ","アルワハ","マラキ","リラ",
+    "ロイヤルスモーキン","BANG BANG","BONCHE","SAMURAI BLOND","BLTC",
+    "NASH","MEZZA","DEUS",
+]
+_PIPE_KW  = ["MIXTURE","BLEND","FLAKE","CUT","CAVENDISH","LATAKIA","NAVY",
+             "VIRGINIA","BURLEY","ORIENTAL","ENGLISH","SCOTTISH","AROMATIC",
+             "シャグ","フレイク","ミクスチャー","ブレンド","オリエント","バージニア"]
+_SHISHA_KW = ["HOOKAH","MOLASSES","FLAVORED","ICE","MOJITO","FIZZ"]
+
+
+def _get_pipe_subcat(p: dict) -> str:
+    country  = p.get("country", "")
+    name_up  = (p.get("name", "") + " " + p.get("product_type", "")).upper()
+    if any(b in name_up for b in (b.upper() for b in _SHISHA_BRANDS)):
+        return "シーシャ"
+    if any(c in country for c in _SHISHA_COUNTRIES):
+        return "シーシャ"
+    if any(c in country for c in _WESTERN_COUNTRIES):
+        return "西洋パイプ"
+    if any(k in name_up for k in _PIPE_KW):
+        return "西洋パイプ"
+    if any(k in name_up for k in _SHISHA_KW):
+        return "シーシャ"
+    return "西洋パイプ"
+
+
+# ---------------------------------------------------------------------------
+# ブランド抽出
+# ---------------------------------------------------------------------------
+
+def _load_brand_overrides() -> dict[str, str]:
+    if BRAND_OVERRIDES_FILE.exists():
+        with open(BRAND_OVERRIDES_FILE, encoding="utf-8") as f:
+            raw = json.load(f)
+        return {k: v for k, v in raw.items() if not k.startswith("_")}
+    return {}
+
+_BRAND_OVERRIDES: dict[str, str] = _load_brand_overrides()
+_BRAND_SKIP_WORDS = {"hookah", "tobacco", "cigars", "cigar", "pipe", "shisha",
+                     "premium", "classic", "original", "special",
+                     # 日本語カタカナ一般名詞
+                     "パイプ", "パイプたばこ", "パイプタバコ", "シャグ", "シーシャ",
+                     "フレイク", "タバコ", "たばこ"}
+
+
+def extract_brand(name: str) -> str:
+    """商品名からブランド名を抽出する"""
+    name = name.replace("\n", " ").strip()
+
+    # カンマ前がブランド+製品（例: "Azure hookah tobacco, Black Line..."）
+    if "," in name:
+        name = name.split(",")[0].strip()
+
+    parts = name.split()
+    if not parts:
+        return name
+    if len(parts) == 1:
+        return parts[0]
+
+    # 先頭の全大文字単語の連続を抽出（AL FAKHER, EP CARRILLO 等）
+    caps_run = [p for p in parts if p.isupper() and len(p) >= 2]
+    caps_prefix = []
+    for p in parts:
+        if p.isupper() and len(p) >= 2:
+            caps_prefix.append(p)
+        else:
+            break
+
+    if len(caps_prefix) >= 2:
+        # 2語以上の全大文字 → 2語をブランドとする
+        candidate = " ".join(caps_prefix[:2])
+    elif len(caps_prefix) == 1 and len(caps_prefix[0]) >= 3:
+        # 1語全大文字（SEBERO, DOZAJ 等） → その語のみ
+        candidate = caps_prefix[0]
+    else:
+        # 混在ケース: 2語目が数字・一般名詞なら1語のみ
+        second = parts[1]
+        if re.match(r"^[\d\(（【]", second) or second.lower() in _BRAND_SKIP_WORDS:
+            candidate = parts[0]
+        else:
+            candidate = f"{parts[0]} {parts[1]}"
+
+    # 手動補正を適用
+    return _BRAND_OVERRIDES.get(candidate, candidate)
+
+
+# ---------------------------------------------------------------------------
+# 商品データ付加情報の計算
+# ---------------------------------------------------------------------------
+
+def enrich_products(products: list[dict]) -> None:
+    """全商品に subcategory・brand フィールドを付加（in-place）"""
+    for p in products:
+        # subcategory: パイプたばこのみ設定、他はNone
+        if p.get("category") == "パイプたばこ":
+            p["subcategory"] = _get_pipe_subcat(p)
+        else:
+            p["subcategory"] = None
+        # brand
+        p["brand"] = extract_brand(p.get("name", ""))
+
 
 # ---------------------------------------------------------------------------
 # GlyphID → Unicode マップ (MS-Mincho-90ms-RKSJ-H 用)
@@ -101,6 +220,7 @@ def load_data() -> dict:
 
 def save_data(data: dict):
     data["updated_at"] = date.today().isoformat()
+    enrich_products(data["products"])  # subcategory・brand を全商品に付加
     DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)

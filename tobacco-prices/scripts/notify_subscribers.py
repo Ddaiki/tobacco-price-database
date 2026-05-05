@@ -27,29 +27,6 @@ SITE_URL     = os.environ.get("SITE_URL", "").rstrip("/")
 DATA_FILE = Path(__file__).parent.parent / "data" / "prices.json"
 DATA_FILE_GIT = "tobacco-prices/data/prices.json"
 
-# パイプたばこのサブカテゴリ判定（index.html と同じロジック）
-SHISHA_COUNTRIES  = ["アラブ首長国連邦", "ヨルダン", "トルコ", "エジプト", "ロシア", "インド", "レバノン", "サウジ"]
-WESTERN_COUNTRIES = ["デンマーク", "イギリス", "英国", "アイルランド", "ベルギー", "オランダ", "スイス", "スウェーデン", "ドイツ"]
-SHISHA_BRANDS = [
-    "AL FAKHER", "ALFAKHER", "DOZAJ", "DARKSIDE", "DARK SIDE", "AFZAL",
-    "FUMARI", "AZURE", "TRIFECTA", "SOCIAL SMOKE", "STARBUZZ", "STAR BUZZ",
-    "SERBETLI", "DEBAJ", "NAKHLA", "AL WAHA", "BUTA", "MALAKI", "LIRRA",
-    "TANGIERS", "HAZE", "ODUMAN", "REVOSHI", "SEBERO", "ELEMENT", "MUSTHAVE",
-    "ZODIAC", "JIBAR", "JIBIAR", "LAVOO", "CHAOS", "DUFT", "ARGELINI",
-    "SHISHA KARTEL", "ADALYA", "MUST HAVE", "CONSUME", "BLUE MIST",
-    "TWO APPLE", "WHITE FOX", "CHABACCO", "PARADISE", "KRAKEN",
-    "MAZAYA", "HOOKAFINA", "TOKYO SHISHA", "JBR", "ROYAL SMOKIN",
-    "アルファーヘル", "ドザジ", "ダークサイド", "アフザル", "フマリ",
-    "スターバズ", "セルベトリ", "デバジ", "ナハラ", "アルワハ", "マラキ", "リラ",
-    "ロイヤルスモーキン",
-]
-PIPE_KW = [
-    "MIXTURE", "BLEND", "FLAKE", "CUT", "CAVENDISH", "LATAKIA", "NAVY",
-    "VIRGINIA", "BURLEY", "ORIENTAL", "ENGLISH", "SCOTTISH", "AROMATIC",
-    "シャグ", "フレイク", "ミクスチャー", "ブレンド", "オリエント", "バージニア",
-]
-SHISHA_KW = ["HOOKAH", "MOLASSES", "FLAVORED", "ICE", "MOJITO", "FIZZ"]
-
 CATEGORY_DISPLAY = {
     "加熱式たばこ": "加熱式",
     "葉巻たばこ": "葉巻",
@@ -60,27 +37,11 @@ CATEGORY_DISPLAY = {
 }
 
 
-def get_pipe_subcat(p: dict) -> str:
-    """パイプたばこのサブカテゴリ（シーシャ/西洋パイプ）を返す"""
-    country  = p.get("country", "")
-    name_up  = (p.get("name", "") + " " + p.get("product_type", "")).upper()
-    if any(b in name_up for b in (b.upper() for b in SHISHA_BRANDS)):
-        return "シーシャ"
-    if any(c in country for c in SHISHA_COUNTRIES):
-        return "シーシャ"
-    if any(c in country for c in WESTERN_COUNTRIES):
-        return "西洋パイプ"
-    if any(k in name_up for k in PIPE_KW):
-        return "西洋パイプ"
-    if any(k in name_up for k in SHISHA_KW):
-        return "シーシャ"
-    return "西洋パイプ"
-
-
 def effective_category(p: dict) -> str:
-    """通知フィルター用の実効カテゴリを返す（パイプはサブカテゴリに展開）"""
-    if p.get("category") == "パイプたばこ":
-        return get_pipe_subcat(p)
+    """通知フィルター用の実効カテゴリを返す（subcategoryフィールドを優先使用）"""
+    subcat = p.get("subcategory")
+    if subcat:
+        return subcat
     return p.get("category", "")
 
 
@@ -166,9 +127,7 @@ def build_email_html(changes: list, sub: dict, updated_at: str) -> str:
         )
         for c in items:
             p = c["product"]
-            cat = CATEGORY_DISPLAY.get(p.get("category", ""), p.get("category", ""))
-            if p.get("category") == "パイプたばこ":
-                cat = get_pipe_subcat(p)
+            cat = CATEGORY_DISPLAY.get(effective_category(p), effective_category(p))
             if c["type"] == "new":
                 price_str = f'¥{c["new_price"]:,}（新規）'
             else:
