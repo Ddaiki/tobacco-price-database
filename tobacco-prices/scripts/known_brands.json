@@ -38,7 +38,7 @@
     { "ja": "Por Larranaga",               "en": "Por Larranaga",         "category": "葉巻たばこ", "origin": "キューバ" },
     { "ja": "Por Larraaga",               "en": "Por Larranaga",         "category": "葉巻たばこ", "origin": "キューバ" },
     { "ja": "Henry Clay",                  "en": "Henry Clay",            "category": "葉巻たばこ", "origin": "ドミニカ共和国" },
-    { "ja": "Bolivar Robusto",             "en": "Bolivar",               "category": "葉巻たばこ", "origin": "キューバ" },
+    { "ja": "Bolivar",                     "en": "Bolivar",               "category": "葉巻たばこ", "origin": "キューバ" },
     { "ja": "Juan Lopez",                  "en": "Juan Lopez",            "category": "葉巻たばこ", "origin": "キューバ" },
     { "ja": "Punch",                       "en": "Punch",                 "category": "葉巻たばこ", "origin": "キューバ/ホンジュラス" },
     { "ja": "La Gloria Cubana",            "en": "La Gloria Cubana",      "category": "葉巻たばこ", "origin": "ニカラグア/ドミニカ" },
@@ -305,7 +305,10 @@
     { "ja": "プレミアム",                  "en": "Premium",               "category": "葉巻たばこ" },
     { "ja": "コロナ",                      "en": "Corona",                "category": "葉巻たばこ" },
     { "ja": "ドンエステバン",              "en": "Don Esteban",           "category": "葉巻たばこ" },
-    { "ja": "中華",                        "en": "Zhonghua",              "category": "紙巻たばこ", "origin": "中国" }
+    { "ja": "中華",                        "en": "Zhonghua",              "category": "紙巻たばこ", "origin": "中国" },
+    { "ja": "BdR",                         "en": "BdR",                   "category": "葉巻たばこ" },
+    { "ja": "Bliss",                       "en": "Bliss",                 "category": "葉巻たばこ" },
+    { "ja": "EGM",                         "en": "EGM",                   "category": "葉巻たばこ" }
   ],
 
   "multi_segment_brand_names": {
@@ -421,7 +424,16 @@
     "Montecristo Memories":            "モンテクリスト",
     "H.Upmann":                        "H.アップマン",
     "サンチョパンザ":                  "サンチョ・パンザ",
-    "コロナ":                          "コロナ"
+    "コロナ":                          "コロナ",
+    "Azure Hookah Tobacco":            "Azure",
+    "アークローヤル":                  "アーク・ローヤル",
+    "Bolivar Robusto":                 "ボリバー",
+    "Cañonazo":                        "コイーバ",
+    "Piramide Extra":                  "コイーバ",
+    "109":                             "パルタガス",
+    "Salomon":                         "クアバ",
+    "Robusto No.2":                    "コイーバ",
+    "Laguito No.1":                    "コイーバ"
   }
 }
 

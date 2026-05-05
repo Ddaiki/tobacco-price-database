@@ -203,7 +203,7 @@ def extract_brand(name: str) -> str:
     if not parts:
         return name
     if len(parts) == 1:
-        return parts[0]
+        return _BRAND_OVERRIDES.get(parts[0], parts[0])
 
     # 先頭の全大文字単語の連続を抽出（AL FAKHER, EP CARRILLO 等）
     caps_prefix = []
