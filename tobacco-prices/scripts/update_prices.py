@@ -101,19 +101,29 @@ def _get_pipe_subcat(p: dict) -> str:
 # ---------------------------------------------------------------------------
 
 def _load_brand_overrides() -> dict[str, str]:
+    overrides: dict[str, str] = {}
+    # brand_overrides.json（手動補正）
     if BRAND_OVERRIDES_FILE.exists():
         with open(BRAND_OVERRIDES_FILE, encoding="utf-8") as f:
             raw = json.load(f)
-        return {k: v for k, v in raw.items() if not k.startswith("_")}
-    return {}
-
-
-def _load_known_brands() -> list[str]:
-    """既知の・区切りブランド名を長い順に返す（前方一致で使用）"""
+        overrides.update({k: v for k, v in raw.items() if not k.startswith("_")})
+    # known_brands.json の brand_normalization（自動生成）で追加補正
     if KNOWN_BRANDS_FILE.exists():
         with open(KNOWN_BRANDS_FILE, encoding="utf-8") as f:
             raw = json.load(f)
-        brands = [b for b in raw.get("brands", []) if not b.startswith("_")]
+        norm = raw.get("brand_normalization", {})
+        overrides.update({k: v for k, v in norm.items() if not k.startswith("_")})
+    return overrides
+
+
+def _load_known_brands() -> list[str]:
+    """既知の・区切りブランド名を長い順に返す（前方一致で使用）。
+    known_brands.json の multi_segment_brand_names キーを使用。"""
+    if KNOWN_BRANDS_FILE.exists():
+        with open(KNOWN_BRANDS_FILE, encoding="utf-8") as f:
+            raw = json.load(f)
+        multi = raw.get("multi_segment_brand_names", {})
+        brands = [k for k in multi.keys() if not k.startswith("_")]
         return sorted(brands, key=len, reverse=True)
     return []
 
