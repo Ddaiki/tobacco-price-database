@@ -270,7 +270,42 @@
     { "ja": "シベリア",                    "en": "Siberia",               "category": "かぎたばこ" },
     { "ja": "ルーシー",                    "en": "Lucy",                  "category": "かぎたばこ" },
     { "ja": "ヴィカ スヴェンソン",         "en": "Vika Svensson",         "category": "かぎたばこ" },
-    { "ja": "SHIKHAR FILTER",              "en": "Shikhar Filter",        "category": "かぎたばこ" }
+    { "ja": "SHIKHAR FILTER",              "en": "Shikhar Filter",        "category": "かぎたばこ" },
+
+    { "ja": "CAPITOL",                     "en": "Capitol",               "category": "葉巻たばこ" },
+    { "ja": "FRESCURA",                    "en": "Frescura",              "category": "葉巻たばこ" },
+    { "ja": "CORTOS",                      "en": "Cortos",                "category": "葉巻たばこ" },
+    { "ja": "CONFIDENCIAAL",               "en": "Confidenciaal",         "category": "葉巻たばこ" },
+    { "ja": "VEGUEROS",                    "en": "Vegueros",              "category": "葉巻たばこ", "origin": "キューバ" },
+    { "ja": "RAW",                         "en": "RAW",                   "category": "パイプたばこ", "subcategory": "西洋パイプ" },
+    { "ja": "ゴールデンクローバー",        "en": "Golden Clover",         "category": "パイプたばこ", "subcategory": "西洋パイプ" },
+    { "ja": "ペッセカヌー",                "en": "Pesse Canoe",           "category": "パイプたばこ", "subcategory": "シーシャ" },
+    { "ja": "BLTC",                        "en": "BLTC",                  "category": "パイプたばこ", "subcategory": "シーシャ" },
+    { "ja": "ラモンアロンネス",            "en": "Ramon Allones",         "category": "葉巻たばこ", "origin": "キューバ" },
+    { "ja": "クオーラム",                  "en": "Quorum",                "category": "葉巻たばこ", "origin": "エクアドル" },
+    { "ja": "JG",                         "en": "JG Cigars",             "category": "葉巻たばこ" },
+    { "ja": "Compas",                      "en": "Compas",                "category": "葉巻たばこ" },
+    { "ja": "Concordia",                   "en": "Concordia",             "category": "葉巻たばこ" },
+    { "ja": "Prosperous",                  "en": "Prosperous",            "category": "葉巻たばこ" },
+    { "ja": "CIGARO",                      "en": "Cigaro",                "category": "葉巻たばこ" },
+    { "ja": "Acid",                        "en": "Acid Cigars",           "category": "葉巻たばこ" },
+    { "ja": "L'Atelier",                   "en": "L'Atelier",             "category": "葉巻たばこ" },
+    { "ja": "Roque",                       "en": "Roque",                 "category": "葉巻たばこ" },
+    { "ja": "OVERSEAS",                    "en": "Overseas",              "category": "葉巻たばこ" },
+    { "ja": "SOLA",                        "en": "Sola",                  "category": "葉巻たばこ" },
+    { "ja": "Apyna",                       "en": "Apyna",                 "category": "葉巻たばこ" },
+    { "ja": "Ubazito",                     "en": "Ubazito",               "category": "葉巻たばこ" },
+    { "ja": "スリービー",                  "en": "Three B's",             "category": "パイプたばこ", "subcategory": "西洋パイプ" },
+    { "ja": "桃山",                        "en": "Momoyama",              "category": "パイプたばこ", "subcategory": "西洋パイプ" },
+    { "ja": "H.Upmann",                    "en": "H.Upmann",              "category": "葉巻たばこ", "origin": "キューバ" },
+    { "ja": "サンチョパンザ",              "en": "Sancho Panza",          "category": "葉巻たばこ", "origin": "キューバ" },
+    { "ja": "レイデルムンド",              "en": "Leydelmundo",           "category": "葉巻たばこ" },
+    { "ja": "由翁",                        "en": "Yuou",                  "category": "葉巻たばこ", "origin": "日本" },
+    { "ja": "タイクーン",                  "en": "Tycoon",                "category": "葉巻たばこ" },
+    { "ja": "プレミアム",                  "en": "Premium",               "category": "葉巻たばこ" },
+    { "ja": "コロナ",                      "en": "Corona",                "category": "葉巻たばこ" },
+    { "ja": "ドンエステバン",              "en": "Don Esteban",           "category": "葉巻たばこ" },
+    { "ja": "中華",                        "en": "Zhonghua",              "category": "紙巻たばこ", "origin": "中国" }
   ],
 
   "multi_segment_brand_names": {
@@ -376,7 +411,17 @@
     "ダビドフ ダニッシュ":              "ダビドフ",
     "ダビドフ ブルー":                  "ダビドフ",
     "ダビドフ レッド":                  "ダビドフ",
-    "ダビドフ ロイヤルティ":            "ダビドフ"
+    "ダビドフ ロイヤルティ":            "ダビドフ",
+    "ホヨードゥモントレー":            "ホヨー・ドゥ・モントレー",
+    "ホヨードウ モントレー":           "ホヨー・ドゥ・モントレー",
+    "ヴィヴァラヴィダ":               "Viva La Vida",
+    "グアンタナメラ":                  "グアンタナメラ",
+    "Montecristo":                     "モンテクリスト",
+    "Montecristo Platinum":            "モンテクリスト",
+    "Montecristo Memories":            "モンテクリスト",
+    "H.Upmann":                        "H.アップマン",
+    "サンチョパンザ":                  "サンチョ・パンザ",
+    "コロナ":                          "コロナ"
   }
 }
 

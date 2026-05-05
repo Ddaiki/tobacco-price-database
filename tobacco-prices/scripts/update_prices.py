@@ -116,20 +116,58 @@ def _load_brand_overrides() -> dict[str, str]:
     return overrides
 
 
-def _load_known_brands() -> list[str]:
-    """既知の・区切りブランド名を長い順に返す（前方一致で使用）。
-    known_brands.json の multi_segment_brand_names キーを使用。"""
-    if KNOWN_BRANDS_FILE.exists():
-        with open(KNOWN_BRANDS_FILE, encoding="utf-8") as f:
-            raw = json.load(f)
-        multi = raw.get("multi_segment_brand_names", {})
-        brands = [k for k in multi.keys() if not k.startswith("_")]
-        return sorted(brands, key=len, reverse=True)
-    return []
+def _load_all_brand_names() -> list[tuple[str, str]]:
+    """known_brands.json から全ブランド名を収集して (大文字キー, 正規名) タプルを長い順に返す。
+    ja を正規名として優先し、en はキー追加のみに使用する（英語名商品のマッチング用）。"""
+    if not KNOWN_BRANDS_FILE.exists():
+        return []
+    with open(KNOWN_BRANDS_FILE, encoding="utf-8") as f:
+        raw = json.load(f)
+
+    lookup: dict[str, str] = {}  # upper_key → canonical
+
+    # brands[].ja を正規名として登録、brands[].en を英語キーとして追加
+    for entry in raw.get("brands", []):
+        if not isinstance(entry, dict):
+            continue
+        ja = entry.get("ja", "").strip()
+        en = re.sub(r"\s*\(.*?\)", "", entry.get("en", "")).strip()
+        if ja and not ja.startswith("_"):
+            lookup[ja.upper()] = ja          # ja が正規名（優先）
+        if en and len(en) >= 3 and not en.startswith("_"):
+            en_key = en.upper()
+            if en_key not in lookup:         # ja と被らない英語キーのみ追加
+                lookup[en_key] = en
+
+    # multi_segment_brand_names のキーも登録（上書き優先で正確な表記を保持）
+    for key in raw.get("multi_segment_brand_names", {}):
+        if not key.startswith("_"):
+            lookup[key.upper()] = key
+
+    # 長い順にソート（長いブランド名を優先してマッチ）
+    return sorted(lookup.items(), key=lambda x: len(x[0]), reverse=True)
+
+
+def _is_brand_boundary(rest: str, known_is_ascii: bool) -> bool:
+    """ブランド名の後が単語境界かどうかを判定する"""
+    if not rest:
+        return True
+    c = rest[0]
+    if c in (" ", "・", "\u30fb", "\t", "(", "（", "【", "「"):
+        return True
+    # ASCII文字のブランドの後に全角文字（日本語等）が続く場合も境界とみなす
+    # 例: "RAWクラシックシャグ" → "RAW" がブランド
+    if known_is_ascii and ord(c) > 127:
+        return True
+    # 全角文字のブランドの後にASCII英数字が続く場合も境界とみなす
+    # 例: "プレミアムNo.6" → "プレミアム" がブランド
+    if not known_is_ascii and c.isascii() and (c.isalpha() or c.isdigit()):
+        return True
+    return False
 
 
 _BRAND_OVERRIDES: dict[str, str] = _load_brand_overrides()
-_KNOWN_BRANDS: list[str] = _load_known_brands()
+_ALL_BRAND_NAMES: list[tuple[str, str]] = _load_all_brand_names()
 _BRAND_SKIP_WORDS = {"hookah", "tobacco", "cigars", "cigar", "pipe", "shisha",
                      "premium", "classic", "original", "special",
                      # 日本語カタカナ一般名詞
@@ -145,13 +183,19 @@ def extract_brand(name: str) -> str:
     if "," in name:
         name = name.split(",")[0].strip()
 
-    # ・(中黒) 区切りの日本語名: known_brands と前方一致し最長のものを採用、
-    # 一致しない場合は最初のセグメントをブランドとする
+    # ─── Step 1: known_brands との前方一致（全商品名に適用） ───────────────
+    # ・区切り・スペース区切り・直接連結（RAW+カタカナ等）すべてに対応
+    name_upper = name.upper()
+    for upper_key, canonical in _ALL_BRAND_NAMES:
+        if name_upper.startswith(upper_key):
+            rest = name[len(upper_key):]
+            known_is_ascii = upper_key.isascii()
+            if _is_brand_boundary(rest, known_is_ascii):
+                return _BRAND_OVERRIDES.get(canonical, canonical)
+
+    # ─── Step 2: フォールバック ヒューリスティック ─────────────────────────
+    # ・区切り: 先頭セグメントをブランドとする
     if "・" in name:
-        for known in _KNOWN_BRANDS:  # 長い順にソート済み
-            if name.startswith(known):
-                candidate = known
-                return _BRAND_OVERRIDES.get(candidate, candidate)
         candidate = name.split("・")[0].strip()
         return _BRAND_OVERRIDES.get(candidate, candidate)
 
@@ -170,20 +214,16 @@ def extract_brand(name: str) -> str:
             break
 
     if len(caps_prefix) >= 2:
-        # 2語以上の全大文字 → 2語をブランドとする
         candidate = " ".join(caps_prefix[:2])
     elif len(caps_prefix) == 1 and len(caps_prefix[0]) >= 3:
-        # 1語全大文字（SEBERO, DOZAJ 等） → その語のみ
         candidate = caps_prefix[0]
     else:
-        # 混在ケース: 2語目が数字・一般名詞なら1語のみ
         second = parts[1]
         if re.match(r"^[\d\(（【]", second) or second.lower() in _BRAND_SKIP_WORDS:
             candidate = parts[0]
         else:
             candidate = f"{parts[0]} {parts[1]}"
 
-    # 手動補正を適用
     return _BRAND_OVERRIDES.get(candidate, candidate)
 
 
