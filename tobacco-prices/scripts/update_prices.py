@@ -52,6 +52,7 @@ CATEGORY_KEYWORDS = [
 HEADER_TERMS = {"名称", "区分", "定価", "品目", "製造国", "製品の", "小売", "現行", "変更"}
 
 BRAND_OVERRIDES_FILE = Path(__file__).parent / "brand_overrides.json"
+KNOWN_BRANDS_FILE    = Path(__file__).parent / "known_brands.json"
 
 # ---------------------------------------------------------------------------
 # サブカテゴリ判定定数（パイプたばこ → シーシャ / 西洋パイプ）
@@ -106,7 +107,19 @@ def _load_brand_overrides() -> dict[str, str]:
         return {k: v for k, v in raw.items() if not k.startswith("_")}
     return {}
 
+
+def _load_known_brands() -> list[str]:
+    """既知の・区切りブランド名を長い順に返す（前方一致で使用）"""
+    if KNOWN_BRANDS_FILE.exists():
+        with open(KNOWN_BRANDS_FILE, encoding="utf-8") as f:
+            raw = json.load(f)
+        brands = [b for b in raw.get("brands", []) if not b.startswith("_")]
+        return sorted(brands, key=len, reverse=True)
+    return []
+
+
 _BRAND_OVERRIDES: dict[str, str] = _load_brand_overrides()
+_KNOWN_BRANDS: list[str] = _load_known_brands()
 _BRAND_SKIP_WORDS = {"hookah", "tobacco", "cigars", "cigar", "pipe", "shisha",
                      "premium", "classic", "original", "special",
                      # 日本語カタカナ一般名詞
@@ -122,6 +135,16 @@ def extract_brand(name: str) -> str:
     if "," in name:
         name = name.split(",")[0].strip()
 
+    # ・(中黒) 区切りの日本語名: known_brands と前方一致し最長のものを採用、
+    # 一致しない場合は最初のセグメントをブランドとする
+    if "・" in name:
+        for known in _KNOWN_BRANDS:  # 長い順にソート済み
+            if name.startswith(known):
+                candidate = known
+                return _BRAND_OVERRIDES.get(candidate, candidate)
+        candidate = name.split("・")[0].strip()
+        return _BRAND_OVERRIDES.get(candidate, candidate)
+
     parts = name.split()
     if not parts:
         return name
@@ -129,7 +152,6 @@ def extract_brand(name: str) -> str:
         return parts[0]
 
     # 先頭の全大文字単語の連続を抽出（AL FAKHER, EP CARRILLO 等）
-    caps_run = [p for p in parts if p.isupper() and len(p) >= 2]
     caps_prefix = []
     for p in parts:
         if p.isupper() and len(p) >= 2:
