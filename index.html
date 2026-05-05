@@ -428,6 +428,54 @@ function applyFilters() {
   renderTable();
 }
 
+/** アルファベット・カナ行グループラベルを返す */
+function getGroupLabel(str) {
+  if (!str) return 'その他';
+  const c = str[0];
+  const up = c.toUpperCase();
+  const code = up.charCodeAt(0);
+  if (code >= 65 && code <= 90) return up;            // A–Z
+  if (code >= 48 && code <= 57) return '0–9';         // 数字
+  const kRows = {
+    'ア':'ア行','イ':'ア行','ウ':'ア行','エ':'ア行','オ':'ア行',
+    'ァ':'ア行','ィ':'ア行','ゥ':'ア行','ェ':'ア行','ォ':'ア行',
+    'カ':'カ行','キ':'カ行','ク':'カ行','ケ':'カ行','コ':'カ行',
+    'ガ':'カ行','ギ':'カ行','グ':'カ行','ゲ':'カ行','ゴ':'カ行',
+    'サ':'サ行','シ':'サ行','ス':'サ行','セ':'サ行','ソ':'サ行',
+    'ザ':'サ行','ジ':'サ行','ズ':'サ行','ゼ':'サ行','ゾ':'サ行',
+    'タ':'タ行','チ':'タ行','ツ':'タ行','テ':'タ行','ト':'タ行',
+    'ダ':'タ行','ヂ':'タ行','ヅ':'タ行','デ':'タ行','ド':'タ行','ッ':'タ行',
+    'ナ':'ナ行','ニ':'ナ行','ヌ':'ナ行','ネ':'ナ行','ノ':'ナ行',
+    'ハ':'ハ行','ヒ':'ハ行','フ':'ハ行','ヘ':'ハ行','ホ':'ハ行',
+    'バ':'ハ行','ビ':'ハ行','ブ':'ハ行','ベ':'ハ行','ボ':'ハ行',
+    'パ':'ハ行','ピ':'ハ行','プ':'ハ行','ペ':'ハ行','ポ':'ハ行',
+    'マ':'マ行','ミ':'マ行','ム':'マ行','メ':'マ行','モ':'マ行',
+    'ヤ':'ヤ行','ユ':'ヤ行','ヨ':'ヤ行','ャ':'ヤ行','ュ':'ヤ行','ョ':'ヤ行',
+    'ラ':'ラ行','リ':'ラ行','ル':'ラ行','レ':'ラ行','ロ':'ラ行',
+    'ワ':'ワ行','ヲ':'ワ行','ン':'ワ行','ヴ':'ワ行',
+  };
+  if (kRows[c]) return kRows[c];
+  return 'その他';
+}
+
+/** ソート済み文字列配列を optgroup でグループ化した HTML を返す */
+function buildGroupedOptions(items, prevValue) {
+  const groups = new Map();
+  for (const item of items) {
+    const label = getGroupLabel(item);
+    if (!groups.has(label)) groups.set(label, []);
+    groups.get(label).push(item);
+  }
+  let html = '';
+  for (const [label, vals] of groups) {
+    const opts = vals.map(v =>
+      `<option value="${escHtml(v)}"${v === prevValue ? ' selected' : ''}>${escHtml(v)}</option>`
+    ).join('');
+    html += `<optgroup label="${escHtml(label)}">${opts}</optgroup>`;
+  }
+  return html;
+}
+
 /** 現在の種類フィルター・製造国フィルターに基づいてドロップダウン選択肢を更新 */
 function updateSecondaryFilters(resetSelections) {
   // 種類フィルターだけ適用した候補商品を取得（製造国・ブランドは無視）
@@ -445,8 +493,7 @@ function updateSecondaryFilters(resetSelections) {
   const countryEl = document.getElementById('country-select');
   const prevCountry = resetSelections ? '' : countryEl.value;
   const countries = [...new Set(catFiltered.map(p => p.country).filter(Boolean))].sort((a,b) => a.localeCompare(b, 'ja'));
-  countryEl.innerHTML = '<option value="">すべての国</option>' +
-    countries.map(c => `<option value="${escHtml(c)}"${c === prevCountry ? ' selected' : ''}>${escHtml(c)}</option>`).join('');
+  countryEl.innerHTML = '<option value="">すべての国</option>' + buildGroupedOptions(countries, prevCountry);
   currentCountry = countries.includes(prevCountry) ? prevCountry : '';
   countryEl.value = currentCountry;
   countryEl.classList.toggle('active-filter', !!currentCountry);
@@ -456,8 +503,7 @@ function updateSecondaryFilters(resetSelections) {
   const brandEl = document.getElementById('brand-select');
   const prevBrand = resetSelections ? '' : brandEl.value;
   const brands = [...new Set(brandCandidates.map(p => p.brand).filter(Boolean))].sort((a,b) => a.localeCompare(b, 'ja'));
-  brandEl.innerHTML = '<option value="">すべてのブランド</option>' +
-    brands.map(b => `<option value="${escHtml(b)}"${b === prevBrand ? ' selected' : ''}>${escHtml(b)}</option>`).join('');
+  brandEl.innerHTML = '<option value="">すべてのブランド</option>' + buildGroupedOptions(brands, prevBrand);
   currentBrand = brands.includes(prevBrand) ? prevBrand : '';
   brandEl.value = currentBrand;
   brandEl.classList.toggle('active-filter', !!currentBrand);
