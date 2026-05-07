@@ -3,7 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>製造たばこ 小売定価データベース</title>
+<title>製造たばこ小売定価データベース | 財務省認可価格を一覧・検索</title>
+<meta name="description" content="財務省が認可した製造たばこの小売定価を一覧・検索できる無料データベース。葉巻・紙巻・加熱式・シーシャ・パイプたばこなど4,000件以上の価格と改定履歴を収録。ブランド・製造国・カテゴリで絞り込み可能。">
+<meta name="keywords" content="たばこ 価格, 製造たばこ 小売定価, 財務省 たばこ, 葉巻 価格, シーシャ 価格, 加熱式たばこ 価格, パイプたばこ 価格, たばこ 値段, 葉巻 値段, cigar price japan">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ddaiki.github.io/tobacco-price-database/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ddaiki.github.io/tobacco-price-database/">
+<meta property="og:title" content="製造たばこ小売定価データベース | 財務省認可価格を一覧・検索">
+<meta property="og:description" content="財務省が認可した製造たばこの小売定価を一覧・検索できる無料データベース。葉巻・紙巻・加熱式・シーシャ・パイプたばこなど4,000件以上の価格と改定履歴を収録。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="製造たばこ小売定価データベース">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="製造たばこ小売定価データベース">
+<meta name="twitter:description" content="財務省認可の製造たばこ小売定価を一覧・検索。葉巻・紙巻・加熱式・シーシャ・パイプたばこ 4,000件以上の価格履歴を収録。">
+<!-- JSON-LD 構造化データ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "製造たばこ小売定価データベース",
+  "url": "https://ddaiki.github.io/tobacco-price-database/",
+  "description": "財務省が認可した製造たばこの小売定価を一覧・検索できる無料データベース。葉巻・紙巻・加熱式・シーシャ・パイプたばこなど4,000件以上の価格と改定履歴を収録。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "ja",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "Ddaiki"
+  },
+  "about": {
+    "@type": "Dataset",
+    "name": "製造たばこ小売定価データセット",
+    "description": "財務省「製造たばこの小売定価の認可」PDFから抽出した価格データ。4,000件以上の商品の価格履歴を収録。",
+    "keywords": ["たばこ", "価格", "葉巻", "シーシャ", "加熱式たばこ", "財務省"],
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "creator": { "@type": "Person", "name": "Ddaiki" },
+    "isAccessibleForFree": true,
+    "isBasedOn": {
+      "@type": "GovernmentService",
+      "name": "財務省 製造たばこの小売定価の認可",
+      "url": "https://www.mof.go.jp/policy/tab_salt/topics/kouriteika.html",
+      "provider": { "@type": "GovernmentOrganization", "name": "財務省" }
+    }
+  }
+}
+</script>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7X29LJ22P"></script>
 <script>
@@ -300,6 +348,11 @@ td { padding: 9px 10px; vertical-align: middle; }
           <p>条件に合った更新があったときにメールでお知らせします</p>
         </div>
         <button class="modal-close" id="notify-close-btn">×</button>
+      </div>
+
+      <div style="background:#fff8e1;border:1px solid #ffe082;border-radius:6px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#795548;line-height:1.6">
+        <strong>⚠️ 現在、メール送信機能は準備中です。</strong><br>
+        メールアドレスの登録は可能ですが、独自ドメインを取得次第、通知の送信を開始予定です。登録いただければ、準備が整い次第お知らせします。
       </div>
 
       <form id="notify-form">

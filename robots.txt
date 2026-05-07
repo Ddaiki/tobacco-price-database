@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ddaiki.github.io/tobacco-price-database/sitemap.xml
