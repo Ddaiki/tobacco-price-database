@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-05",
+  "updated_at": "2026-05-11",
   "products": [
     {
       "category": "葉巻たばこ",
@@ -79301,6 +79301,24 @@
       ],
       "subcategory": null,
       "brand": "ブレンズ"
+    },
+    {
+      "category": "加熱式たばこ",
+      "name": "センティア・パッション・フルーツ・カプセル",
+      "product_type": "F45 20スティック ハードパック 5.7g",
+      "country": "ルーマニア\nギリシャ",
+      "current_price": 570,
+      "last_changed": "2026-05-07",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 570,
+          "date": "2026-05-07",
+          "pdf": "20260507_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "センティア"
     }
   ]
 }
