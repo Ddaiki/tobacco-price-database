@@ -11,7 +11,6 @@ GitHub Actions の update-prices.yml から prices.json 更新後に実行され
 """
 import json
 import os
-import subprocess
 import logging
 import requests
 from pathlib import Path
@@ -24,8 +23,8 @@ SUPABASE_KEY = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
 RESEND_KEY   = os.environ["RESEND_API_KEY"]
 SITE_URL     = os.environ.get("SITE_URL", "").rstrip("/")
 
-DATA_FILE = Path(__file__).parent.parent / "data" / "prices.json"
-DATA_FILE_GIT = "tobacco-prices/data/prices.json"
+DATA_FILE     = Path(__file__).parent.parent / "data" / "prices.json"
+BASELINE_FILE = Path(__file__).parent.parent / "data" / "notify_baseline.json"
 
 CATEGORY_DISPLAY = {
     "加熱式たばこ": "加熱式",
@@ -38,44 +37,58 @@ CATEGORY_DISPLAY = {
 
 
 def effective_category(p: dict) -> str:
-    """通知フィルター用の実効カテゴリを返す（subcategoryフィールドを優先使用）"""
     subcat = p.get("subcategory")
     if subcat:
         return subcat
     return p.get("category", "")
 
 
-def get_old_products() -> dict[str, dict]:
-    """git show HEAD~1 で変更前の prices.json を取得して名前→商品のマップを返す"""
-    try:
-        result = subprocess.run(
-            ["git", "show", f"HEAD~1:{DATA_FILE_GIT}"],
-            capture_output=True, text=True, check=True,
-        )
-        old = json.loads(result.stdout)
-        return {p["name"]: p for p in old.get("products", [])}
-    except Exception as e:
-        log.warning("旧バージョン取得失敗: %s", e)
-        return {}
+def load_baseline() -> dict[str, int] | None:
+    """前回通知時の {商品名: 価格} マップを返す。ファイル未存在なら None。"""
+    if not BASELINE_FILE.exists():
+        return None
+    with open(BASELINE_FILE, encoding="utf-8") as f:
+        return json.load(f)
 
 
-def find_changes(old_map: dict, new_products: list) -> list:
+def save_baseline(products: list) -> None:
+    """現在の価格をベースラインとして保存"""
+    baseline = {
+        p["name"]: p["current_price"]
+        for p in products
+        if not p.get("discontinued")
+    }
+    with open(BASELINE_FILE, "w", encoding="utf-8") as f:
+        json.dump(baseline, f, ensure_ascii=False, indent=2)
+    log.info("ベースライン保存: %d件", len(baseline))
+
+
+def find_changes(baseline: dict, new_products: list) -> list:
     """新規追加・価格変更を検出して返す"""
     changes = []
     for p in new_products:
         if p.get("discontinued"):
             continue
         name = p["name"]
-        if name not in old_map:
-            changes.append({"type": "new", "product": p, "old_price": None, "new_price": p["current_price"]})
-        elif old_map[name]["current_price"] != p["current_price"]:
-            changes.append({"type": "price_change", "product": p,
-                            "old_price": old_map[name]["current_price"], "new_price": p["current_price"]})
+        new_price = p["current_price"]
+        if name not in baseline:
+            changes.append({
+                "type": "new",
+                "product": p,
+                "old_price": None,
+                "new_price": new_price,
+            })
+        elif baseline[name] != new_price:
+            changes.append({
+                "type": "price_change",
+                "product": p,
+                "old_price": baseline[name],
+                "new_price": new_price,
+            })
     return changes
 
 
 def get_confirmed_subscribers() -> list:
-    """Supabase から confirmed=true の購読者を全件取得"""
     headers = {
         "apikey": SUPABASE_KEY,
         "Authorization": f"Bearer {SUPABASE_KEY}",
@@ -87,24 +100,20 @@ def get_confirmed_subscribers() -> list:
 
 
 def matches_subscriber(change: dict, sub: dict) -> bool:
-    """この変更が購読者のフィルター条件に合致するか判定"""
     p = change["product"]
 
-    # カテゴリフィルター（空 = 全カテゴリ）
     cats = sub.get("category_filters") or []
     if cats:
         eff_cat = effective_category(p)
         if eff_cat not in cats:
             return False
 
-    # 製造国フィルター（空 = 全国）
     countries = sub.get("country_filters") or []
     if countries:
         prod_country = p.get("country", "")
         if not any(c in prod_country for c in countries):
             return False
 
-    # ブランドキーワードフィルター（空 = 全ブランド、部分一致）
     keywords = sub.get("name_keywords") or []
     if keywords:
         name_lower = p.get("name", "").lower()
@@ -201,14 +210,23 @@ def send_email(to_email: str, html: str, updated_at: str, change_count: int) -> 
 
 
 def main() -> None:
-    with open(DATA_FILE) as f:
+    with open(DATA_FILE, encoding="utf-8") as f:
         new_data = json.load(f)
+    new_products = new_data.get("products", [])
 
-    old_map  = get_old_products()
-    changes  = find_changes(old_map, new_data.get("products", []))
+    baseline = load_baseline()
+
+    if baseline is None:
+        # 初回実行: 通知は送らずベースラインを初期化
+        log.info("初回実行: ベースライン初期化（通知スキップ）")
+        save_baseline(new_products)
+        return
+
+    changes = find_changes(baseline, new_products)
 
     if not changes:
         log.info("変更なし - 通知スキップ")
+        save_baseline(new_products)
         return
 
     log.info("変更検出: %d件", len(changes))
@@ -230,6 +248,8 @@ def main() -> None:
             log.error("送信失敗 %s: %s", sub["email"], e)
 
     log.info("通知完了: %d/%d件送信", sent, len(subscribers))
+    # 通知後（or 送信なし）にベースラインを更新
+    save_baseline(new_products)
 
 
 if __name__ == "__main__":

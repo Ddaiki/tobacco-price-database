@@ -652,6 +652,8 @@ def get_processed_pdfs(data: dict) -> set[str]:
         for h in p.get("price_history", []):
             if h.get("pdf"):
                 processed.add(h["pdf"])
+    # 0件だったPDFも処理済みとして記録済みのものを追加
+    processed.update(data.get("processed_pdfs", []))
     return processed
 
 
@@ -675,6 +677,7 @@ def main():
     log.info("未処理PDF件数: %d", len(new_pdfs))
 
     total_changed = 0
+    empty_pdfs: list[str] = []
     for link in new_pdfs:
         log.info("処理中: %s (%s)%s",
                  link["filename"], link["date"],
@@ -689,12 +692,20 @@ def main():
                 changed = merge_into_db(data, products, link["filename"])
                 total_changed += changed
                 log.info("  DB更新件数: %d", changed)
+            else:
+                # 0件PDFも処理済みとして記録し再処理を防ぐ
+                empty_pdfs.append(link["filename"])
+                log.info("  抽出0件: 処理済みとして記録")
         except Exception as e:
             log.error("  エラー (スキップ): %s", e)
 
-    if total_changed > 0 or not data["products"]:
+    if empty_pdfs:
+        data.setdefault("processed_pdfs", [])
+        data["processed_pdfs"].extend(empty_pdfs)
+
+    if total_changed > 0 or empty_pdfs or not data["products"]:
         save_data(data)
-        log.info("完了: %d件の変更", total_changed)
+        log.info("完了: 価格変更=%d件, 0件PDF=%d個", total_changed, len(empty_pdfs))
     else:
         log.info("新規データなし。更新をスキップします。")
 

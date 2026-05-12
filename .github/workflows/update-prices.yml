@@ -28,25 +28,22 @@ jobs:
       - name: Run update script
         run: python tobacco-prices/scripts/update_prices.py
 
-      - name: Commit and push if changed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tobacco-prices/data/prices.json
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-            echo "PRICES_CHANGED=false" >> "$GITHUB_ENV"
-          else
-            git commit -m "chore: update tobacco prices ($(date -u +%Y-%m-%d))"
-            git push
-            echo "PRICES_CHANGED=true" >> "$GITHUB_ENV"
-          fi
-
       - name: Send update notifications
-        if: env.PRICES_CHANGED == 'true'
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           SITE_URL: ${{ secrets.SITE_URL }}
         run: python tobacco-prices/scripts/notify_subscribers.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add tobacco-prices/data/prices.json tobacco-prices/data/notify_baseline.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update tobacco prices ($(date -u +%Y-%m-%d))"
+            git push
+          fi
