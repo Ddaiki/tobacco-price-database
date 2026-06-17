@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-11",
+  "updated_at": "2026-06-17",
   "products": [
     {
       "category": "葉巻たばこ",
@@ -42014,10 +42014,15 @@
       "name": "ペペ・オーガニック缶(100g)",
       "product_type": "100.0g ペーパー缶",
       "country": "ドイツ",
-      "current_price": 2850,
-      "last_changed": "2024-08-13",
+      "current_price": 2930,
+      "last_changed": "2026-05-18",
       "discontinued": false,
       "price_history": [
+        {
+          "price": 2930,
+          "date": "2026-05-18",
+          "pdf": "20260518_kouriteikahenkou.pdf"
+        },
         {
           "price": 2850,
           "date": "2024-08-13",
@@ -79319,6 +79324,214 @@
       ],
       "subcategory": null,
       "brand": "センティア"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ペペ リッチグリーン",
+      "product_type": "30.0g パウチ",
+      "country": "ドイツ",
+      "current_price": 840,
+      "last_changed": "2026-06-01",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 840,
+          "date": "2026-06-01",
+          "pdf": "20260518_kouriteikahenkou.pdf"
+        }
+      ],
+      "subcategory": "西洋パイプ",
+      "brand": "ペペ"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ペペ・オーガニック・シャグ",
+      "product_type": "",
+      "country": "ドイツ",
+      "current_price": 900,
+      "last_changed": "2026-05-18",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 900,
+          "date": "2026-05-18",
+          "pdf": "20260518_kouriteikahenkou.pdf"
+        }
+      ],
+      "subcategory": "西洋パイプ",
+      "brand": "ペペ"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ペペ・リッチグリーン缶(100g)",
+      "product_type": "100.0g 缶",
+      "country": "ドイツ",
+      "current_price": 2720,
+      "last_changed": "2026-05-18",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2720,
+          "date": "2026-05-18",
+          "pdf": "20260518_kouriteikahenkou.pdf"
+        }
+      ],
+      "subcategory": "西洋パイプ",
+      "brand": "ペペ"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ハーベスト・シャグ・バニラ",
+      "product_type": "30.0g パウチ",
+      "country": "ドイツ",
+      "current_price": 830,
+      "last_changed": "2026-05-18",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 830,
+          "date": "2026-05-18",
+          "pdf": "20260518_kouriteikahenkou.pdf"
+        }
+      ],
+      "subcategory": "西洋パイプ",
+      "brand": "ハーベスト"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "マカヌード ゴールド トルペド",
+      "product_type": "165mm 1本",
+      "country": "ドミニカ共和国",
+      "current_price": 2900,
+      "last_changed": "2026-05-18",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2900,
+          "date": "2026-05-18",
+          "pdf": "20260518_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "マカヌード ゴールド"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "Laguito No.6",
+      "product_type": "166mm 1本",
+      "country": "キューバ",
+      "current_price": 18000,
+      "last_changed": "2026-05-26",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 18000,
+          "date": "2026-05-26",
+          "pdf": "20260520_kouriteikahenkou.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "Laguito No.6"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Must Have Kiwi Smoothie",
+      "product_type": "125.0g 箱",
+      "country": "ロシア",
+      "current_price": 5600,
+      "last_changed": "2026-06-01",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 5600,
+          "date": "2026-06-01",
+          "pdf": "20260520_kouriteikahenkou.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "Must Have"
+    },
+    {
+      "category": "かぎたばこ",
+      "name": "ベロ・ピーチ・アイス・ミディアム",
+      "product_type": "15個 缶",
+      "country": "パキスタン",
+      "current_price": 360,
+      "last_changed": "2026-05-25",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 360,
+          "date": "2026-05-25",
+          "pdf": "20260525_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "ベロ"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "TAB Edicion Maduro Coronas",
+      "product_type": "140mm 1本",
+      "country": "フィリピン",
+      "current_price": 1500,
+      "last_changed": "2026-05-29",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1500,
+          "date": "2026-05-29",
+          "pdf": "20260529_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "TAB"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "TAB Edicion Maduro Robusto",
+      "product_type": "128mm 1本",
+      "country": "フィリピン",
+      "current_price": 1800,
+      "last_changed": "2026-05-29",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1800,
+          "date": "2026-05-29",
+          "pdf": "20260529_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "TAB"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "TAB Edicion Maduro Toro",
+      "product_type": "152mm 1本",
+      "country": "フィリピン",
+      "current_price": 2000,
+      "last_changed": "2026-05-29",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2000,
+          "date": "2026-05-29",
+          "pdf": "20260529_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "TAB"
     }
+  ],
+  "processed_pdfs": [
+    "20230724_kouriteika.pdf",
+    "20251017_kouriteikahenkou.pdf",
+    "20251203_kouriteika.pdf",
+    "20260520_kouriteika.pdf",
+    "20260529_kouriteikahenkou.pdf",
+    "20260601_kouriteikahenkou.pdf",
+    "20260609_kouriteika.pdf",
+    "20260615_kouriteika.pdf"
   ]
 }
