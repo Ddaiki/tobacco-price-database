@@ -29,6 +29,7 @@ jobs:
         run: python tobacco-prices/scripts/update_prices.py
 
       - name: Send update notifications
+        continue-on-error: true
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
