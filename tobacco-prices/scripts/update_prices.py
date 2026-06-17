@@ -332,10 +332,14 @@ def fetch_pdf_links() -> list[dict]:
         if filename in seen:
             continue
         seen.add(filename)
-        m = re.search(r"(\d{8})_kouriteika", filename)
+        m = re.search(r"(?<!\d)(\d{8})_kouriteika", filename)
         if not m:
             continue
-        approval_date = datetime.strptime(m.group(1), "%Y%m%d").strftime("%Y-%m-%d")
+        try:
+            approval_date = datetime.strptime(m.group(1), "%Y%m%d").strftime("%Y-%m-%d")
+        except ValueError:
+            log.warning("Skipping unrecognized filename: %s", filename)
+            continue
         is_henkou = "henkou" in filename
         links.append({
             "url": href,
