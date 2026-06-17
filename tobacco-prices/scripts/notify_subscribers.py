@@ -51,10 +51,14 @@ def load_baseline() -> dict[str, int] | None:
         return json.load(f)
 
 
+def _baseline_key(p: dict) -> str:
+    return f'{p["name"]}|||{p.get("product_type", "")}'
+
+
 def save_baseline(products: list) -> None:
     """現在の価格をベースラインとして保存"""
     baseline = {
-        p["name"]: p["current_price"]
+        _baseline_key(p): p["current_price"]
         for p in products
         if not p.get("discontinued")
     }
@@ -69,16 +73,16 @@ def find_changes(baseline: dict, new_products: list) -> list:
     for p in new_products:
         if p.get("discontinued"):
             continue
-        name = p["name"]
+        key = _baseline_key(p)
         new_price = p["current_price"]
-        if name not in baseline:
+        if key not in baseline:
             changes.append({
                 "type": "new",
                 "product": p,
                 "old_price": None,
                 "new_price": new_price,
             })
-        elif baseline[name] != new_price:
+        elif baseline[key] != new_price:
             changes.append({
                 "type": "price_change",
                 "product": p,
