@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-22",
+  "updated_at": "2026-06-29",
   "products": [
     {
       "category": "葉巻たばこ",
@@ -79133,9 +79133,14 @@
       "product_type": "50.0g 箱",
       "country": "トルコ",
       "current_price": 1750,
-      "last_changed": "2026-04-27",
+      "last_changed": "2026-06-19",
       "discontinued": false,
       "price_history": [
+        {
+          "price": 1750,
+          "date": "2026-06-19",
+          "pdf": "20260619_kouriteika.pdf"
+        },
         {
           "price": 1750,
           "date": "2026-04-27",
@@ -79533,6 +79538,7 @@
     "20260601_kouriteikahenkou.pdf",
     "20260609_kouriteika.pdf",
     "20260615_kouriteika.pdf",
-    "20260618_kouriteika.pdf"
+    "20260618_kouriteika.pdf",
+    "20260624_kouriteika.pdf"
   ]
 }
