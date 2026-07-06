@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29",
+  "updated_at": "2026-07-06",
   "products": [
     {
       "category": "葉巻たばこ",
@@ -79527,6 +79527,42 @@
       ],
       "subcategory": null,
       "brand": "TAB"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "アレック ブラッドリー フィルシィー フーリガン",
+      "product_type": "152mm 1本",
+      "country": "ホンジュラス",
+      "current_price": 2500,
+      "last_changed": "2026-06-26",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2500,
+          "date": "2026-06-26",
+          "pdf": "20260626_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "アレック ブラッドリー"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "アレック ブラッドリー シャムロック",
+      "product_type": "",
+      "country": "ホンジュラス",
+      "current_price": 2900,
+      "last_changed": "2026-06-26",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2900,
+          "date": "2026-06-26",
+          "pdf": "20260626_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "アレック ブラッドリー"
     }
   ],
   "processed_pdfs": [
@@ -79539,6 +79575,9 @@
     "20260609_kouriteika.pdf",
     "20260615_kouriteika.pdf",
     "20260618_kouriteika.pdf",
-    "20260624_kouriteika.pdf"
+    "20260624_kouriteika.pdf",
+    "20260626_kouriteikahenkou.pdf",
+    "20260629_kouriteikahenkou.pdf",
+    "20260630_kouriteika.pdf"
   ]
 }
