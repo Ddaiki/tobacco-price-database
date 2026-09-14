@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-31",
+  "updated_at": "2026-09-14",
   "products": [
     {
       "category": "葉巻たばこ",
@@ -79856,6 +79856,258 @@
       ],
       "subcategory": "シーシャ",
       "brand": "DOGMA RASPBERRY"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DEUS Base",
+      "product_type": "30.0g 箱",
+      "country": "ロシア",
+      "current_price": 1500,
+      "last_changed": "2026-09-04",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1500,
+          "date": "2026-09-04",
+          "pdf": "20260904_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "DEUS"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DEUS Pomegranate Mors",
+      "product_type": "30.0g 箱",
+      "country": "ロシア",
+      "current_price": 1500,
+      "last_changed": "2026-09-04",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1500,
+          "date": "2026-09-04",
+          "pdf": "20260904_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "DEUS"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DEUS Base",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2026-09-04",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2026-09-04",
+          "pdf": "20260904_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "DEUS"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DEUS Orange Blossom",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4400,
+      "last_changed": "2026-09-04",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4400,
+          "date": "2026-09-04",
+          "pdf": "20260904_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "DEUS"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "ロッキーパテル IT'S A BOY",
+      "product_type": "152mm 1本",
+      "country": "ニカラグア",
+      "current_price": 2200,
+      "last_changed": "2026-09-12",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2200,
+          "date": "2026-09-12",
+          "pdf": "20260908_kouriteikahenkou.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "ロッキーパテル"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "MAMBO ROBUSTO MADURO",
+      "product_type": "124mm 1本",
+      "country": "ニカラグア",
+      "current_price": 3300,
+      "last_changed": "2026-09-09",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3300,
+          "date": "2026-09-09",
+          "pdf": "20260909_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "MAMBO ROBUSTO"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "Flor de Oliva 550 Robusto",
+      "product_type": "127mm 1本",
+      "country": "ニカラグア",
+      "current_price": 1210,
+      "last_changed": "2026-09-09",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1210,
+          "date": "2026-09-09",
+          "pdf": "20260909_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "Flor de"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "Flor de Oliva 550 Maduro Robusto",
+      "product_type": "",
+      "country": "ニカラグア",
+      "current_price": 1320,
+      "last_changed": "2026-09-09",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1320,
+          "date": "2026-09-09",
+          "pdf": "20260909_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "Flor de"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "Oliva Serie G 450 Robusto Round",
+      "product_type": "114mm 1本",
+      "country": "ニカラグア",
+      "current_price": 1540,
+      "last_changed": "2026-09-09",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1540,
+          "date": "2026-09-09",
+          "pdf": "20260909_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "Oliva"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "Oliva Serie G 438 Petit Corona",
+      "product_type": "100mm 1本",
+      "country": "ニカラグア",
+      "current_price": 1210,
+      "last_changed": "2026-09-09",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1210,
+          "date": "2026-09-09",
+          "pdf": "20260909_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "Oliva"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "Oliva Serie O 438 Petit Corona",
+      "product_type": "",
+      "country": "ニカラグア",
+      "current_price": 1320,
+      "last_changed": "2026-09-09",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1320,
+          "date": "2026-09-09",
+          "pdf": "20260909_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "Oliva"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "Oliva Serie V Melanio 135 Aniversario 2026",
+      "product_type": "140mm 1本",
+      "country": "ニカラグア",
+      "current_price": 3520,
+      "last_changed": "2026-09-09",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3520,
+          "date": "2026-09-09",
+          "pdf": "20260909_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "Oliva"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "ジョンエイルズベリー・ウインターエディション",
+      "product_type": "100.0g 缶",
+      "country": "ドイツ",
+      "current_price": 6000,
+      "last_changed": "2026-09-09",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 6000,
+          "date": "2026-09-09",
+          "pdf": "20260909_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "西洋パイプ",
+      "brand": "ジョンエイルズベリー"
+    },
+    {
+      "category": "紙巻たばこ",
+      "name": "ディージェー ミックス サイゴン・アイシーブルー",
+      "product_type": "FK 20本 ハードパック",
+      "country": "ベトナム",
+      "current_price": 550,
+      "last_changed": "2026-09-09",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 550,
+          "date": "2026-09-09",
+          "pdf": "20260909_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "ディージェー ミックス サイゴン"
     }
   ],
   "processed_pdfs": [
@@ -79881,6 +80133,7 @@
     "20260805_kouriteikahenkou.pdf",
     "20260817_kouriteikahenkou.pdf",
     "20260821_kouriteika.pdf",
-    "20260826_kouriteikahenkou.pdf"
+    "20260826_kouriteikahenkou.pdf",
+    "20260907_kouriteika.pdf"
   ]
 }
