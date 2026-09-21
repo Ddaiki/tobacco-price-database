@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-14",
+  "updated_at": "2026-09-21",
   "products": [
     {
       "category": "葉巻たばこ",
@@ -80108,6 +80108,60 @@
       ],
       "subcategory": null,
       "brand": "ディージェー ミックス サイゴン"
+    },
+    {
+      "category": "かぎたばこ",
+      "name": "ベロ・マンゴー・アイス・ミディアム",
+      "product_type": "15個 缶",
+      "country": "パキスタン",
+      "current_price": 380,
+      "last_changed": "2026-09-14",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 380,
+          "date": "2026-09-14",
+          "pdf": "20260914_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "ベロ"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "エル・ガウチョ・スクエア・ファンタスティコ・ブルー",
+      "product_type": "150mm 1本",
+      "country": "インドネシア",
+      "current_price": 2500,
+      "last_changed": "2026-09-14",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2500,
+          "date": "2026-09-14",
+          "pdf": "20260914_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "エル"
+    },
+    {
+      "category": "加熱式たばこ",
+      "name": "センティア・グレープフルーツ・カプセル",
+      "product_type": "F45 20スティック ハードパック 5.7g",
+      "country": "ルーマニア\nギリシャ",
+      "current_price": 590,
+      "last_changed": "2026-09-16",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 590,
+          "date": "2026-09-16",
+          "pdf": "20260916_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "センティア"
     }
   ],
   "processed_pdfs": [
@@ -80134,6 +80188,7 @@
     "20260817_kouriteikahenkou.pdf",
     "20260821_kouriteika.pdf",
     "20260826_kouriteikahenkou.pdf",
-    "20260907_kouriteika.pdf"
+    "20260907_kouriteika.pdf",
+    "20260914_kouriteikahenkou.pdf"
   ]
 }
