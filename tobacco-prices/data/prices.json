@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21",
+  "updated_at": "2026-10-05",
   "products": [
     {
       "category": "葉巻たばこ",
@@ -2091,10 +2091,15 @@
       "name": "H.O.T. レッド",
       "product_type": "1.0g 1本",
       "country": "アメリカ合衆国",
-      "current_price": 560,
-      "last_changed": "2026-03-19",
+      "current_price": 570,
+      "last_changed": "2026-10-01",
       "discontinued": false,
       "price_history": [
+        {
+          "price": 570,
+          "date": "2026-10-01",
+          "pdf": "20260925_kouriteikahenkou.pdf"
+        },
         {
           "price": 560,
           "date": "2026-03-19",
@@ -80162,6 +80167,168 @@
       ],
       "subcategory": null,
       "brand": "センティア"
+    },
+    {
+      "category": "紙巻たばこ",
+      "name": "エッセ チェンジ ダブル ベリーソーダ",
+      "product_type": "FK 20本 ハードパック",
+      "country": "大韓民国",
+      "current_price": 500,
+      "last_changed": "2026-09-25",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 500,
+          "date": "2026-09-25",
+          "pdf": "20260925_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "エッセ チェンジ"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "LOTUS MADURO 52",
+      "product_type": "140mm 1本",
+      "country": "ベトナム",
+      "current_price": 5700,
+      "last_changed": "2026-09-25",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 5700,
+          "date": "2026-09-25",
+          "pdf": "20260925_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "LOTUS MADURO"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "Dunbarton Tobacco & Trust 10TH JUBILEE",
+      "product_type": "143mm 1本",
+      "country": "ニカラグア",
+      "current_price": 5000,
+      "last_changed": "2026-09-25",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 5000,
+          "date": "2026-09-25",
+          "pdf": "20260925_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "Dunbarton"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "アムステルダム",
+      "product_type": "25.0g パウチ",
+      "country": "ブラジル",
+      "current_price": 950,
+      "last_changed": "2026-09-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 950,
+          "date": "2026-09-28",
+          "pdf": "20260928_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "西洋パイプ",
+      "brand": "アムステルダム"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "マラジョ",
+      "product_type": "",
+      "country": "ブラジル",
+      "current_price": 850,
+      "last_changed": "2026-09-28",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 850,
+          "date": "2026-09-28",
+          "pdf": "20260928_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "西洋パイプ",
+      "brand": "マラジョ"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "OFFICIAL BOOTLEG SELECTION Lonsdale",
+      "product_type": "170mm 1本",
+      "country": "ホンジュラス",
+      "current_price": 7300,
+      "last_changed": "2026-09-30",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 7300,
+          "date": "2026-09-30",
+          "pdf": "20260930_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "OFFICIAL BOOTLEG"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "OFFICIAL BOOTLEG SELECTION Torpedo",
+      "product_type": "156mm 1本",
+      "country": "ホンジュラス",
+      "current_price": 7600,
+      "last_changed": "2026-09-30",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 7600,
+          "date": "2026-09-30",
+          "pdf": "20260930_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "OFFICIAL BOOTLEG"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "OFFICIAL BOOTLEG SELECTION Double Corona",
+      "product_type": "194mm 1本",
+      "country": "ホンジュラス",
+      "current_price": 8600,
+      "last_changed": "2026-09-30",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 8600,
+          "date": "2026-09-30",
+          "pdf": "20260930_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "OFFICIAL BOOTLEG"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "OFFICIAL BOOTLEG SELECTION Lancero",
+      "product_type": "192mm 1本",
+      "country": "ホンジュラス",
+      "current_price": 8300,
+      "last_changed": "2026-09-30",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 8300,
+          "date": "2026-09-30",
+          "pdf": "20260930_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "OFFICIAL BOOTLEG"
     }
   ],
   "processed_pdfs": [
