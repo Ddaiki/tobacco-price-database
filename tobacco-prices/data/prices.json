@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05",
+  "updated_at": "2026-10-12",
   "products": [
     {
       "category": "葉巻たばこ",
@@ -1191,10 +1191,15 @@
       "name": "BALLI BAGDADI",
       "product_type": "50.0g 箱",
       "country": "トルコ",
-      "current_price": 1600,
-      "last_changed": "2023-04-24",
+      "current_price": 1500,
+      "last_changed": "2026-10-12",
       "discontinued": false,
       "price_history": [
+        {
+          "price": 1500,
+          "date": "2026-10-12",
+          "pdf": "20261002_kouriteikahenkou.pdf"
+        },
         {
           "price": 1600,
           "date": "2023-04-24",
@@ -80329,6 +80334,150 @@
       ],
       "subcategory": null,
       "brand": "OFFICIAL BOOTLEG"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "BALLI APPLE",
+      "product_type": "250.0g 缶",
+      "country": "トルコ",
+      "current_price": 7500,
+      "last_changed": "2026-10-12",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 7500,
+          "date": "2026-10-12",
+          "pdf": "20261002_kouriteikahenkou.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "BALLI"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "BALLI APPLE",
+      "product_type": "50.0g 箱",
+      "country": "トルコ",
+      "current_price": 1500,
+      "last_changed": "2026-10-02",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1500,
+          "date": "2026-10-02",
+          "pdf": "20261002_kouriteikahenkou.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "BALLI"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "BALLI CARNAVAL",
+      "product_type": "50.0g 箱",
+      "country": "トルコ",
+      "current_price": 1500,
+      "last_changed": "2026-10-12",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1500,
+          "date": "2026-10-12",
+          "pdf": "20261002_kouriteikahenkou.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "BALLI"
+    },
+    {
+      "category": "加熱式たばこ",
+      "name": "テリア・インテンス・レギュラー",
+      "product_type": "F45 20スティック ハードパック 5.2g",
+      "country": "イタリア\nギリシャ",
+      "current_price": 640,
+      "last_changed": "2026-10-06",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 640,
+          "date": "2026-10-06",
+          "pdf": "20261006_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "テリア"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SERBETLI ISTANBUL NIGHTS",
+      "product_type": "50.0g 箱",
+      "country": "トルコ",
+      "current_price": 1500,
+      "last_changed": "2026-10-07",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1500,
+          "date": "2026-10-07",
+          "pdf": "20261007_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "SERBETLI"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SERBETLI VANILLA",
+      "product_type": "250.0g 箱",
+      "country": "トルコ",
+      "current_price": 7500,
+      "last_changed": "2026-10-07",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 7500,
+          "date": "2026-10-07",
+          "pdf": "20261007_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "SERBETLI"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SERBETLI COLA",
+      "product_type": "250.0g 箱",
+      "country": "トルコ",
+      "current_price": 7500,
+      "last_changed": "2026-10-07",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 7500,
+          "date": "2026-10-07",
+          "pdf": "20261007_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "SERBETLI"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SERBETLI ICE BODRUM TANGERINE",
+      "product_type": "250.0g 箱",
+      "country": "トルコ",
+      "current_price": 7500,
+      "last_changed": "2026-10-07",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 7500,
+          "date": "2026-10-07",
+          "pdf": "20261007_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "SERBETLI"
     }
   ],
   "processed_pdfs": [
@@ -80356,6 +80505,8 @@
     "20260821_kouriteika.pdf",
     "20260826_kouriteikahenkou.pdf",
     "20260907_kouriteika.pdf",
-    "20260914_kouriteikahenkou.pdf"
+    "20260914_kouriteikahenkou.pdf",
+    "20261002_kouriteika.pdf",
+    "20261007_kouriteikahenkou.pdf"
   ]
 }
