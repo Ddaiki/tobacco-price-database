@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12",
+  "updated_at": "2026-10-26",
   "products": [
     {
       "category": "葉巻たばこ",
@@ -80478,6 +80478,150 @@
       ],
       "subcategory": "シーシャ",
       "brand": "SERBETLI"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "SERBETLI GRAPE",
+      "product_type": "50.0g 箱",
+      "country": "トルコ",
+      "current_price": 1500,
+      "last_changed": "2026-10-16",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1500,
+          "date": "2026-10-16",
+          "pdf": "20261016_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "SERBETLI"
+    },
+    {
+      "category": "紙巻たばこ",
+      "name": "ピール ライムコーラ スーパースリム",
+      "product_type": "FK 20本 ハードパック",
+      "country": "アラブ首長国連邦",
+      "current_price": 570,
+      "last_changed": "2026-10-16",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 570,
+          "date": "2026-10-16",
+          "pdf": "20261016_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "ピール"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "CONFIDENCIAAL HIMITSU REGIONAL EDITION JAPAN",
+      "product_type": "124mm 1本",
+      "country": "ホンジュラス",
+      "current_price": 3300,
+      "last_changed": "2026-10-16",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3300,
+          "date": "2026-10-16",
+          "pdf": "20261016_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "CONFIDENCIAAL"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "DOGMA VILLANUEVA HS",
+      "product_type": "80.0g 瓶",
+      "country": "ロシア",
+      "current_price": 7700,
+      "last_changed": "2026-10-19",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 7700,
+          "date": "2026-10-19",
+          "pdf": "20261019_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "DOGMA VILLANUEVA"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "MEZZA Blue Mist",
+      "product_type": "100.0g 箱",
+      "country": "インドネシア",
+      "current_price": 3900,
+      "last_changed": "2026-10-21",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3900,
+          "date": "2026-10-21",
+          "pdf": "20261021_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "MEZZA"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tombacco Blackline CITRUS MIX",
+      "product_type": "50.0g 箱",
+      "country": "インドネシア",
+      "current_price": 2000,
+      "last_changed": "2026-10-21",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2000,
+          "date": "2026-10-21",
+          "pdf": "20261021_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "Tombacco"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tombacco Whiteline MANGO",
+      "product_type": "50.0g 箱",
+      "country": "インドネシア",
+      "current_price": 1630,
+      "last_changed": "2026-10-21",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1630,
+          "date": "2026-10-21",
+          "pdf": "20261021_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "Tombacco"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tombacco Whiteline SOUL OF JAVA",
+      "product_type": "50.0g 箱",
+      "country": "インドネシア",
+      "current_price": 1630,
+      "last_changed": "2026-10-21",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1630,
+          "date": "2026-10-21",
+          "pdf": "20261021_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "Tombacco"
     }
   ],
   "processed_pdfs": [
@@ -80507,6 +80651,7 @@
     "20260907_kouriteika.pdf",
     "20260914_kouriteikahenkou.pdf",
     "20261002_kouriteika.pdf",
-    "20261007_kouriteikahenkou.pdf"
+    "20261007_kouriteikahenkou.pdf",
+    "20261021_kouriteikahenkou.pdf"
   ]
 }
