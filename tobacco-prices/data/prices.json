@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26",
+  "updated_at": "2026-11-02",
   "products": [
     {
       "category": "葉巻たばこ",
@@ -80622,6 +80622,150 @@
       ],
       "subcategory": "シーシャ",
       "brand": "Tombacco"
+    },
+    {
+      "category": "かぎたばこ",
+      "name": "ベロ・ジューシー・オレンジ・ミディアム",
+      "product_type": "15個 缶",
+      "country": "パキスタン",
+      "current_price": 380,
+      "last_changed": "2026-10-26",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 380,
+          "date": "2026-10-26",
+          "pdf": "20261026_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "ベロ"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Debaj Grape Berry",
+      "product_type": "50.0g 箱",
+      "country": "アラブ首長国連邦",
+      "current_price": 1650,
+      "last_changed": "2026-10-26",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1650,
+          "date": "2026-10-26",
+          "pdf": "20261026_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "DEBAJ"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "NASH ノーアロマ ピロート・クバーノ",
+      "product_type": "30.0g 箱",
+      "country": "ロシア",
+      "current_price": 3000,
+      "last_changed": "2026-10-26",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3000,
+          "date": "2026-10-26",
+          "pdf": "20261026_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "NASH"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "1962 コスタリカ ナチュラル",
+      "product_type": "127mm 1本",
+      "country": "コスタリカ",
+      "current_price": 2200,
+      "last_changed": "2026-10-26",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 2200,
+          "date": "2026-10-26",
+          "pdf": "20261026_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "1962 コスタリカ"
+    },
+    {
+      "category": "葉巻たばこ",
+      "name": "ロッキーパテル 2026 イヤー オブ ザ ホース",
+      "product_type": "178mm 1本",
+      "country": "ニカラグア",
+      "current_price": 5500,
+      "last_changed": "2026-10-26",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 5500,
+          "date": "2026-10-26",
+          "pdf": "20261026_kouriteika.pdf"
+        }
+      ],
+      "subcategory": null,
+      "brand": "ロッキーパテル"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "MEZZA Smokey Bacon",
+      "product_type": "100.0g 箱",
+      "country": "インドネシア",
+      "current_price": 3900,
+      "last_changed": "2026-10-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 3900,
+          "date": "2026-10-27",
+          "pdf": "20261027_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "MEZZA"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tombacco Whiteline AROMA LIME",
+      "product_type": "50.0g 箱",
+      "country": "インドネシア",
+      "current_price": 1630,
+      "last_changed": "2026-10-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1630,
+          "date": "2026-10-27",
+          "pdf": "20261027_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "Tombacco"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Tombacco Whiteline YOGURT",
+      "product_type": "50.0g 箱",
+      "country": "インドネシア",
+      "current_price": 1630,
+      "last_changed": "2026-10-27",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1630,
+          "date": "2026-10-27",
+          "pdf": "20261027_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "Tombacco"
     }
   ],
   "processed_pdfs": [
@@ -80652,6 +80796,7 @@
     "20260914_kouriteikahenkou.pdf",
     "20261002_kouriteika.pdf",
     "20261007_kouriteikahenkou.pdf",
-    "20261021_kouriteikahenkou.pdf"
+    "20261021_kouriteikahenkou.pdf",
+    "20261030_kouriteika.pdf"
   ]
 }
