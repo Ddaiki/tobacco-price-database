@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02",
+  "updated_at": "2026-11-16",
   "products": [
     {
       "category": "葉巻たばこ",
@@ -80766,6 +80766,96 @@
       ],
       "subcategory": "シーシャ",
       "brand": "Tombacco"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Debaj Green Lemon",
+      "product_type": "50.0g 箱",
+      "country": "アラブ首長国連邦",
+      "current_price": 1650,
+      "last_changed": "2026-11-10",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1650,
+          "date": "2026-11-10",
+          "pdf": "20261110_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "DEBAJ"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "BLACK ROCK Hookah Molasses Earl Grey",
+      "product_type": "50.0g 箱",
+      "country": "インド",
+      "current_price": 1950,
+      "last_changed": "2026-11-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1950,
+          "date": "2026-11-13",
+          "pdf": "20261113_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "BLACK ROCK"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "AFZAL Hookah Molasses Chocolate Pan",
+      "product_type": "",
+      "country": "インド",
+      "current_price": 1750,
+      "last_changed": "2026-11-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 1750,
+          "date": "2026-11-13",
+          "pdf": "20261113_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "AFZAL"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Sapphire Crown BITTER CHERRY",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4200,
+      "last_changed": "2026-11-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4200,
+          "date": "2026-11-13",
+          "pdf": "20261113_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "Sapphire Crown"
+    },
+    {
+      "category": "パイプたばこ",
+      "name": "Sapphire Crown YUZU-HONEY",
+      "product_type": "100.0g 箱",
+      "country": "ロシア",
+      "current_price": 4200,
+      "last_changed": "2026-11-13",
+      "discontinued": false,
+      "price_history": [
+        {
+          "price": 4200,
+          "date": "2026-11-13",
+          "pdf": "20261113_kouriteika.pdf"
+        }
+      ],
+      "subcategory": "シーシャ",
+      "brand": "Sapphire Crown"
     }
   ],
   "processed_pdfs": [
@@ -80797,6 +80887,7 @@
     "20261002_kouriteika.pdf",
     "20261007_kouriteikahenkou.pdf",
     "20261021_kouriteikahenkou.pdf",
-    "20261030_kouriteika.pdf"
+    "20261030_kouriteika.pdf",
+    "20261111_kouriteika.pdf"
   ]
 }
